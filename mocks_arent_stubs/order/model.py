@@ -8,9 +8,9 @@ class Order:
         self.quantity = 0
 
     def fill(self, stock):
-        is_can_fill = stock.has_inventory(self.product_type)
-        if is_can_fill:
-            self.quantity = stock.unload(self.product_type, self.need_quantity)
+        if not stock.has_inventory(self.product_type):
+            return
+        self.quantity = stock.unload(self.product_type, self.need_quantity)
 
     def is_filled(self):
         return bool(self.quantity != 0)
@@ -27,11 +27,11 @@ class Warehouse:
     def add(self, product_type, product):
         self.inventory[product_type] = product
 
+    def has_inventory(self, product_type):
+        return bool(self.inventory.get(product_type, None))
+
     def unload(self, product_type, quantity):
         if self.inventory[product_type] < quantity:
             return 0
         self.inventory[product_type] -= quantity
         return quantity
-
-    def has_inventory(self, product_type):
-        return bool(self.inventory.get(product_type, None))
