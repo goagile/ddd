@@ -1,5 +1,6 @@
 import unittest
 from datetime import datetime
+from datetime import date
 
 
 class Test(unittest.TestCase):
@@ -18,13 +19,18 @@ class Test(unittest.TestCase):
         self.assertIsInstance(p.children[0], Person)
         self.assertIsInstance(p.children[1], Person)
 
+    def test_birthdate(self):
+        p = Person('Jim', birthdate=november(2000, 21))
+
+        self.assertIsNotNone(p.birthdate)
+        self.assertEqual(november(2000, 21), p.birthdate)
+
 
 class Person:
-    def __init__(self, name):
+    def __init__(self, name, birthdate=None):
         self.__name = name
         self.__children = []
-        self.__children = []
-        self.birthdate = datetime.now()
+        self.__birthdate = birthdate
 
     @property
     def name(self):
@@ -33,6 +39,10 @@ class Person:
     @property
     def children(self):
         return self.__children
+
+    @property
+    def birthdate(self):
+        return self.__birthdate
 
     def add_children(self, children):
         if not isinstance(children, Person):
@@ -47,3 +57,7 @@ class Person:
             return years
         else:
             return 0
+
+
+def november(year, day):
+    return date(year=year, month=11, day=day)
