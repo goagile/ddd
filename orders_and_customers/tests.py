@@ -2,8 +2,8 @@ import unittest
 
 from nilsson.orders_and_customers.application_layer import Repository
 from nilsson.orders_and_customers.domain_layer import (
-    Town, create_a_customer_and_an_order, create_order, TotalCreditService
-)
+    Town, create_a_customer_and_an_order, create_order, TotalCreditService,
+    create_customer, OrderFactory, Product)
 
 repository = Repository()
 
@@ -59,7 +59,7 @@ class TestFirst(unittest.TestCase):
 
         self.assertFalse(order.is_ok_accounting_to_size())
 
-    def cant_set_to_high_credit_limit_for_customer(self):
+    def test_cant_set_to_high_credit_limit_for_customer(self):
         new_customer = create_ronneby_customer(10)
 
         # Нужен упрощенный вариант CreditService <= 300
@@ -67,6 +67,14 @@ class TestFirst(unittest.TestCase):
         new_customer.credit_limit = 1000
 
         self.assertFalse(new_customer.is_ok_credit_limit)
+
+    def test_can_create_order_with_order_line(self):
+        new_customer = create_customer('Jim')
+        new_order = OrderFactory.create_order(new_customer)
+
+        OrderFactory.create_order_line(new_order, Product())
+
+        self.assertEqual(1, new_order.order_lines)
 
 
 def create_ronneby_customer(price):

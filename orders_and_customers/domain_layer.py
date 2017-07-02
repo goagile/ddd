@@ -1,10 +1,30 @@
 
 
+class OrderFactory:
+
+    @classmethod
+    def create_order(cls, customer):
+        pass
+
+    @classmethod
+    def create_order_line(cls, order, product):
+        pass
+
+
+class Product:
+    def __init__(self):
+        pass
+
+
 class Town:
     Ronneby = 'Ronneby'
 
 
 def create_a_customer_and_an_order(town, price):
+    return Customer()
+
+
+def create_customer(name):
     return Customer()
 
 
