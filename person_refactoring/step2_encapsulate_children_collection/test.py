@@ -8,13 +8,15 @@ class Test(unittest.TestCase):
 
         self.assertEqual('Jim', p.name)
 
-    def test_add_one_children(self):
+    def test_can_calculate_nimber_of_kids(self):
         p = Person('Jim')
 
         p.add_children(Person('Tom'))
+        p.add_children(Person('Sonya'))
 
-        self.assertEqual(1, len(p.children))
+        self.assertEqual(2, len(p.children))
         self.assertIsInstance(p.children[0], Person)
+        self.assertIsInstance(p.children[1], Person)
 
 
 class Person:
