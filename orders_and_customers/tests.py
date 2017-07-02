@@ -1,20 +1,9 @@
 import unittest
 
-
-class Repository():
-
-    def get_customers(self, town, price):
-        return []
-
-    def get_orders(self, customer):
-        return []
-
+from nilsson.orders_and_customers.application_layer import Repository
+from nilsson.orders_and_customers.domain_layer import Town, create_a_customer_and_an_order
 
 repository = Repository()
-
-
-class Town:
-    Ronneby = 'Ronneby'
 
 
 class TestFirst(unittest.TestCase):
@@ -36,13 +25,4 @@ class TestFirst(unittest.TestCase):
         self.assertEqual(1, len(orders_for_the_new_customer))
 
     def test_(self):
-        pass
-
-
-def create_a_customer_and_an_order(town, proce):
-    return Customer()
-
-
-class Customer:
-    def __init__(self):
         pass
