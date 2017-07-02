@@ -8,25 +8,29 @@ class Test(unittest.TestCase):
 
         self.assertEqual('Jim', p.name)
 
-    def test_strange_children(self):
-        p = Person('Jim')
-
-        p.children = [
+    def test_still_strange_children(self):
+        p = Person('Jim', children=[
             1, 'A', datetime.year, float(2/4)
-        ]
+        ])
 
         self.assertEqual([1, 'A', datetime.year, float(2/4)], p.children)
 
 
 class Person:
-    def __init__(self, name):
+    def __init__(self, name, children=None):
         self.__name = name
         self.birthdate = datetime.now()
-        self.children = []
+        self.__children = []
+        if children:
+            self.__children = children
 
     @property
     def name(self):
         return self.__name
+
+    @property
+    def children(self):
+        return self.__children
 
     def how_old(self):
         if self.birthdate < datetime.now():
