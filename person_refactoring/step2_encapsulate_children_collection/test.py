@@ -8,21 +8,21 @@ class Test(unittest.TestCase):
 
         self.assertEqual('Jim', p.name)
 
-    def test_still_strange_children(self):
-        p = Person('Jim', children=[
-            1, 'A', datetime.year, float(2/4)
-        ])
+    def test_add_one_children(self):
+        p = Person('Jim')
 
-        self.assertEqual([1, 'A', datetime.year, float(2/4)], p.children)
+        p.add_children(Person('Tom'))
+
+        self.assertEqual(1, len(p.children))
+        self.assertIsInstance(p.children[0], Person)
 
 
 class Person:
-    def __init__(self, name, children=None):
+    def __init__(self, name):
         self.__name = name
-        self.birthdate = datetime.now()
         self.__children = []
-        if children:
-            self.__children = children
+        self.__children = []
+        self.birthdate = datetime.now()
 
     @property
     def name(self):
@@ -31,6 +31,11 @@ class Person:
     @property
     def children(self):
         return self.__children
+
+    def add_children(self, children):
+        if not isinstance(children, Person):
+            raise ValueError('The children is needs subclasses of Person class')
+        self.__children.append(children)
 
     def how_old(self):
         if self.birthdate < datetime.now():
