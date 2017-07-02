@@ -4,7 +4,7 @@
 import unittest
 from unittest.mock import MagicMock
 
-from nilsson.mocks_arent_stubs.order.model import Order, Warehouse
+from nilsson.start_examples.mocks_arent_stubs.order import Order, Warehouse
 
 TALISKER = 'Talisker'
 HIGHLAND_PARK = 'Highland Park'
