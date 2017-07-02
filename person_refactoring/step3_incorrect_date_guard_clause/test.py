@@ -56,13 +56,16 @@ class Person:
     def how_old(self):
         if self._incorrect_birthdate():
             raise ValueError
+        return self._number_of_years()
+
+    def _incorrect_birthdate(self):
+        return bool(self.birthdate < datetime.now())
+
+    def _number_of_years(self):
         years = datetime.now().year - self.birthdate.year
         if datetime.now().timetuple().tm_yday < self.birthdate.timetuple().tm_yday:
             years -= 1
         return years
-
-    def _incorrect_birthdate(self):
-        return bool(self.birthdate < datetime.now())
 
 
 def november(year, day):
