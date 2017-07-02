@@ -42,9 +42,13 @@ class TruckCalculation:
     def need_number_of_trucks(self):
         if self._is_not_calculatable():
             return 0
-        number_of_unloadings = 60 / self.unloading_time
-        shuttle_capacity = self.truck_capacity * number_of_unloadings
-        return self.milling_capacity / shuttle_capacity
+        return self._single_truck_capacity_during_one_hour
 
     def _is_not_calculatable(self):
         return bool(self.truck_capacity == 0 or self.unloading_time == 0)
+
+    @property
+    def _single_truck_capacity_during_one_hour(self):
+        number_of_unloadings = 60 / self.unloading_time
+        shuttle_capacity = self.truck_capacity * number_of_unloadings
+        return self.milling_capacity / shuttle_capacity
