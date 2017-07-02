@@ -1,6 +1,5 @@
 import unittest
 from datetime import datetime
-from datetime import date
 
 
 class Test(unittest.TestCase):
@@ -18,6 +17,17 @@ class Test(unittest.TestCase):
         self.assertEqual(2, len(p.children))
         self.assertIsInstance(p.children[0], Person)
         self.assertIsInstance(p.children[1], Person)
+
+    def test_birthdate(self):
+        p = Person('Jim', birthdate=november(2000, 21))
+
+        self.assertIsNotNone(p.birthdate)
+        self.assertEqual(november(2000, 21), p.birthdate)
+
+    def test_incorrect_birthdate(self):
+        p = Person('Jim', birthdate=datetime.now())
+        with self.assertRaises(ValueError):
+            p.how_old()
 
 
 class Person:
@@ -44,10 +54,16 @@ class Person:
         self.__children.append(children)
 
     def how_old(self):
-        if self.birthdate < datetime.now():
-            years = datetime.now().year - self.birthdate.year
-            if datetime.now().timetuple().tm_yday < self.birthdate.timetuple().tm_yday:
-                years -= 1
-            return years
-        else:
-            return 0
+        if self._incorrect_birthdate():
+            raise ValueError
+        years = datetime.now().year - self.birthdate.year
+        if datetime.now().timetuple().tm_yday < self.birthdate.timetuple().tm_yday:
+            years -= 1
+        return years
+
+    def _incorrect_birthdate(self):
+        return bool(self.birthdate < datetime.now())
+
+
+def november(year, day):
+    return datetime(year=year, month=11, day=day)
