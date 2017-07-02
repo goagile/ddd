@@ -40,8 +40,11 @@ class TruckCalculation:
 
     @property
     def need_number_of_trucks(self):
-        if self.truck_capacity == 0 or self.unloading_time == 0:
+        if self._is_not_calculatable():
             return 0
         number_of_unloadings = 60 / self.unloading_time
         shuttle_capacity = self.truck_capacity * number_of_unloadings
         return self.milling_capacity / shuttle_capacity
+
+    def _is_not_calculatable(self):
+        return bool(self.truck_capacity == 0 or self.unloading_time == 0)
