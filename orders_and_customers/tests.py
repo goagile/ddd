@@ -1,7 +1,9 @@
 import unittest
 
 from nilsson.orders_and_customers.application_layer import Repository
-from nilsson.orders_and_customers.domain_layer import Town, create_a_customer_and_an_order
+from nilsson.orders_and_customers.domain_layer import (
+    Town, create_a_customer_and_an_order, create_order, TotalCreditService
+)
 
 repository = Repository()
 
@@ -38,6 +40,17 @@ class TestFirst(unittest.TestCase):
 
         self.fail('Not realized')
         # for o in orders:pass
+
+    def test_can_get_total_credit_for_customer_excluding_current_order(self):
+        new_customer = create_ronneby_customer(22)
+        second_order = create_order(new_customer, 110)
+        service = TotalCreditService()
+
+        current_credit = service.get_current_credit(new_customer)
+        second_current_credit = service.get_current_credit_by_order(new_customer, second_order)
+
+        self.assertEqual(110 + 22, current_credit)
+        self.assertEqual(22, second_current_credit)
 
 
 def create_ronneby_customer(price):
