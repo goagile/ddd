@@ -16,6 +16,10 @@ class Product:
         pass
 
 
+class OrderStatus:
+    ACCEPTED = 'Accepted'
+
+
 class Town:
     Ronneby = 'Ronneby'
 

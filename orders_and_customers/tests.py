@@ -3,7 +3,7 @@ import unittest
 from nilsson.orders_and_customers.application_layer import Repository
 from nilsson.orders_and_customers.domain_layer import (
     Town, create_a_customer_and_an_order, create_order, TotalCreditService,
-    create_customer, OrderFactory, Product)
+    create_customer, OrderFactory, Product, OrderStatus)
 
 repository = Repository()
 
@@ -75,6 +75,15 @@ class TestFirst(unittest.TestCase):
         OrderFactory.create_order_line(new_order, Product())
 
         self.assertEqual(1, new_order.order_lines)
+
+    def test_can_accept_order(self):
+        new_customer = create_customer('Jim')
+        order = OrderFactory.create_order(new_customer)
+        self.assertFalse(order.status == OrderStatus.ACCEPTED)
+
+        order.accept()
+
+        self.assertTrue(order.status == OrderStatus.ACCEPTED)
 
 
 def create_ronneby_customer(price):
