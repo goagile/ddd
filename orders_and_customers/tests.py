@@ -52,6 +52,28 @@ class TestFirst(unittest.TestCase):
         self.assertEqual(110 + 22, current_credit)
         self.assertEqual(22, second_current_credit)
 
+    def test_can_check_that_an_order_total_size_is_ok(self):
+        new_customer = create_ronneby_customer(2000000)
+
+        order = repository.get_orders(new_customer)[0]
+
+        self.assertFalse(order.is_ok_accounting_to_size())
+
+    def cant_set_to_high_credit_limit_for_customer(self):
+        new_customer = create_ronneby_customer(10)
+
+        # Нужен упрощенный вариант CreditService <= 300
+        new_customer.credit_service = StubCreditService(300)
+        new_customer.credit_limit = 1000
+
+        self.assertFalse(new_customer.is_ok_credit_limit)
+
 
 def create_ronneby_customer(price):
     return create_a_customer_and_an_order(Town.Ronneby, 420)
+
+
+class StubCreditService:
+
+    def __init__(self, limit):
+        self.limit = limit

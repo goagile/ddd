@@ -15,12 +15,15 @@ def create_order(customer, price):
 class Order:
 
     def __init__(self, price):
-        self.pricr = price
+        self.price = price
+
+    def is_ok_accounting_to_size(self):
+        return False
 
 
 class Customer:
     def __init__(self):
-        pass
+        self.credit_limit = 0
 
 
 class TotalCreditService:
