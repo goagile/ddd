@@ -8,12 +8,16 @@ RU_CONSTANT_TEXT_PATTERN = r'(?:\'|\")([-А-Яа-я \d.:?!\\|/]*)(?:\'|\")'
 def collect_constants(path):
     lines = get_lines(path)
     constants = get_constants(lines)
+    translitted = translit_constants(constants)
+    for a, b in zip(translitted, constants):
+        print(a + '="' + b + '"')
 
-    for constant in constants:
-        print(transliterate(constant))
+
+def translit_constants(constants):
+    return [translit(c) for c in constants]
 
 
-def transliterate(text):
+def translit(text):
     match = []
     ru = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧЪЫЬЭЮЯ'
     en = 'ABVGDEEJZIIKLMNOPRSTUFHCC_Y_EUY'
