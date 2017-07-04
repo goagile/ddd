@@ -1,17 +1,34 @@
 import os
 
+import re
+
+RU_CONSTANT_TEXT_PATTERN = r'(?:\'|\")([-А-Яа-я \d.:?!\\|/]*)(?:\'|\")'
+
 
 def collect_constants(path):
     lines = get_lines(path)
-
-    print(''.join(lines))
+    constants = get_constants(lines)
+    print(constants)
 
 
 def get_lines(path):
-    lines = []
     with open(path, 'r') as file:
-        lines = file.readlines()
-    return lines
+        result = file.readlines()
+    return result
+
+
+def get_constants(lines):
+    result = []
+    for line in lines:
+        result.extend(match_constant(line))
+    return result
+
+
+def match_constant(line):
+    match = re.findall(RU_CONSTANT_TEXT_PATTERN, line)
+    if match:
+        return (m for m in match if m)
+    return []
 
 
 if __name__ == '__main__':
