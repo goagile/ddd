@@ -1,6 +1,6 @@
 import unittest
 
-from nilsson.start_examples.specification.model import Color, Product, Repository, Size
+from nilsson.start_examples.specification.step_0_source_code.model import Color, Repository, Size
 
 
 repository = Repository()
