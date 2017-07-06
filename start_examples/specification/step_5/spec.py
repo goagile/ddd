@@ -31,3 +31,13 @@ class BelowPriceSpec(Spec):
 
     def is_satisfied_by(self, product):
         return bool(product.price > self.__price)
+
+
+class AndSpec(Spec):
+
+    def __init__(self, augend, addend):
+        self.augend = augend
+        self.addend = addend
+
+    def is_satisfied_by(self, product):
+        return self.augend.is_satisfied_by(product) and self.addend.is_satisfied_by(product)

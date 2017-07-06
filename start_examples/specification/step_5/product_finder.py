@@ -1,4 +1,4 @@
-from nilsson.start_examples.specification.step_5.spec import ColorSpec, SizeSpec, BelowPriceSpec
+from nilsson.start_examples.specification.step_5.spec import ColorSpec, SizeSpec, BelowPriceSpec, AndSpec
 
 
 class ProductFinder:
@@ -8,23 +8,27 @@ class ProductFinder:
 
     def find_by_color(self, color):
         result = []
+        spec = ColorSpec(color)
         for product in self.__repository:
-            if ColorSpec(color).is_satisfied_by(product):
+            if spec.is_satisfied_by(product):
                 result.append(product)
         return result
 
     def find_by_size(self, size):
         result = []
+        spec = SizeSpec(size)
         for product in self.__repository:
-            if SizeSpec(size).is_satisfied_by(product):
+            if spec.is_satisfied_by(product):
                 result.append(product)
         return result
 
     def find_below_price_and_color(self, price, color):
         result = []
-        price_spec = BelowPriceSpec(price)
-        color_spec = ColorSpec(color)
+        spec = AndSpec(
+            BelowPriceSpec(price),
+            ColorSpec(color)
+        )
         for product in self.__repository:
-            if price_spec.is_satisfied_by(product) and color_spec.is_satisfied_by(product):
+            if spec.is_satisfied_by(product):
                 result.append(product)
         return result
