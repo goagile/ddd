@@ -1,9 +1,9 @@
 import unittest
 
-from nilsson.start_examples.specification.step_8.product import Color, Size, product
-from nilsson.start_examples.specification.step_8.product_finder import ProductFinder
-from nilsson.start_examples.specification.step_8.product_repository import ProductRepository
-from nilsson.start_examples.specification.step_8.spec import (
+from nilsson.start_examples.specification.step_8_named_constants.product import Color, Size, product
+from nilsson.start_examples.specification.step_8_named_constants.product_finder import ProductFinder
+from nilsson.start_examples.specification.step_8_named_constants.product_repository import ProductRepository
+from nilsson.start_examples.specification.step_8_named_constants.spec import (
     ColorSpec, SizeSpec, AndSpec, BelowPriceSpec
 )
 

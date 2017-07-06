@@ -1,4 +1,4 @@
-from nilsson.start_examples.specification.step_8.spec import ColorSpec, SizeSpec, BelowPriceSpec, AndSpec
+from nilsson.start_examples.specification.step_8_named_constants.spec import ColorSpec, SizeSpec, BelowPriceSpec, AndSpec
 
 
 class ProductFinder:
