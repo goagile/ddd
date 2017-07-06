@@ -1,4 +1,4 @@
-from nilsson.start_examples.specification.step_4.product import Size, Product, Color
+from nilsson.start_examples.specification.step_4_below_price_and_color.product import Size, Product, Color
 
 
 class ProductRepository:

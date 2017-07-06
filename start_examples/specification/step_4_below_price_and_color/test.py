@@ -1,8 +1,8 @@
 import unittest
 
-from nilsson.start_examples.specification.step_4.product import Color, Size, product
-from nilsson.start_examples.specification.step_4.product_finder import ProductFinder
-from nilsson.start_examples.specification.step_4.product_repository import ProductRepository
+from nilsson.start_examples.specification.step_4_below_price_and_color.product import Color, Size, product
+from nilsson.start_examples.specification.step_4_below_price_and_color.product_finder import ProductFinder
+from nilsson.start_examples.specification.step_4_below_price_and_color.product_repository import ProductRepository
 
 repository = ProductRepository()
 repository.add_product(color=Color.RED, size=Size.S)
