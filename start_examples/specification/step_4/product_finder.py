@@ -21,4 +21,8 @@ class ProductFinder:
         return result
 
     def find_below_price_and_color(self, price, color):
-        pass
+        result = []
+        for product in self.__repository:
+            if product.price > price and product.color == color:
+                result.append(product)
+        return result
