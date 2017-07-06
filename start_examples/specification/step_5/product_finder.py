@@ -23,7 +23,8 @@ class ProductFinder:
     def find_below_price_and_color(self, price, color):
         result = []
         price_spec = BelowPriceSpec(price)
+        color_spec = ColorSpec(color)
         for product in self.__repository:
-            if price_spec.is_satisfied_by(product) and product.color == color:
+            if price_spec.is_satisfied_by(product) and color_spec.is_satisfied_by(product):
                 result.append(product)
         return result
