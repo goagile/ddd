@@ -1,8 +1,8 @@
 import unittest
 
-from nilsson.start_examples.specification.step_5.product import Color, Size, product
-from nilsson.start_examples.specification.step_5.product_finder import ProductFinder
-from nilsson.start_examples.specification.step_5.product_repository import ProductRepository
+from nilsson.start_examples.specification.step_5_composit_spec.product import Color, Size, product
+from nilsson.start_examples.specification.step_5_composit_spec.product_finder import ProductFinder
+from nilsson.start_examples.specification.step_5_composit_spec.product_repository import ProductRepository
 
 
 repository = ProductRepository()
