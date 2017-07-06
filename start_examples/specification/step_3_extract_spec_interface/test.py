@@ -1,10 +1,13 @@
 import unittest
 
-from nilsson.start_examples.specification.step_3_extract_spec_interface.model import Color, Repository, Size, Product
+from nilsson.start_examples.specification.step_3_extract_spec_interface.model import Color, Repository, Size, Product, \
+    ProductFinder
 
 repository = Repository()
 repository.add_product(Color.RED)
 repository.add_product(Color.GREEN, Size.L)
+
+finder = ProductFinder(repository)
 
 
 def product(color, size=Size.M):
@@ -16,14 +19,14 @@ class TestRepository(unittest.TestCase):
     def test_find_by_color(self):
         expected = [product(Color.RED)]
 
-        result = repository.find_by_color(Color.RED)
+        result = finder.find_by_color(Color.RED)
 
         self.assertEqual(expected, result)
 
     def test_find_by_size(self):
-        expected = [product(Color.RED, Size.L)]
+        expected = [product(Color.GREEN, Size.L)]
 
-        result = repository.find_by_size(Size.L)
+        result = finder.find_by_size(Size.L)
 
         self.assertEqual(expected, result)
 

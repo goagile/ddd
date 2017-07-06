@@ -35,16 +35,25 @@ class Repository:
         new_product = Product(color, size)
         self.__products.append(new_product)
 
+    def __iter__(self):
+        return iter(self.__products)
+
+
+class ProductFinder:
+
+    def __init__(self, repository):
+        self.__repository = repository
+
     def find_by_color(self, color):
         result = []
-        for product in self.__products:
+        for product in self.__repository:
             if ColorSpec(color).is_satisfied_by(product):
                 result.append(product)
         return result
 
     def find_by_size(self, size):
         result = []
-        for product in self.__products:
+        for product in self.__repository:
             if SizeSpec(size).is_satisfied_by(product):
                 result.append(product)
         return result
