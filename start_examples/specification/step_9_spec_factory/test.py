@@ -3,9 +3,6 @@ import unittest
 from nilsson.start_examples.specification.step_9_spec_factory.product import Color, Size, product
 from nilsson.start_examples.specification.step_9_spec_factory.product_finder import ProductFinder
 from nilsson.start_examples.specification.step_9_spec_factory.product_repository import ProductRepository
-from nilsson.start_examples.specification.step_9_spec_factory.spec import (
-    ColorSpec, SizeSpec, AndSpec, BelowPriceSpec
-)
 from nilsson.start_examples.specification.step_9_spec_factory.spec_factory import SpecFactory
 
 red = Color.RED
