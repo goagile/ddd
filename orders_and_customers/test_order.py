@@ -40,7 +40,7 @@ class TestOrder(unittest.TestCase):
     def test_can_create_order_with_customer(self):
         order = empty_order()
 
-        result = order.customer
+        result = order.customer_snapshot
 
         self.assertIsNotNone(result)
 
@@ -129,6 +129,16 @@ class TestOrder(unittest.TestCase):
         order_line = OrderLine(TV_102)
         order.add_order_line(order_line)
 
-        result = len(order.order_lines)
+        result = order.count
 
         self.assertEqual(1, result)
+
+    def test_order_has_snapshot_of_real_customer(self):
+        customer = Customer()
+        customer.name = 'Volvo'
+        order = Order(customer)
+        customer.name = 'Saab'
+
+        result = order.customer_snapshot.name
+
+        self.assertEqual('Volvo', result)

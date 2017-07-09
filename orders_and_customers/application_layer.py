@@ -1,14 +1,5 @@
 
 
-class Repository():
-
-    def get_customers(self, town, price):
-        return []
-
-    def get_orders(self, customer):
-        return []
-
-
 class OrderRepository:
 
     def __init__(self):
@@ -21,7 +12,6 @@ class OrderRepository:
         return None
 
     def add_order(self, order):
-        """ Утверждение по выходным условиям контракта """
         number_of_orders_before = len(self.orders)
 
         self.orders.append(order)
@@ -31,6 +21,6 @@ class OrderRepository:
     def get_orders(self, customer):
         result = []
         for order in self.orders:
-            if order.customer == customer:
+            if order.customer_snapshot == customer:
                 result.append(order)
         return result
