@@ -31,6 +31,10 @@ class OrderLine:
         self.product = product
         self.quantity = 1
 
+    @property
+    def price(self):
+        return self.product.price
+
 
 class Product:
 
