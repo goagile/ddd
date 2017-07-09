@@ -6,7 +6,8 @@ from nilsson.orders_and_customers.domain_layer import Order, Customer, OrderLine
 
 order_repository = OrderRepository()
 
-TV_102 = Product('TV_102', price=102)
+TV_102 = Product('TV', price=102)
+BOOK_50 = Product('BOOK', price=50)
 
 
 def fake_a_customer(customer_number):
@@ -95,13 +96,17 @@ class TestOrder(unittest.TestCase):
 
     def test_order_with_lines_has_total_amount(self):
         order = empty_order()
-        order_line = OrderLine(TV_102)
-        order_line.quantity = 2
-        order.add_order_line(order_line)
+
+        tv_order_line = OrderLine(TV_102)
+        tv_order_line.quantity = 2
+        order.add_order_line(tv_order_line)
+
+        book_order_line = OrderLine(BOOK_50)
+        order.add_order_line(book_order_line)
 
         result = order.total_amount
 
-        self.assertEqual(204, result)
+        self.assertEqual(204 + 50, result)
 
     def test_order_line_gets_default_price(self):
         product = TV_102
