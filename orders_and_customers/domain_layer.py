@@ -1,10 +1,11 @@
+from datetime import datetime
 
 
 class OrderFactory:
 
     @classmethod
     def create_order(cls, customer):
-        pass
+        return Order(price=0)
 
     @classmethod
     def create_order_line(cls, order, product):
@@ -38,8 +39,9 @@ def create_order(customer, price):
 
 class Order:
 
-    def __init__(self, price):
-        self.price = price
+    def __init__(self, customer):
+        self.order_date = datetime.now()
+        self.customer = customer
 
     def is_ok_accounting_to_size(self):
         return False
