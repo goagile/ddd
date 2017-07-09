@@ -27,3 +27,10 @@ class OrderRepository:
         self.orders.append(order)
 
         assert number_of_orders_before == len(self.orders) - 1
+
+    def get_orders(self, customer):
+        result = []
+        for order in self.orders:
+            if order.customer == customer:
+                result.append(order)
+        return result

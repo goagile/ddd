@@ -38,16 +38,17 @@ class TestOrder(unittest.TestCase):
         self.assertEqual(0, result)
 
     def test_order_number_cant_be_zero_after_reconstruction(self):
+        customer = Customer()
         order_number = 42
-        self.fake_an_order(order_number)
+        self.fake_an_order(order_number, customer)
         order = order_repository.get_order(order_number)
 
         result = order.order_number
 
         self.assertEqual(order_number, result)
 
-    def fake_an_order(self, order_number):
-        order = Order(customer=Customer())
+    def fake_an_order(self, order_number, customer):
+        order = Order(customer)
 
         order.order_number = order_number
 
@@ -57,3 +58,16 @@ class TestOrder(unittest.TestCase):
         order = Order(customer=Customer())
 
         order_repository.add_order(order)
+
+    def test_can_find_orders_via_customer(self):
+        customer = Customer()
+        self.fake_an_order(42, customer)
+        self.fake_an_order(12, customer=Customer())
+        self.fake_an_order(3, customer)
+        self.fake_an_order(21, customer)
+        self.fake_an_order(1, customer=Customer())
+        orders = order_repository.get_orders(customer)
+
+        result = len(orders)
+
+        self.assertEqual(3, result)
