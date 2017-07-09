@@ -78,3 +78,10 @@ class TestOrder(unittest.TestCase):
         result = len(orders)
 
         self.assertEqual(3, result)
+
+    def test_empty_order_has_zero_as_total_amount(self):
+        order = Order(customer=Customer())
+
+        result = order.total_amount
+
+        self.assertEqual(0, result)

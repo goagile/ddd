@@ -7,6 +7,7 @@ class Order:
         self.order_date = datetime.now()
         self.customer = customer
         self.order_number = 0
+        self.total_amount = 0
 
     def is_ok_accounting_to_size(self):
         return False
