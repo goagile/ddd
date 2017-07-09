@@ -110,3 +110,11 @@ class TestOrder(unittest.TestCase):
         result = order_line.price
         
         self.assertEqual(102, result)
+
+    def test_order_line_has_total_amount(self):
+        order_line = OrderLine(TV_102)
+        order_line.quantity = 2
+
+        result = order_line.total_amount
+
+        self.assertEqual(204, result)

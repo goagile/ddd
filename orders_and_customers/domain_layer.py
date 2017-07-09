@@ -20,8 +20,8 @@ class Order:
         self.order_lines.append(order_line)
 
     @property
-    def total_amount(self):
-        self.__total_amount = sum(line.product.price * line.quantity for line in self.order_lines)
+    def total_amount(self) -> float:
+        self.__total_amount = sum(line.total_amount for line in self.order_lines)
         return self.__total_amount
 
 
@@ -34,6 +34,10 @@ class OrderLine:
     @property
     def price(self):
         return self.product.price
+
+    @property
+    def total_amount(self):
+        return self.product.price * self.quantity
 
 
 class Product:
