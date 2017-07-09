@@ -1,11 +1,9 @@
 import unittest
 
-from datetime import datetime, timedelta
-
 from nilsson.orders_and_customers.application_layer import Repository
 from nilsson.orders_and_customers.domain_layer import (
     Town, create_a_customer_and_an_order, create_order, TotalCreditService,
-    create_customer, OrderFactory, Product, OrderStatus, Customer, Order)
+    create_customer, OrderFactory, Product, OrderStatus)
 
 
 repository = Repository()
@@ -88,28 +86,6 @@ class TestFirst(unittest.TestCase):
 
         self.assertTrue(order.status == OrderStatus.ACCEPTED)
 
-
-class TestOrder(unittest.TestCase):
-
-    def test_can_create_an_order(self):
-        result = Order(customer=Customer())
-
-        self.assertIsNotNone(result)
-
-    def test_can_create_order_with_customer(self):
-        order = Order(customer=Customer())
-
-        result = order.customer
-
-        self.assertIsNotNone(result)
-
-    def test_order_date_is_current_after_creation(self):
-        the_time_before = datetime.now() - timedelta(milliseconds=1)
-
-        order = Order(customer=Customer())
-
-        self.assertTrue(order.order_date > the_time_before)
-        self.assertTrue(order.order_date < datetime.now() + timedelta(milliseconds=1))
 
 def create_ronneby_customer(price):
     return create_a_customer_and_an_order(Town.Ronneby, 420)

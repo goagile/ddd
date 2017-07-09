@@ -1,6 +1,27 @@
 from datetime import datetime
 
 
+class Order:
+
+    def __init__(self, customer):
+        self.order_date = datetime.now()
+        self.customer = customer
+        self.order_number = 0
+
+    def is_ok_accounting_to_size(self):
+        return False
+
+
+class Customer:
+    def __init__(self):
+        self.credit_limit = 0
+
+
+
+
+
+
+
 class OrderFactory:
 
     @classmethod
@@ -35,21 +56,6 @@ def create_customer(name):
 
 def create_order(customer, price):
     return Order(price)
-
-
-class Order:
-
-    def __init__(self, customer):
-        self.order_date = datetime.now()
-        self.customer = customer
-
-    def is_ok_accounting_to_size(self):
-        return False
-
-
-class Customer:
-    def __init__(self):
-        self.credit_limit = 0
 
 
 class TotalCreditService:
