@@ -2,8 +2,7 @@ import unittest
 from datetime import datetime, timedelta
 
 from nilsson.orders_and_customers.application_layer import OrderRepository
-from nilsson.orders_and_customers.domain_layer import Order, Customer
-
+from nilsson.orders_and_customers.domain_layer import Order, Customer, OrderLine, Product
 
 order_repository = OrderRepository()
 
@@ -85,3 +84,13 @@ class TestOrder(unittest.TestCase):
         result = order.total_amount
 
         self.assertEqual(0, result)
+
+    def test_order_with_lines_has_total_amount(self):
+        order = Order(customer=Customer())
+        order_line = OrderLine(Product('TV', price=102))
+        order_line.quantity = 2
+        order.add_order_line(order_line)
+
+        result = order.total_amount
+
+        self.assertEqual(204, result)
