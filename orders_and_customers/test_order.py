@@ -123,3 +123,12 @@ class TestOrder(unittest.TestCase):
         result = order_line.total_amount
 
         self.assertEqual(204, result)
+
+    def test_can_add_order_line(self):
+        order = empty_order()
+        order_line = OrderLine(TV_102)
+        order.add_order_line(order_line)
+
+        result = len(order.order_lines)
+
+        self.assertEqual(1, result)
