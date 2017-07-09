@@ -24,3 +24,22 @@ class OrderRepository:
             if order.customer_snapshot == customer:
                 result.append(order)
         return result
+
+
+class UnitOfWork:
+    def get_by_key(self, key):
+        raise ValueError('Abstract method')
+
+
+class FakeWorkspace(UnitOfWork):
+    def get_by_key(self, key):
+        return 0
+
+
+class CustomerRepository:
+
+    def __init__(self, workspace: UnitOfWork):
+        self.workspace = workspace
+
+    def get_by_key(self, key):
+        return self.workspace.get_by_key(key)
