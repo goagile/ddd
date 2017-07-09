@@ -10,6 +10,20 @@ order_repository = OrderRepository()
 
 class TestOrder(unittest.TestCase):
 
+    def fake_a_customer(self, customer_number):
+        customer = Customer()
+
+        customer.customer_number = customer_number
+
+        return customer
+
+    def fake_an_order(self, order_number, customer):
+        order = Order(customer)
+
+        order.order_number = order_number
+
+        order_repository.add_order(order)
+
     def test_can_create_an_order(self):
         result = Order(customer=Customer())
 
@@ -47,20 +61,13 @@ class TestOrder(unittest.TestCase):
 
         self.assertEqual(order_number, result)
 
-    def fake_an_order(self, order_number, customer):
-        order = Order(customer)
-
-        order.order_number = order_number
-
-        order_repository.add_order(order)
-
     def test_can_add_order(self):
         order = Order(customer=Customer())
 
         order_repository.add_order(order)
 
     def test_can_find_orders_via_customer(self):
-        customer = Customer()
+        customer = self.fake_a_customer(7)
         self.fake_an_order(42, customer)
         self.fake_an_order(12, customer=Customer())
         self.fake_an_order(3, customer)

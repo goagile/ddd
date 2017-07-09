@@ -14,6 +14,7 @@ class Order:
 
 class Customer:
     def __init__(self):
+        self.customer_number = 0
         self.credit_limit = 0
 
 
