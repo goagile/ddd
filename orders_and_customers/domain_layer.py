@@ -21,6 +21,9 @@ class Order:
         self.order_number = 0
         self.__order_lines = []
 
+    def is_valid(self):
+        return True
+
     def add_order_line(self, order_line):
         self.__order_lines.append(order_line)
 

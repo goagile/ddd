@@ -25,6 +25,7 @@ class Test(unittest.TestCase):
 
         self.assertEqual(2 + no_of_customers_before, self.get_number_of_stored_customers())
 
+    @unittest.skip('not realized')
     def test_can_add_customer(self):
         customer = Customer()
         customer.name = 'Volvo'
