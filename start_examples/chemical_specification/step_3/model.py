@@ -2,7 +2,7 @@
 
 class ContainerFeature:
     ARMORED = 'Armored'
-    LIQUID = 'Li'
+    LIQUID = 'Liquid'
 
 
 class ContainerSpecification:
