@@ -1,10 +1,14 @@
 import unittest
 
+from nilsson.start_examples.sector2.model import Sector
+
+
+I = Sector(0, 90)
+
 
 class TestSector(unittest.TestCase):
 
-    def test_I_sector(self):
-        I = Sector(0, 90)
+    def test_I_sector_positive_angle(self):
         self.assertTrue(I.contains(0))
         self.assertTrue(I.contains(90))
         self.assertFalse(I.contains(90 + 1))
@@ -15,17 +19,11 @@ class TestSector(unittest.TestCase):
         self.assertTrue(I.contains(360 + 90))
         self.assertFalse(I.contains(360 + 90 + 1))
 
-
-class Sector:
-    def __init__(self, a, b):
-        self.a = a
-        self.b = b
-
-    def contains(self, angle):
-        angle = self.rotate_360(angle)
-        return angle <= self.b
-
-    def rotate_360(self, angle):
-        while angle >= 360:
-            angle -= 360
-        return angle
+    def test_I_sector_negative_angle(self):
+        self.assertFalse(I.contains(-1))
+        self.assertFalse(I.contains(-90))
+        self.assertFalse(I.contains(-180))
+        self.assertFalse(I.contains(-180 - 89))
+        self.assertTrue(I.contains(-180 - 90))
+        self.assertTrue(I.contains(-360))
+        self.assertFalse(I.contains(-360 - 1))
