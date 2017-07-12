@@ -1,3 +1,5 @@
+
+
 class TRWrapper:
 
     def __init__(self, pattern, sub, ignore):
@@ -18,5 +20,5 @@ class TRWrapper:
     def match(self, text):
         return bool(
             self.pattern.match(text)
-            and not self.ignore.match(text)
+            and not any(ign.match(text) for ign in self.ignore)
         )
