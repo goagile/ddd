@@ -3,69 +3,45 @@ import unittest
 
 
 QUOTES = r'(?:\'|\")'
+TR = r'TR(\1)'
+SYMBOLS = r'- :_;.,?!'
+RU = r'А-Яа-я'
 
-ru = re.compile('(' + QUOTES + r'[А-Яа-я]+' + QUOTES + ')')
+
+def wrap_in_quotes(text):
+    return '({}{}{})'.format(QUOTES, text, QUOTES)
 
 
-class Test(unittest.TestCase):
+CONST = re.compile(wrap_in_quotes(r'['+SYMBOLS+RU+']+'))
+IGNORE = re.compile(wrap_in_quotes('['+SYMBOLS+']+'))
 
-    def test_findall(self):
-        expected = ['"Имя"', '"Фамилия"']
-        text = 'var columns = ["Имя", "Фамилия"];'
 
-        result = findall(text)
-
-        self.assertEqual(expected, result)
-
-    def test_split(self):
-        expected = ['var x = ', '"Пуск"', '; ']
-        text = 'var x = "Пуск"; '
-
-        result = split(text)
-
-        self.assertEqual(expected, result)
+class TestInsertTr(unittest.TestCase):
 
     def test_insert_tr(self):
-        expected = 'var x = TR("Пуск"); '
-        text = 'var x = "Пуск"; '
+        expected = 'var x = [TR("Имя"), TR("Фамилия")]; '
+        text = 'var x = ["Имя", "Фамилия"]; '
 
-        result = insert_tr(text)
+        result = insert_tr_to(text, CONST, TR, IGNORE)
 
-        print(result)
+        self.assertEqual(expected, result)
+
+    def test_insert_tr_2(self):
+        expected = 'var x = [TR("Имя"), TR("Фамилия по"), ":", "-"]; '
+        text = 'var x = ["Имя", "Фамилия по", ":", "-"]; '
+
+        result = insert_tr_to(text, CONST, TR, IGNORE)
 
         self.assertEqual(expected, result)
 
 
-def insert_tr(line):
-    result = []
-    parts = ru.split(line)
-    for part in parts:
-        p = part
-        if ru.match(part):
-            p = 'TR(' + part + ')'
-        result.append(p)
+def insert_tr_to(text, pattern, sub, ignore):
+    parts = pattern.split(text)
+    result = [find(part, pattern, sub, ignore) for part in parts]
     return ''.join(result)
 
 
-def findall(text):
-    result = ru.findall(text)
-    return result
-
-
-def split(text):
-    result = ru.split(text)
-    return result
-
-
-def split_str(text):
-    splitted = ru.split(text)
-    find = findall(text)
-
-    result = []
-    count = len(splitted)
-    for i in range(count):
-        result.append(splitted[i])
-        if find and i < count - 1:
-            result.extend(find)
-
-    return result
+def find(text, pattern, sub, ignore):
+    if pattern.match(text) and not ignore.match(text):
+        return pattern.sub(sub, text)
+    return text
