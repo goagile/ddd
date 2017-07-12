@@ -2,10 +2,10 @@
 
 class TRWrapper:
 
-    def __init__(self, pattern, sub, ignore):
-        self.pattern = pattern
-        self.sub = sub
-        self.ignore = ignore
+    def __init__(self, config):
+        self.pattern = config.CONST
+        self.sub = config.TR
+        self.ignore = config.IGNORE
 
     def wrap(self, text):
         parts = self.pattern.split(text)

@@ -3,24 +3,26 @@ import unittest
 
 from nilsson.start_examples.tr.model import TRWrapper
 
-QUOTES = r'(?:\'|\")'
-SYMBOLS = r'- :_;.,?!'
-RU = r'А-Яа-я'
+
+class TRWrapperConfig:
+
+    def __init__(self):
+        self.QUOTES = r'(?:\'|\")'
+        self.SYMBOLS = r'- :_;.,?!'
+        self.RU = r'А-Яа-я'
+
+        self.CONST = re.compile(self.wrap_in_quotes(r'['+self.SYMBOLS+self.RU+']+'))
+        self.TR = r'TR(\1)'
+        self.IGNORE = [
+            re.compile(self.wrap_in_quotes('['+self.SYMBOLS+']+')),
+            re.compile(self.wrap_in_quotes(', ')),
+        ]
+
+    def wrap_in_quotes(self, text):
+        return '({}{}{})'.format(self.QUOTES, text, self.QUOTES)
 
 
-def wrap_in_quotes(text):
-    return '({}{}{})'.format(QUOTES, text, QUOTES)
-
-
-CONST = re.compile(wrap_in_quotes(r'['+SYMBOLS+RU+']+'))
-TR = r'TR(\1)'
-IGNORE = [
-    re.compile(wrap_in_quotes('['+SYMBOLS+']+')),
-    re.compile(wrap_in_quotes(', ')),
-]
-
-
-wrapper = TRWrapper(CONST, TR, IGNORE)
+wrapper = TRWrapper(TRWrapperConfig())
 
 
 class TestTRWrapper(unittest.TestCase):
