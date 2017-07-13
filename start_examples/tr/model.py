@@ -5,7 +5,7 @@ class TRWrapper:
     def __init__(self, config):
         self.pattern = config.CONST
         self.sub = config.TR
-        self.ignore = config.IGNORE
+        self.ignore = config.ignore_patterns()
 
     def wrap(self, text):
         parts = self.pattern.split(text)

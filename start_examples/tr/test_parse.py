@@ -13,7 +13,9 @@ class TRWrapperConfig:
 
         self.CONST = re.compile(self.wrap_in_quotes(r'['+self.SYMBOLS+self.RU+']+'))
         self.TR = r'TR(\1)'
-        self.IGNORE = [
+
+    def ignore_patterns(self):
+        return [
             re.compile(self.wrap_in_quotes('['+self.SYMBOLS+']+')),
             re.compile(self.wrap_in_quotes(', ')),
         ]
