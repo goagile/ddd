@@ -1,7 +1,7 @@
 import re
 import unittest
 
-from nilsson.start_examples.tr.config import quotes, special_symbols, ru, patterns, wrapper
+from nilsson.start_examples.tr.config import wrapper
 
 
 class TestTRWrapper(unittest.TestCase):

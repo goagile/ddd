@@ -3,20 +3,23 @@ import re
 from nilsson.start_examples.tr.model import Patterns, TRWrapper
 
 
-def quotes(text):
-    q = r'(?:\'|\")'
-    return '({}{}{})'.format(q, text, q)
+def q(text):
+    quotes = r'(?:\'|\")'
+    return '({}{}{})'.format(quotes, text, quotes)
 
 
-special_symbols = r'- :_;.,?!'
 tr = r'TR(\1)'
 ru = r'А-Яа-я'
+special_symbols = r'- :_;.,?!'
+ru_and_symbols = q(r'[{}{}]+'.format(special_symbols, ru))
 
-patterns = Patterns()
-patterns.to_search = re.compile(quotes(r'[' + special_symbols + ru + ']+'))
-patterns.to_replace = r'TR(\1)'
-patterns.add_to_skip(pattern=re.compile(quotes('[' + special_symbols + ']+')))
-patterns.add_to_skip(pattern=re.compile(quotes(', ')))
+
+patterns = Patterns(
+    to_search=ru_and_symbols,
+    to_replace=tr
+)
+patterns.add_to_skip(q(r'[{}]+'.format(special_symbols)))
+patterns.add_to_skip(q(r', '))
 
 
 wrapper = TRWrapper(patterns)

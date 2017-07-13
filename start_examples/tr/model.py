@@ -1,9 +1,10 @@
+import re
 
 
 class TRWrapper:
 
     def __init__(self, config):
-        self.pattern_to_search = config.to_search
+        self.pattern_to_search = re.compile(config.to_search)
         self.pattern_to_replace = config.to_replace
         self.patterns_to_skip = config.to_skip
 
@@ -26,9 +27,9 @@ class TRWrapper:
 
 class Patterns:
 
-    def __init__(self):
-        to_search = ''
-        to_replace = ''
+    def __init__(self, to_search, to_replace):
+        self.to_search = to_search
+        self.to_replace = to_replace
         self.__to_skip = []
 
     @property
@@ -36,4 +37,5 @@ class Patterns:
         return self.__to_skip
 
     def add_to_skip(self, pattern):
-        self.to_skip.append(pattern)
+        compiled = re.compile(pattern)
+        self.to_skip.append(compiled)
