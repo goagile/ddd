@@ -3,9 +3,9 @@
 class TRWrapper:
 
     def __init__(self, config):
-        self.pattern_to_search = config.pattern_to_search
-        self.pattern_to_replace = config.pattern_to_replace
-        self.patterns_to_skip = config.patterns_to_skip
+        self.pattern_to_search = config.to_search
+        self.pattern_to_replace = config.to_replace
+        self.patterns_to_skip = config.to_skip
 
     def wrap(self, text):
         parts = self.pattern_to_search.split(text)
@@ -22,3 +22,18 @@ class TRWrapper:
             self.pattern_to_search.match(text)
             and not any(ign.match(text) for ign in self.patterns_to_skip)
         )
+
+
+class Patterns:
+
+    def __init__(self):
+        to_search = ''
+        to_replace = ''
+        self.__to_skip = []
+
+    @property
+    def to_skip(self):
+        return self.__to_skip
+
+    def add_to_skip(self, pattern):
+        self.to_skip.append(pattern)

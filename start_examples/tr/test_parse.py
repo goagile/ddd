@@ -1,36 +1,7 @@
 import re
 import unittest
 
-from nilsson.start_examples.tr.model import TRWrapper
-
-
-class TRWrapperConfig:
-
-    special_symbols = r'- :_;.,?!'
-    quotes = r'(?:\'|\")'
-    tr = r'TR(\1)'
-    ru = r'А-Яа-я'
-
-    @property
-    def pattern_to_search(self):
-        return re.compile(self.wrap_in_quotes(r'[' + self.special_symbols + self.ru + ']+'))
-
-    @property
-    def pattern_to_replace(self):
-        return self.tr
-
-    @property
-    def patterns_to_skip(self):
-        return [
-            re.compile(self.wrap_in_quotes('['+self.special_symbols+']+')),
-            re.compile(self.wrap_in_quotes(', ')),
-        ]
-
-    def wrap_in_quotes(self, text):
-        return '({}{}{})'.format(self.quotes, text, self.quotes)
-
-
-wrapper = TRWrapper(TRWrapperConfig())
+from nilsson.start_examples.tr.config import quotes, special_symbols, ru, patterns, wrapper
 
 
 class TestTRWrapper(unittest.TestCase):
