@@ -6,22 +6,28 @@ from nilsson.start_examples.tr.model import TRWrapper
 
 class TRWrapperConfig:
 
-    def __init__(self):
-        self.QUOTES = r'(?:\'|\")'
-        self.SYMBOLS = r'- :_;.,?!'
-        self.RU = r'А-Яа-я'
+    special_symbols = r'- :_;.,?!'
+    quotes = r'(?:\'|\")'
+    tr = r'TR(\1)'
+    ru = r'А-Яа-я'
 
-        self.CONST = re.compile(self.wrap_in_quotes(r'['+self.SYMBOLS+self.RU+']+'))
-        self.TR = r'TR(\1)'
+    @property
+    def pattern_to_search(self):
+        return re.compile(self.wrap_in_quotes(r'[' + self.special_symbols + self.ru + ']+'))
 
-    def ignore_patterns(self):
+    @property
+    def pattern_to_replace(self):
+        return self.tr
+
+    @property
+    def patterns_to_skip(self):
         return [
-            re.compile(self.wrap_in_quotes('['+self.SYMBOLS+']+')),
+            re.compile(self.wrap_in_quotes('['+self.special_symbols+']+')),
             re.compile(self.wrap_in_quotes(', ')),
         ]
 
     def wrap_in_quotes(self, text):
-        return '({}{}{})'.format(self.QUOTES, text, self.QUOTES)
+        return '({}{}{})'.format(self.quotes, text, self.quotes)
 
 
 wrapper = TRWrapper(TRWrapperConfig())
