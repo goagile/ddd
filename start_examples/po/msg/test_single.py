@@ -1,6 +1,6 @@
 import unittest
 
-from nilsson.start_examples.po.model import Msg
+from nilsson.start_examples.po.msg.model import Msg
 
 
 box = Msg(id='Box')

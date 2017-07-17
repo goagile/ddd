@@ -1,6 +1,6 @@
 import unittest
 
-from nilsson.start_examples.po.model import MsgCollection, Msg
+from nilsson.start_examples.po.msg.model import MsgCollection, Msg
 
 
 class TestMsgCollection(unittest.TestCase):
