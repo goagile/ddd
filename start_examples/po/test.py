@@ -1,22 +1,25 @@
 import unittest
 
+from nilsson.start_examples.po.model import Msg
+
+
+box = Msg(id='Box')
+
 
 class TestMsg(unittest.TestCase):
 
     def test_create_msg_with_id(self):
         expected = 'Box'
-        msg = Msg('Box')
 
-        result = msg.id
+        result = box.id
 
         self.assertEqual(expected, result)
 
     def test_get_str(self):
         expected = 'Ящик'
-        msg = Msg('Box')
-        msg.str = 'Ящик'
+        box.str = 'Ящик'
 
-        result = msg.str
+        result = box.str
 
         self.assertEqual(expected, result)
 
@@ -25,29 +28,9 @@ class TestMsg(unittest.TestCase):
             '../modules/user/x.js:112',
             '../modules/user/x.js:300'
         ]
-        msg = Msg('Box')
-        msg.add_path('../modules/user/x.js:112')
-        msg.add_path('../modules/user/x.js:300')
+        box.add_path('../modules/user/x.js:112')
+        box.add_path('../modules/user/x.js:300')
 
-        result = [p for p in msg.paths]
+        result = [p for p in box.paths]
 
         self.assertEqual(expected, result)
-
-
-class Msg:
-
-    def __init__(self, id):
-        self.str = ''
-        self.__id = id
-        self.__paths = []
-
-    @property
-    def id(self):
-        return self.__id
-
-    def add_path(self, path: str):
-        self.__paths.append(path)
-
-    @property
-    def paths(self):
-        return iter(self.__paths)
