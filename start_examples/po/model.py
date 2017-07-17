@@ -49,4 +49,21 @@ class MsgPlural(Msg):
 
 
 class MsgCollection:
-    pass
+
+    def __init__(self):
+        self.__msgs = []
+
+    def add_msg(self, id, str):
+        msg = Msg(id)
+        msg.str = str
+        self.__msgs.append(msg)
+
+    @property
+    def count(self):
+        return len(self.__msgs)
+
+    def get_msg(self, id):
+        for msg in self.__msgs:
+            if msg.id == id:
+                return msg
+        return None

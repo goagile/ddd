@@ -10,7 +10,7 @@ class TestMsgCollection(unittest.TestCase):
         msg_collection = MsgCollection()
         msg_collection.add_msg(id='Box', str='Ящик')
 
-        result = msg_collection.count()
+        result = msg_collection.count
 
         self.assertEqual(expected, result)
 
