@@ -8,6 +8,14 @@ class Msg:
         self.__id = id
         self.__paths = []
 
+    def __eq__(self, other):
+        if not isinstance(other, Msg):
+            return False
+        return all([
+            self.id == other.id,
+            self.str == other.str
+        ])
+
     @property
     def is_plural(self):
         return self.__is_plural
@@ -32,6 +40,14 @@ class MsgPlural(Msg):
         self.__strs = []
         self.__id_plural = id_plural
 
+    def __eq__(self, other):
+        if not isinstance(other, MsgPlural):
+            return False
+        return all([
+            self.id == other.id,
+            self.__strs == [s for s in other.strs]
+        ])
+
     @property
     def is_plural(self):
         return self.__is_plural
@@ -52,6 +68,14 @@ class MsgCollection:
 
     def __init__(self):
         self.__msgs = []
+
+    def __eq__(self, other):
+        msgs = zip(self.__msgs, [m for m in other.msgs])
+        return all(s == o for s, o in msgs)
+
+    @property
+    def msgs(self):
+        return iter(self.__msgs)
 
     def add_msg(self, id, str, paths=None):
         msg = Msg(id)

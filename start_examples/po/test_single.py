@@ -8,6 +8,11 @@ box = Msg(id='Box')
 
 class TestMsg(unittest.TestCase):
 
+    def test_eq(self):
+        box1 = Msg(id='Box')
+        box2 = Msg(id='Box')
+        self.assertEqual(box1, box2)
+
     def test_is_plural(self):
         self.assertFalse(box.is_plural)
 
