@@ -58,6 +58,12 @@ class MsgCollection:
         msg.str = str
         self.__msgs.append(msg)
 
+    def add_msg_plural(self, id, id_plural, strs):
+        msg = MsgPlural(id, id_plural)
+        for s in strs:
+            msg.add_str(s)
+        self.__msgs.append(msg)
+
     @property
     def count(self):
         return len(self.__msgs)
