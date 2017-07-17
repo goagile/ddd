@@ -53,9 +53,12 @@ class MsgCollection:
     def __init__(self):
         self.__msgs = []
 
-    def add_msg(self, id, str):
+    def add_msg(self, id, str, paths=None):
         msg = Msg(id)
         msg.str = str
+        if paths:
+            for path in paths:
+                msg.add_path(path)
         self.__msgs.append(msg)
 
     def add_msg_plural(self, id, id_plural, strs):

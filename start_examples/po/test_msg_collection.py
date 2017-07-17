@@ -24,6 +24,22 @@ class TestMsgCollection(unittest.TestCase):
 
         self.assertEqual(expected, result)
 
+    def test_add_msg_with_paths(self):
+        expected = [
+            '../modules/user/x.js:112',
+            '../modules/user/x.js:300'
+        ]
+        msg_collection = MsgCollection()
+        msg_collection.add_msg(id='Box', str='Ящик', paths=[
+            '../modules/user/x.js:112',
+            '../modules/user/x.js:300'
+        ])
+        box = msg_collection.get_msg('Box')
+
+        result = [p for p in box.paths]
+
+        self.assertEqual(expected, result)
+
     def test_put_and_get_plural_msg(self):
         expected = ['Ящик', 'Ящики']
         msg_collection = MsgCollection()
