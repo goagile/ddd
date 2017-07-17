@@ -8,6 +8,9 @@ boxes = MsgPlural(id='Box', id_plural='Boxes')
 
 class TestMsgPlural(unittest.TestCase):
 
+    def test_is_plural(self):
+        self.assertTrue(boxes.is_plural)
+
     def test_create_msg_with_id(self):
         self.assertEqual('Box', boxes.id)
         self.assertEqual('Boxes', boxes.id_plural)

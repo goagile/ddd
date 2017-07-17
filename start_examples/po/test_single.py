@@ -8,6 +8,9 @@ box = Msg(id='Box')
 
 class TestMsg(unittest.TestCase):
 
+    def test_is_plural(self):
+        self.assertFalse(box.is_plural)
+
     def test_create_msg_with_id(self):
         expected = 'Box'
 
