@@ -18,16 +18,31 @@ class Test(unittest.TestCase):
         event = Event('msgid_finded')
         waiting_msgstr = State('waiting_msgstr')
 
-        t = Transition(start, event, waiting_msgstr)
+        form_start_to_waiting_msgstr = Transition(start, event, waiting_msgstr)
 
-        self.assertEqual('start', t.source.name)
-        self.assertEqual('msgid_finded', t.trigger.name)
-        self.assertEqual('waiting_msgstr', t.target.name)
+        self.assertEqual('start', form_start_to_waiting_msgstr.source.name)
+        self.assertEqual('msgid_finded', form_start_to_waiting_msgstr.trigger.name)
+        self.assertEqual('waiting_msgstr', form_start_to_waiting_msgstr.target.name)
+
+    def test_add_transition_to_state(self):
+        waiting_msgstr = State('waiting_msgstr')
+        msgstr_finded = Event('msgstr_finded')
+        waiting_msgstr.add_transition(waiting_msgstr, msgstr_finded)
+
+        result = len(waiting_msgstr.transitions)
+
+        self.assertEqual(1, result)
 
 
 class State:
+
     def __init__(self, name):
         self.name = name
+        self.transitions = []
+
+    def add_transition(self, target, event):
+        t = Transition(self, event, target)
+        self.transitions.append(t)
 
 
 class Transition:
