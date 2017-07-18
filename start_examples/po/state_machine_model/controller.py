@@ -11,14 +11,15 @@ class Controller:
     def handle(self, event_name, line):
         if self.current_state.has_transition(event_name):
             target = self.current_state.target_state(event_name)
-            self.transition_to(target, line)
+            command_names = self.current_state.transition_commands(event_name)
+            self.execute_commands(line, command_names)
+            self.transition_to(target)
 
-    def transition_to(self, target, line):
-        self.execute_commands(line)
+    def transition_to(self, target):
         self.current_state = target
 
-    def execute_commands(self, line):
-        for command_name in self.current_state.command_names:
-            command = self.command_channel.get(command_name)
+    def execute_commands(self, line, command_names):
+        for name in command_names:
+            command = self.command_channel.get(name)
             if command:
                 command.execute(line, self.msg_collection)

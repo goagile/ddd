@@ -64,12 +64,13 @@ class TestParser(unittest.TestCase):
         expected = MsgCollection()
         expected.add_msg(id='Box', str='Ящик', paths=[
             '../path/to/file.js:300',
-            '../path/to/file.js:500'
+            '../path/to/file.js:500',
+            '../path/to/file.js:510'
         ])
         lines = [
             '\n',
             '#: ../path/to/file.js:300',
-            '#: ../path/to/file.js:500',
+            '#: ../path/to/file.js:500 ../path/to/file.js:510',
             'msgid "Box"',
             'msgstr "Ящик"'
         ]
