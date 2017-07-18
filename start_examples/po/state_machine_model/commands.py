@@ -1,6 +1,15 @@
 from start_examples.po.msg_model.msg_collection import MsgCollection
 
 
+class CreateCurrentMsg:
+
+    def __init__(self, name):
+        self.name = name
+
+    def execute(self, line, msg_collection):
+        msg_collection.create_current_msg()
+
+
 class ParseMsgPath:
 
     def __init__(self, name):
@@ -9,8 +18,8 @@ class ParseMsgPath:
     def execute(self, line, msg_collection):
         paths_str = line.strip().split('#:')[1].strip()
         paths = paths_str.split()
-        if not msg_collection.current_msg:
-            msg_collection.create_current_msg()
+        # if not msg_collection.current_msg:
+        #     msg_collection.create_current_msg()
         for path in paths:
             msg_collection.add_path_to_current_msg(path)
 

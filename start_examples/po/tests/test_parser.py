@@ -96,7 +96,28 @@ class TestParser(unittest.TestCase):
 
         self.assertEqual(expected, result)
 
-    def test_parse_plural_1_2(self):
+    def test_parse_plural_1(self):
+        expected = MsgCollection()
+        expected.add_msg_plural(id='Box', id_plural='Boxes', strs=[
+            'Ящик',
+            'Ящика'
+        ], paths=['../path/to/file.js:300'])
+        lines = [
+            '\n',
+            '#: ../path/to/file.js:300',
+            'msgid "Box"',
+            'msgid_plural "Boxes"',
+            'msgstr[0] "Ящик"',
+            'msgstr[1] "Ящика"'
+
+        ]
+        self.parser.parse_lines(lines)
+
+        result = self.parser.msg_collection
+
+        self.assertEqual(expected, result)
+
+    def test_parse_plural_2(self):
         expected = MsgCollection()
         expected.add_msg_plural(id='Box', id_plural='Boxes', strs=[
             'Ящик',
@@ -111,6 +132,29 @@ class TestParser(unittest.TestCase):
             'msgstr[0] "Ящик"',
             'msgstr[1] "Ящика"',
             'msgstr[2] "Ящиков"',
+
+        ]
+        self.parser.parse_lines(lines)
+
+        result = self.parser.msg_collection
+
+        self.assertEqual(expected, result)
+
+    def test_parse_single_and_plurals(self):
+        expected = MsgCollection()
+        expected.add_msg(id='Fox', str='Лиса', paths=['../path/to/file.js:10'])
+        expected.add_msg_plural(id='Box', id_plural='Boxes', strs=['Ящик', 'Ящика'], paths=['../path/to/file.js:300'])
+        lines = [
+            '\n',
+            '#: ../path/to/file.js:10',
+            'msgid "Fox"',
+            'msgstr "Лиса"',
+            '\n',
+            '#: ../path/to/file.js:300',
+            'msgid "Box"',
+            'msgid_plural "Boxes"',
+            'msgstr[0] "Ящик"',
+            'msgstr[1] "Ящика"'
 
         ]
         self.parser.parse_lines(lines)
