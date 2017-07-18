@@ -59,3 +59,22 @@ class TestParser(unittest.TestCase):
         result = self.parser.controller.msg_collection
 
         self.assertEqual(expected, result)
+
+    def test_parse_lines_with_2x_paths(self):
+        expected = MsgCollection()
+        expected.add_msg(id='Box', str='Ящик', paths=[
+            '../path/to/file.js:300',
+            '../path/to/file.js:500'
+        ])
+        lines = [
+            '\n',
+            '#: ../path/to/file.js:300',
+            '#: ../path/to/file.js:500',
+            'msgid "Box"',
+            'msgstr "Ящик"'
+        ]
+        self.parser.parse_lines(lines)
+
+        result = self.parser.controller.msg_collection
+
+        self.assertEqual(expected, result)

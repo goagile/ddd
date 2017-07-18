@@ -23,8 +23,12 @@ waiting_msgstr.add_command('parse_msgstr')
 
 
 waiting_new_line.add_transition(target=waiting_paths, event=new_line_finded)
+
 waiting_paths.add_transition(target=waiting_msgid, event=paths_finded)
+
 waiting_msgid.add_transition(target=waiting_msgstr, event=msgid_finded)
+waiting_msgid.add_transition(target=waiting_msgid, event=paths_finded)
+
 waiting_msgstr.add_transition(target=waiting_new_line, event=msgstr_finded)
 
 command_channel = {
