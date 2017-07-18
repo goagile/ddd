@@ -2,6 +2,7 @@ from start_examples.po.state_machine_model.commands import ParsePathCommand, Par
 from start_examples.po.state_machine_model.event import Event
 from start_examples.po.state_machine_model.state import State
 
+
 waiting_new_line = State('waiting_new_line')
 new_line_finded = Event('new_line_finded')
 
@@ -28,5 +29,5 @@ waiting_msgstr.add_transition(target=waiting_new_line, event=msgstr_finded)
 command_channel = {
     'parse_path': ParsePathCommand('parse_path'),
     'parse_msgid': ParseIdCommand('parse_msgid'),
-    'parse_msstr': ParseStrCommand('parse_msstr'),
+    'parse_msgstr': ParseStrCommand('parse_msgstr'),
 }

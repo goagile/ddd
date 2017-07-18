@@ -65,7 +65,8 @@ class MsgCollection:
             self.__msgs.remove(msg)
 
     def create_current_msg(self):
-        self.current_msg = Msg(id='Current')
+        self.add_msg(id='Current')
+        self.current_msg = self.get_msg(id='Current')
 
     def add_path_to_current_msg(self, path):
         if self.current_msg:

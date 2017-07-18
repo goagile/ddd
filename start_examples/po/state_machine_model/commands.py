@@ -22,7 +22,7 @@ class ParseIdCommand:
         new_id = line.split('msgid')[1].strip().strip('"')
         if msg_collection.current_msg:
             current = msg_collection.current_msg
-            msg_collection.add_msg(id=new_id, paths=current.paths)
+            current.id = new_id
             return
         raise ValueError()
 
@@ -33,9 +33,9 @@ class ParseStrCommand:
         self.name = name
 
     def execute(self, line, msg_collection: MsgCollection):
-        new_id = line.split('msgstr')[1].strip().strip('"')
-        if msg_collection.has_msg('Current'):
-            current = msg_collection.get_msg('Current')
-            msg_collection.add_msg(id=new_id, paths=current.paths)
+        new_str = line.split('msgstr')[1].strip().strip('"')
+        if msg_collection.current_msg:
+            current = msg_collection.current_msg
+            current.str = new_str
             return
         raise ValueError()
