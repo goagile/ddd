@@ -2,7 +2,8 @@ import unittest
 
 from start_examples.po.state_machine_model.controller import Controller
 from start_examples.po.state_machine_model.transition import Transition
-from start_examples.po.state_machine_model import State, Event
+from start_examples.po.state_machine_model.state import State
+from start_examples.po.state_machine_model.event import Event
 from start_examples.po.state_machine_model.state_machine import StateMachine
 
 from start_examples.po.msg_model.msg_collection import MsgCollection
