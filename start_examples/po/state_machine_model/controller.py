@@ -14,7 +14,10 @@ class Controller:
             self.transition_to(target, line)
 
     def transition_to(self, target, line):
+        self.execute_commands(line)
         self.current_state = target
+
+    def execute_commands(self, line):
         for command_name in self.current_state.command_names:
             command = self.command_channel.get(command_name)
             if command:
