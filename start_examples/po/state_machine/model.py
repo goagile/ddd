@@ -6,7 +6,7 @@ class ParsePathCommand:
         self.name = name
 
     def execute(self, line, msg_collection):
-        path = 'xxx'
+        path = line.strip().split('#:')[1].strip()
         if not msg_collection.has_msg('Current'):
             msg_collection.add_msg('Current')
         msg_collection.get_msg('Current')
