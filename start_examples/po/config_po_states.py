@@ -1,4 +1,4 @@
-from start_examples.po.state_machine_model.commands import (
+from nilsson.start_examples.po.state_machine_model.commands import (
     ParseMsgPath,
     ParseMsgId,
     ParseMsgStr,
@@ -8,8 +8,8 @@ from start_examples.po.state_machine_model.commands import (
     ParseMsgStr2,
     CreateCurrentMsg
 )
-from start_examples.po.state_machine_model.event import Event
-from start_examples.po.state_machine_model.state import State
+from nilsson.start_examples.po.state_machine_model.event import Event
+from nilsson.start_examples.po.state_machine_model.state import State
 
 
 waiting_new_line = State('waiting_new_line')

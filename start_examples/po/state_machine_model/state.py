@@ -1,4 +1,4 @@
-from start_examples.po.state_machine_model.transition import Transition
+from nilsson.start_examples.po.state_machine_model.transition import Transition
 
 
 class State:

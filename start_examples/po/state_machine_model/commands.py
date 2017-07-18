@@ -1,4 +1,4 @@
-from start_examples.po.msg_model.msg_collection import MsgCollection
+from nilsson.start_examples.po.msg_model.msg_collection import MsgCollection
 
 
 class CreateCurrentMsg:

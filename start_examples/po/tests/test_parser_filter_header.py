@@ -1,6 +1,6 @@
 import unittest
 
-from start_examples.po.parser.po_parser import PoParser
+from nilsson.start_examples.po.parser.po_parser import PoParser
 
 
 class TestParser(unittest.TestCase):

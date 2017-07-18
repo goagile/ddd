@@ -1,8 +1,8 @@
 import unittest
 
-from start_examples.po.msg_model.msg_collection import MsgCollection
-from start_examples.po.msg_model.msg import Msg
-from start_examples.po.msg_model.msg_plural import MsgPlural
+from nilsson.start_examples.po.msg_model.msg_collection import MsgCollection
+from nilsson.start_examples.po.msg_model.msg import Msg
+from nilsson.start_examples.po.msg_model.msg_plural import MsgPlural
 
 
 class TestMsgCollection(unittest.TestCase):

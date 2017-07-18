@@ -1,12 +1,11 @@
 import unittest
 
-from start_examples.po.state_machine_model.controller import Controller
-from start_examples.po.state_machine_model.transition import Transition
-from start_examples.po.state_machine_model.state import State
-from start_examples.po.state_machine_model.event import Event
-from start_examples.po.state_machine_model.state_machine import StateMachine
-
-from start_examples.po.msg_model.msg_collection import MsgCollection
+from nilsson.start_examples.po.state_machine_model.controller import Controller
+from nilsson.start_examples.po.state_machine_model.transition import Transition
+from nilsson.start_examples.po.state_machine_model.state import State
+from nilsson.start_examples.po.state_machine_model.event import Event
+from nilsson.start_examples.po.state_machine_model.state_machine import StateMachine
+from nilsson.start_examples.po.msg_model.msg_collection import MsgCollection
 
 
 class Test(unittest.TestCase):
