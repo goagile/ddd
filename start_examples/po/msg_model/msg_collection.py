@@ -11,7 +11,7 @@ class MsgCollection:
     def __repr__(self):
         result = 'MsgCollection: ['
         for m in self.msgs:
-            result += str(m)
+            result += repr(m)
         result += ']'
         return result
 
@@ -30,10 +30,13 @@ class MsgCollection:
                 msg.add_path(path)
         self.__msgs.append(msg)
 
-    def add_msg_plural(self, id, id_plural, strs):
+    def add_msg_plural(self, id, id_plural, strs, paths=None):
         msg = MsgPlural(id, id_plural)
         for s in strs:
             msg.add_str(s)
+        if paths:
+            for path in paths:
+                msg.add_path(path)
         self.__msgs.append(msg)
 
     @property

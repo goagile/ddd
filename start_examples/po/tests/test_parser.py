@@ -27,7 +27,7 @@ class TestParser(unittest.TestCase):
         ]
         self.parser.parse_lines(lines)
 
-        result = self.parser.controller.msg_collection
+        result = self.parser.msg_collection
 
         self.assertEqual(expected, result)
 
@@ -41,7 +41,7 @@ class TestParser(unittest.TestCase):
         ]
         self.parser.parse_lines(lines)
 
-        result = self.parser.controller.msg_collection
+        result = self.parser.msg_collection
 
         self.assertEqual(expected, result)
 
@@ -56,7 +56,7 @@ class TestParser(unittest.TestCase):
         ]
         self.parser.parse_lines(lines)
 
-        result = self.parser.controller.msg_collection
+        result = self.parser.msg_collection
 
         self.assertEqual(expected, result)
 
@@ -76,6 +76,45 @@ class TestParser(unittest.TestCase):
         ]
         self.parser.parse_lines(lines)
 
-        result = self.parser.controller.msg_collection
+        result = self.parser.msg_collection
+
+        self.assertEqual(expected, result)
+
+    def test_parse_plural_0(self):
+        expected = MsgCollection()
+        expected.add_msg_plural(id='Box', id_plural='Boxes', strs=['Ящик'], paths=['../path/to/file.js:300'])
+        lines = [
+            '\n',
+            '#: ../path/to/file.js:300',
+            'msgid "Box"',
+            'msgid_plural "Boxes"',
+            'msgstr[0] "Ящик"'
+        ]
+        self.parser.parse_lines(lines)
+
+        result = self.parser.msg_collection
+
+        self.assertEqual(expected, result)
+
+    def test_parse_plural_1_2(self):
+        expected = MsgCollection()
+        expected.add_msg_plural(id='Box', id_plural='Boxes', strs=[
+            'Ящик',
+            'Ящика',
+            'Ящиков'
+        ], paths=['../path/to/file.js:300'])
+        lines = [
+            '\n',
+            '#: ../path/to/file.js:300',
+            'msgid "Box"',
+            'msgid_plural "Boxes"',
+            'msgstr[0] "Ящик"',
+            'msgstr[1] "Ящика"',
+            'msgstr[2] "Ящиков"',
+
+        ]
+        self.parser.parse_lines(lines)
+
+        result = self.parser.msg_collection
 
         self.assertEqual(expected, result)

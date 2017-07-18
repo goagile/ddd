@@ -9,6 +9,9 @@ class MsgPlural(Msg):
         self.__strs = []
         self.__id_plural = id_plural
 
+    def __repr__(self):
+        return '{}: {}, {}, {}'.format(self.__class__.__name__, self.__id, self.strs, self.__paths)
+
     def __eq__(self, other):
         if not isinstance(other, MsgPlural):
             return False
