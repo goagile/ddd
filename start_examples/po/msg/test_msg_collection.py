@@ -78,3 +78,26 @@ class TestMsgCollection(unittest.TestCase):
         result = msg_collection.get_msg('Box').strs
 
         self.assertEqual(expected, result)
+
+    def test_has_msg(self):
+        msg_collection = MsgCollection()
+        msg_collection.add_msg(id='Box')
+
+        result = msg_collection.has_msg('Box')
+
+        self.assertTrue(result)
+
+    def test_add_path_to(self):
+        expected = Msg(id='Box', str='Ящик', paths=[
+            '../modules/user/x.js:112',
+            '../modules/user/x.js:300'
+        ])
+
+        msg_collection = MsgCollection()
+        msg_collection.add_msg(id='Box', str='Ящик')
+        msg_collection.add_path_to(id='Box', path='../modules/user/x.js:112')
+        msg_collection.add_path_to(id='Box', path='../modules/user/x.js:300')
+
+        result = msg_collection.get_msg(id='Box')
+
+        self.assertEqual(expected, result)

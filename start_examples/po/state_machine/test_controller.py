@@ -2,14 +2,22 @@ import unittest
 
 from start_examples.po.msg.model import MsgCollection
 from start_examples.po.state_machine import waiting_new_line
-from start_examples.po.state_machine.model import Controller, StateMachine, ParseCommand
+from start_examples.po.state_machine.model import Controller, StateMachine
+
+
+class PrintCommand:
+    def __init__(self, name):
+        self.name = name
+
+    def execute(self, line):
+        print(line)
 
 
 class Test(unittest.TestCase):
 
     def setUp(self):
         command_channel = {
-            'print': ParseCommand('print')
+            'print': PrintCommand('print')
         }
         self.machine = StateMachine(waiting_new_line)
         self.controller = Controller(self.machine, command_channel, MsgCollection())

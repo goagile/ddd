@@ -38,6 +38,13 @@ class TestMsg(unittest.TestCase):
         msg.str = 'Коробка'
         self.assertEqual('Коробка', msg.str)
 
+    def test_path_in_constructor(self):
+        msg = Msg(id='Box', str='Ящик', paths=[
+            '../modules/user/x.js:112'
+        ])
+
+        self.assertIn('../modules/user/x.js:112', msg.paths)
+
     def test_add_path(self):
         expected = [
             '../modules/user/x.js:112',

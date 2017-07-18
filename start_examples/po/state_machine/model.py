@@ -1,12 +1,16 @@
 
 
-class ParseCommand:
+class ParsePathCommand:
 
     def __init__(self, name):
         self.name = name
 
     def execute(self, line, msg_collection):
-        msg_collection.add_msg(id='Box')
+        path = 'xxx'
+        if not msg_collection.has_msg('Current'):
+            msg_collection.add_msg('Current')
+        msg_collection.get_msg('Current')
+        msg_collection.add_path_to('Current', path)
 
 
 class Controller:

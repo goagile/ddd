@@ -2,11 +2,11 @@
 
 class Msg:
 
-    def __init__(self, id, str=''):
+    def __init__(self, id, str='', paths=None):
         self.__is_plural = False
         self.str = str
         self.__id = id
-        self.__paths = []
+        self.__paths = [] if not paths else paths
 
     def __repr__(self):
         return '{}: {}'.format(self.__class__.__name__, self.__dict__)
@@ -107,3 +107,10 @@ class MsgCollection:
     def add_str_to(self, id, str):
         msg = self.get_msg(id)
         msg.str = str
+
+    def add_path_to(self, id, path):
+        msg = self.get_msg(id)
+        msg.add_path(path)
+
+    def has_msg(self, id):
+        return bool(self.get_msg(id))
