@@ -29,7 +29,7 @@ class TestParser(unittest.TestCase):
 
         result = self.parser.controller.msg_collection
 
-        self.assertMsgCollectionEqual(expected, result)
+        self.assertEqual(expected, result)
 
     def test_parse_id_line(self):
         expected = MsgCollection()
@@ -58,8 +58,4 @@ class TestParser(unittest.TestCase):
 
         result = self.parser.controller.msg_collection
 
-        self.assertMsgCollectionEqual(expected, result)
-
-    def assertMsgCollectionEqual(self, msg_col1, msg_col2):
-        for msg1, msg2 in zip(msg_col1.msgs, msg_col2.msgs):
-            self.assertEqual(msg1, msg2)
+        self.assertEqual(expected, result)
