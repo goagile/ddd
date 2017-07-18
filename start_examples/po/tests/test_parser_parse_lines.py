@@ -84,7 +84,8 @@ class TestParser(unittest.TestCase):
         expected = MsgCollection()
         expected.add_msg_plural(id='Box', id_plural='Boxes', strs=['Ящик'], paths=['../path/to/file.js:300'])
         lines = [
-            'AAAAAAA',
+            'TRASH',
+
             '\n',
             '#: ../path/to/file.js:300',
             'msgid "Box"',
@@ -162,6 +163,27 @@ class TestParser(unittest.TestCase):
 
             'TRASH',
 
+        ]
+        self.parser.parse_lines(lines)
+
+        result = self.parser.msg_collection
+
+        self.assertEqual(expected, result)
+
+    def test_duplicates(self):
+        expected = MsgCollection()
+        expected.add_msg(id='Box', str='Ящик', paths=['../path/to/file.js:300'])
+        lines = [
+            '\n',
+            '#: ../path/to/file.js:300',
+            'msgid "Box"',
+            'msgstr "Ящик"'
+
+            '\n',
+            '#: ../path/to/file.js:300',
+            'msgid "Box"',
+            'msgid_plural "Boxes"',
+            'msgstr[0] "Ящик"',
         ]
         self.parser.parse_lines(lines)
 

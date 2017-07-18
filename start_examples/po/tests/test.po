@@ -1,9 +1,0 @@
-#: ../modules/user/x.js:112 ../modules/user/x.js:300
-msgid "Box"
-msgstr "Ящик"
-
-#: ../modules/user/x.js:112 ../modules/user/x.js:300
-msgid "Box"
-msgid_plural "Boxes"
-msgstr[0] "Ящик"
-msgstr[1] "Ящики"

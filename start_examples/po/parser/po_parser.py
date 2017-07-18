@@ -11,7 +11,7 @@ class PoParser:
 
     def parse_lines(self, lines):
         for line in lines:
-            if line == '\n':
+            if line.startswith('\n') or line.startswith('\r'):
                 self.controller.handle('new_line_finded', line)
 
             elif line.startswith('#:'):
