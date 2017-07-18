@@ -1,15 +1,12 @@
 import unittest
 
-from nilsson.start_examples.po.state_machine import waiting_new_line
-from nilsson.start_examples.po.state_machine.model import StateMachine, Controller, PrintCommand
+from nilsson.start_examples.po.state_machine import waiting_new_line, command_channel
+from nilsson.start_examples.po.state_machine.model import StateMachine, Controller
 
 
 class TestParser(unittest.TestCase):
 
     def setUp(self):
-        command_channel = {
-            'print': PrintCommand('print')
-        }
         machine = StateMachine(waiting_new_line)
         controller = Controller(machine, command_channel)
         self.parser = PoParser(controller)
