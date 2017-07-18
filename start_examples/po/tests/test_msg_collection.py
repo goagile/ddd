@@ -113,3 +113,21 @@ class TestMsgCollection(unittest.TestCase):
         result = msg_collection
 
         self.assertEqual(expected, result)
+
+    def test_create_current_msg(self):
+        msg_collection = MsgCollection()
+        msg_collection.create_current_msg()
+
+        result = msg_collection.current_msg
+
+        self.assertIsNotNone(result)
+
+    def test_add_path_to_current_msg(self):
+        expected = Msg(id='Current', paths=['../modules/user/x.js:112'])
+        msg_collection = MsgCollection()
+        msg_collection.create_current_msg()
+        msg_collection.add_path_to_current_msg(path='../modules/user/x.js:112')
+
+        result = msg_collection.current_msg
+
+        self.assertEqual(expected, result)

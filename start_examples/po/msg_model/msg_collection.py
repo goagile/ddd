@@ -6,6 +6,7 @@ class MsgCollection:
 
     def __init__(self):
         self.__msgs = []
+        self.current_msg = None
 
     def __repr__(self):
         result = 'MsgCollection: ['
@@ -62,3 +63,10 @@ class MsgCollection:
         msg = self.get_msg(id)
         if msg:
             self.__msgs.remove(msg)
+
+    def create_current_msg(self):
+        self.current_msg = Msg(id='Current')
+
+    def add_path_to_current_msg(self, path):
+        if self.current_msg:
+            self.current_msg.add_path(path)

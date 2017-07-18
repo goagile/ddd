@@ -29,11 +29,11 @@ class TestParser(unittest.TestCase):
 
         result = self.parser.controller.msg_collection
 
-        self.assertEqual(expected, result)
+        # self.assertEqual(1, len([m for m in result.msgs]))
+        self.assertMsgCollectionEqual(expected, result)
 
     def test_parse_id_line(self):
         expected = MsgCollection()
-        expected.add_msg(id='Current', str='', paths=['../modules/user/x.js:300'])
         expected.add_msg(id='Box', str='', paths=['../modules/user/x.js:300'])
         lines = [
             '\n',
@@ -44,11 +44,12 @@ class TestParser(unittest.TestCase):
 
         result = self.parser.controller.msg_collection
 
-        self.assertEqual(expected, result)
+        self.assertMsgCollectionEqual(expected, result)
 
     # def test_parse_str_line(self):
     #     expected = MsgCollection()
-    #     expected.add_msg(id='Current', str='Ящик', paths=['../modules/user/x.js:300'])
+    #     expected.add_msg(id='Current', str='', paths=['../modules/user/x.js:300'])
+    #     expected.add_msg(id='Box', str='Ящик', paths=['../modules/user/x.js:300'])
     #     lines = [
     #         '\n',
     #         '#: ../path/to/file.js:300',
@@ -60,3 +61,8 @@ class TestParser(unittest.TestCase):
     #     result = self.parser.controller.msg_collection
     #
     #     self.assertEqual(expected, result)
+
+    def assertMsgCollectionEqual(self, msg_col1, msg_col2):
+        # self.assertEqual(len(msg_col1.msgs), len(list(m for m in msg_col2.msgs)))
+        for msg1, msg2 in zip(msg_col1.msgs, msg_col2.msgs):
+            self.assertEqual(msg1, msg2)
