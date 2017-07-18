@@ -1,7 +1,8 @@
 import unittest
 
+from start_examples.po.msg.model import MsgCollection
 from start_examples.po.state_machine import waiting_new_line, command_channel
-from start_examples.po.state_machine.model import StateMachine, Controller, MsgCollectionBuilder
+from start_examples.po.state_machine.model import StateMachine, Controller
 
 
 class TestParser(unittest.TestCase):
@@ -10,7 +11,7 @@ class TestParser(unittest.TestCase):
         self.controller = Controller(
             StateMachine(waiting_new_line),
             command_channel,
-            MsgCollectionBuilder())
+            MsgCollection())
         self.parser = PoParser(self.controller)
 
     def test_parse_lines(self):
@@ -23,9 +24,8 @@ class TestParser(unittest.TestCase):
 
         self.parser.parse_lines(lines)
 
-        print('\n'.join(
-            self.controller.collection_builder.lines
-        ))
+        for m in self.controller.msg_collection.msgs:
+            print(m)
 
 
 class PoParser:

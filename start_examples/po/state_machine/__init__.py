@@ -1,4 +1,4 @@
-from nilsson.start_examples.po.state_machine.model import State, Event, ParseCommand, MsgCollectionBuilder
+from start_examples.po.state_machine.model import State, Event, ParseCommand
 
 waiting_new_line = State('waiting_new_line')
 new_line_finded = Event('new_line_finded')

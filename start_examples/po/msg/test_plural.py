@@ -1,6 +1,6 @@
 import unittest
 
-from nilsson.start_examples.po.msg.model import MsgPlural
+from start_examples.po.msg.model import MsgPlural
 
 
 boxes = MsgPlural(id='Box', id_plural='Boxes')

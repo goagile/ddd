@@ -5,17 +5,17 @@ class ParseCommand:
     def __init__(self, name):
         self.name = name
 
-    def execute(self, line, construction_builder):
-        construction_builder.add_line(line)
+    def execute(self, line, msg_collection):
+        msg_collection.add_msg(id='Box', str=line)
 
 
 class Controller:
 
-    def __init__(self, machine, command_channel, collection_builder):
+    def __init__(self, machine, command_channel, msg_collection):
         self.machine = machine
         self.command_channel = command_channel
         self.current_state = machine.start
-        self.collection_builder = collection_builder
+        self.msg_collection = msg_collection
 
     def handle(self, event_name, line):
         if self.current_state.has_transition(event_name):
@@ -27,7 +27,7 @@ class Controller:
         for command_name in self.current_state.command_names:
             command = self.command_channel.get(command_name)
             if command:
-                command.execute(line, self.collection_builder)
+                command.execute(line, self.msg_collection)
 
 
 class StateMachine:
@@ -67,12 +67,3 @@ class Event:
 
     def __init__(self, name):
         self.name = name
-
-
-class MsgCollectionBuilder:
-
-    def __init__(self):
-        self.lines = []
-
-    def add_line(self, line):
-        self.lines.append(line)

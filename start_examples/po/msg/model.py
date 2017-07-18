@@ -8,6 +8,9 @@ class Msg:
         self.__id = id
         self.__paths = []
 
+    def __repr__(self):
+        return '{}: {}'.format(self.__class__.__name__, self.__dict__)
+
     def __eq__(self, other):
         if not isinstance(other, Msg):
             return False
@@ -77,7 +80,7 @@ class MsgCollection:
     def msgs(self):
         return iter(self.__msgs)
 
-    def add_msg(self, id, str, paths=None):
+    def add_msg(self, id, str='', paths=None):
         msg = Msg(id)
         msg.str = str
         if paths:
