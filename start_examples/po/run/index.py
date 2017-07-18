@@ -10,7 +10,7 @@ from start_examples.po.parser.po_parser import PoParser
 def fill_excel(excel_path, msg_collection):
     wb = Workbook()
     ws = wb.get_active_sheet()
-    alignment = Alignment(wrapText=True, vertical='top')
+    alignment = Alignment(wrapText=True, vertical='top', shrink_to_fit=True)
 
     for row_index, msg in enumerate(msg_collection, 2):
         if msg.is_plural:
@@ -40,7 +40,7 @@ def fill_excel(excel_path, msg_collection):
 
         # ws.row_dimensions[row_index].height = 15
 
-    widths = (25, 30, 40, 20, 40)
+    widths = (25, 30, 80, 20, 40)
     for col, width in enumerate(widths, start=1):
         ws.column_dimensions[get_column_letter(col)].width = width
 
@@ -53,7 +53,7 @@ def join_by_new_line(collection):
 
 if __name__ == '__main__':
     excel_path = 'text.xlsx'
-    path = 'test.po'
+    path = 'test2.po'
     with codecs.open(path, "r", "utf-8") as file:
         lines = file.readlines()
 
