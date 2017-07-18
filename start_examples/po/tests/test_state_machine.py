@@ -1,8 +1,11 @@
 import unittest
 
-from start_examples.po.state_machine.model import Controller, StateMachine, State, Transition, Event
+from start_examples.po.state_machine_model.controller import Controller
+from start_examples.po.state_machine_model.transition import Transition
+from start_examples.po.state_machine_model import State, Event
+from start_examples.po.state_machine_model.state_machine import StateMachine
 
-from start_examples.po.msg.model import MsgCollection
+from start_examples.po.msg_model.msg_collection import MsgCollection
 
 
 class Test(unittest.TestCase):

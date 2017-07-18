@@ -1,6 +1,7 @@
 import unittest
 
-from start_examples.po.msg.model import MsgCollection, Msg
+from start_examples.po.msg_model.msg_collection import MsgCollection
+from start_examples.po.msg_model.msg import Msg
 
 
 class TestMsgCollection(unittest.TestCase):

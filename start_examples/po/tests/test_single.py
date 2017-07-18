@@ -1,7 +1,6 @@
 import unittest
 
-from start_examples.po.msg.model import Msg
-
+from start_examples.po.msg_model.msg import Msg
 
 box = Msg(id='Box')
 

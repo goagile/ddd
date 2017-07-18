@@ -1,4 +1,6 @@
-from start_examples.po.state_machine.model import State, Event, ParsePathCommand, ParseIdCommand
+from start_examples.po.state_machine_model.commands import ParsePathCommand, ParseIdCommand
+from start_examples.po.state_machine_model.event import Event
+from start_examples.po.state_machine_model.state import State
 
 waiting_new_line = State('waiting_new_line')
 new_line_finded = Event('new_line_finded')

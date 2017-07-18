@@ -1,8 +1,9 @@
 import unittest
 
-from start_examples.po.msg.model import MsgCollection
-from start_examples.po.state_machine import waiting_new_line
-from start_examples.po.state_machine.model import Controller, StateMachine
+from start_examples.po.msg_model.msg_collection import MsgCollection
+from start_examples.po.state_machine_model import waiting_new_line
+from start_examples.po.state_machine_model.controller import Controller
+from start_examples.po.state_machine_model.state_machine import StateMachine
 
 
 class PrintCommand:
