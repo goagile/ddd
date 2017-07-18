@@ -9,13 +9,18 @@ class PoParser:
     def __init__(self, controller):
         self.controller = controller
 
-    @staticmethod
-    def new():
-        return PoParser(Controller(
+    @classmethod
+    def new(cls):
+        controller = cls.new_controller()
+        return PoParser(controller)
+
+    @classmethod
+    def new_controller(cls):
+        return Controller(
             StateMachine(waiting_new_line),
             command_channel,
             MsgCollection()
-        ))
+        )
 
     @property
     def msg_collection(self):
