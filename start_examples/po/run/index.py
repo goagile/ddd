@@ -11,7 +11,7 @@ if __name__ == '__main__':
     with codecs.open(path, "r", "utf-8") as file:
         lines = file.readlines()
 
-    print(''.join(lines))
+    # print(''.join(lines))
 
     po_parser = PoParser(Controller(
         StateMachine(waiting_new_line),
@@ -19,8 +19,9 @@ if __name__ == '__main__':
         MsgCollection()
     ))
 
-    # po_parser.parse_lines(lines)
-    #
-    # msg_collection = po_parser.msg_collection
-    #
-    # print(msg_collection)
+    po_parser.parse_lines(lines)
+
+    msg_collection = po_parser.msg_collection
+
+    for m in msg_collection.msgs:
+        print(m)

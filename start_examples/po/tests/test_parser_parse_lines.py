@@ -170,6 +170,7 @@ class TestParser(unittest.TestCase):
 
         self.assertEqual(expected, result)
 
+    @unittest.skip('not needed')
     def test_duplicates(self):
         expected = MsgCollection()
         expected.add_msg(id='Box', str='Ящик', paths=['../path/to/file.js:300'])
