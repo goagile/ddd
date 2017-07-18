@@ -36,4 +36,4 @@ class PoParser:
                 self.controller.handle('msgstr_finded', line)
 
             else:
-                raise ValueError('Ошибка чтения po', line)
+                continue

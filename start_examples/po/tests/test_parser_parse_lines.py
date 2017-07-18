@@ -84,6 +84,7 @@ class TestParser(unittest.TestCase):
         expected = MsgCollection()
         expected.add_msg_plural(id='Box', id_plural='Boxes', strs=['Ящик'], paths=['../path/to/file.js:300'])
         lines = [
+            'AAAAAAA',
             '\n',
             '#: ../path/to/file.js:300',
             'msgid "Box"',
@@ -145,16 +146,21 @@ class TestParser(unittest.TestCase):
         expected.add_msg(id='Fox', str='Лиса', paths=['../path/to/file.js:10'])
         expected.add_msg_plural(id='Box', id_plural='Boxes', strs=['Ящик', 'Ящика'], paths=['../path/to/file.js:300'])
         lines = [
+            'TRASH',
+
             '\n',
             '#: ../path/to/file.js:10',
             'msgid "Fox"',
             'msgstr "Лиса"',
+
             '\n',
             '#: ../path/to/file.js:300',
             'msgid "Box"',
             'msgid_plural "Boxes"',
             'msgstr[0] "Ящик"',
-            'msgstr[1] "Ящика"'
+            'msgstr[1] "Ящика"',
+
+            'TRASH',
 
         ]
         self.parser.parse_lines(lines)
