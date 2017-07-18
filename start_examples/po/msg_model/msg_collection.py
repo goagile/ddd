@@ -18,6 +18,9 @@ class MsgCollection:
     def msgs(self):
         return iter(self.__msgs)
 
+    def __iter__(self):
+        return iter(self.msgs)
+
     def __eq__(self, other):
         return all(msg1 == msg2 for msg1, msg2 in zip(self.__msgs, other.msgs))
 

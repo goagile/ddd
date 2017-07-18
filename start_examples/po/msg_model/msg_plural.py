@@ -2,9 +2,9 @@
 
 class MsgPlural:
 
-    def __init__(self, id, id_plural='', paths=None):
+    def __init__(self, id, id_plural='', strs=None, paths=None):
         self.__is_plural = True
-        self.__strs = []
+        self.__strs = [] if not strs else strs
         self.__id_plural = id_plural
         self.__id = id
         self.__paths = [] if not paths else paths

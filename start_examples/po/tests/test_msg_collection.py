@@ -2,6 +2,7 @@ import unittest
 
 from start_examples.po.msg_model.msg_collection import MsgCollection
 from start_examples.po.msg_model.msg import Msg
+from start_examples.po.msg_model.msg_plural import MsgPlural
 
 
 class TestMsgCollection(unittest.TestCase):
@@ -32,6 +33,19 @@ class TestMsgCollection(unittest.TestCase):
         msg_collection.add_msg(id='Box', str='Ящик')
 
         result = [msg for msg in msg_collection.msgs]
+
+        self.assertEqual(expected, result)
+
+    def test_simple_iter(self):
+        expected = [
+            Msg(id='Fox', str='Лиса'),
+            MsgPlural(id='Box', id_plural='Boxes', strs=['Ящик', 'Ящики'])
+        ]
+        msg_collection = MsgCollection()
+        msg_collection.add_msg(id='Fox', str='Лиса')
+        msg_collection.add_msg_plural(id='Box', id_plural='Boxes', strs=['Ящик', 'Ящики'])
+
+        result = [msg for msg in msg_collection]
 
         self.assertEqual(expected, result)
 

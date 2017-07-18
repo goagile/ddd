@@ -16,5 +16,5 @@ if __name__ == '__main__':
 
     print(msg_collection)
 
-    # for m in msg_collection.msgs:
+    # for m in msg_collection:
     #     print(m)
