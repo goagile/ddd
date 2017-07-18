@@ -11,11 +11,11 @@ class ParseCommand:
 
 class Controller:
 
-    def __init__(self, machine, command_channel, construction_builder):
+    def __init__(self, machine, command_channel, collection_builder):
         self.machine = machine
         self.command_channel = command_channel
         self.current_state = machine.start
-        self.construction_builder = construction_builder
+        self.collection_builder = collection_builder
 
     def handle(self, event_name, line):
         if self.current_state.has_transition(event_name):
@@ -27,7 +27,7 @@ class Controller:
         for command_name in self.current_state.command_names:
             command = self.command_channel.get(command_name)
             if command:
-                command.execute(line, self.construction_builder)
+                command.execute(line, self.collection_builder)
 
 
 class StateMachine:

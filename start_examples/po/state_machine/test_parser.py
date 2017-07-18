@@ -24,7 +24,7 @@ class TestParser(unittest.TestCase):
         self.parser.parse_lines(lines)
 
         print('\n'.join(
-            self.controller.construction_builder.lines
+            self.controller.collection_builder.lines
         ))
 
 
