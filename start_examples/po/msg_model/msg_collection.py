@@ -15,14 +15,12 @@ class MsgCollection:
         result += ']'
         return result
 
-    def __eq__(self, other):
-        other_msgs = [m for m in other.msgs]
-        msgs = zip(self.__msgs, other_msgs)
-        return all(s == o for s, o in msgs)
-
     @property
     def msgs(self):
         return iter(self.__msgs)
+
+    def __eq__(self, other):
+        return all(msg1 == msg2 for msg1, msg2 in zip(self.__msgs, other.msgs))
 
     def add_msg(self, id, str='', paths=None):
         msg = Msg(id)

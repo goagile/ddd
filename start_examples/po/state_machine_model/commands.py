@@ -1,7 +1,7 @@
 from start_examples.po.msg_model.msg_collection import MsgCollection
 
 
-class ParsePathCommand:
+class ParseMsgPath:
 
     def __init__(self, name):
         self.name = name
@@ -13,7 +13,7 @@ class ParsePathCommand:
         msg_collection.add_path_to_current_msg(path)
 
 
-class ParseIdCommand:
+class ParseMsgId:
 
     def __init__(self, name):
         self.name = name
@@ -27,7 +27,7 @@ class ParseIdCommand:
         raise ValueError()
 
 
-class ParseStrCommand:
+class ParseMsgStr:
 
     def __init__(self, name):
         self.name = name

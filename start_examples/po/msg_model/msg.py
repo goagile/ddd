@@ -16,7 +16,8 @@ class Msg:
             return False
         return all([
             self.id == other.id,
-            self.str == other.str
+            self.str == other.str,
+            [p for p in self.paths] == [p for p in other.paths]
         ])
 
     @property
