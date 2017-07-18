@@ -29,6 +29,20 @@ class TestParser(unittest.TestCase):
 
         self.assertEqual(expected, result)
 
+    def test_parse_id_line(self):
+        expected = MsgCollection()
+        expected.add_msg(id='Box', str='', paths=['../modules/user/x.js:300'])
+        lines = [
+            '\n',
+            '#: ../path/to/file.js:300',
+            'msgid "Box"'
+        ]
+        self.parser.parse_lines(lines)
+
+        result = self.parser.controller.msg_collection
+
+        self.assertEqual(expected, result)
+
     # def test_parse_lines(self):
     #     expected = MsgCollection()
     #     expected.add_msg(id='Current', str='', paths=['../modules/user/x.js:300'])

@@ -101,3 +101,14 @@ class TestMsgCollection(unittest.TestCase):
         result = msg_collection.get_msg(id='Box')
 
         self.assertEqual(expected, result)
+
+    def test_remove_msg(self):
+        expected = MsgCollection()
+
+        msg_collection = MsgCollection()
+        msg_collection.add_msg(id='Box', str='Ящик')
+        msg_collection.remove_msg(id='Box')
+
+        result = msg_collection
+
+        self.assertEqual(expected, result)

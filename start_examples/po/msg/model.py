@@ -27,6 +27,10 @@ class Msg:
     def id(self):
         return self.__id
 
+    @id.setter
+    def id(self, value):
+        self.__id = value
+
     def add_path(self, path: str):
         self.__paths.append(path)
 
@@ -122,3 +126,8 @@ class MsgCollection:
 
     def has_msg(self, id):
         return bool(self.get_msg(id))
+
+    def remove_msg(self, id):
+        msg = self.get_msg(id)
+        if msg:
+            self.__msgs.remove(msg)
