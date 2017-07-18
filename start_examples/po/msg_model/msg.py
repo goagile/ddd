@@ -9,7 +9,7 @@ class Msg:
         self.__paths = [] if not paths else paths
 
     def __repr__(self):
-        return '{}(str={}, id={}, paths={})'.format(
+        return '{}(id={}, str={}, paths={})'.format(
             self.__class__.__name__, self.__id, self.str, self.__paths
         )
 
