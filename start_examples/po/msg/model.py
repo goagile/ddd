@@ -72,8 +72,16 @@ class MsgCollection:
     def __init__(self):
         self.__msgs = []
 
+    def __repr__(self):
+        result = 'MsgCollection: ['
+        for m in self.msgs:
+            result += str(m)
+        result += ']'
+        return result
+
     def __eq__(self, other):
-        msgs = zip(self.__msgs, [m for m in other.msgs])
+        other_msgs = [m for m in other.msgs]
+        msgs = zip(self.__msgs, other_msgs)
         return all(s == o for s, o in msgs)
 
     @property

@@ -7,6 +7,8 @@ from start_examples.po.state_machine.model import StateMachine, Controller
 
 class TestParser(unittest.TestCase):
 
+    maxDiff = None
+
     def setUp(self):
         self.controller = Controller(
             StateMachine(waiting_new_line),
@@ -14,18 +16,33 @@ class TestParser(unittest.TestCase):
             MsgCollection())
         self.parser = PoParser(self.controller)
 
-    def test_parse_lines(self):
+    def test_parse_path_line(self):
+        expected = MsgCollection()
+        expected.add_msg(id='Current', str='', paths=['../modules/user/x.js:300'])
         lines = [
             '\n',
-            '#: ../path/to/file.js:300',
-            'msgid "Box"',
-            'msgstr "Ящик"'
+            '#: ../path/to/file.js:300'
         ]
-
         self.parser.parse_lines(lines)
 
-        for m in self.controller.msg_collection.msgs:
-            print(m)
+        result = self.parser.controller.msg_collection
+
+        self.assertEqual(expected, result)
+
+    # def test_parse_lines(self):
+    #     expected = MsgCollection()
+    #     expected.add_msg(id='Current', str='', paths=['../modules/user/x.js:300'])
+    #     lines = [
+    #         '\n',
+    #         '#: ../path/to/file.js:300',
+    #         'msgid "Box"',
+    #         'msgstr "Ящик"'
+    #     ]
+    #     self.parser.parse_lines(lines)
+    #
+    #     result = self.parser.controller.msg_collection
+    #
+    #     self.assertEqual(expected, result)
 
 
 class PoParser:
