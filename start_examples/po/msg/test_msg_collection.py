@@ -59,6 +59,17 @@ class TestMsgCollection(unittest.TestCase):
 
         self.assertEqual(expected, result)
 
+    def test_add_str_to(self):
+        expected = Msg(id='Box', str='Коробка')
+
+        msg_collection = MsgCollection()
+        msg_collection.add_msg(id='Box', str='Ящик')
+        msg_collection.add_str_to(id='Box', str='Коробка')
+
+        result = msg_collection.get_msg(id='Box')
+
+        self.assertEqual(expected, result)
+
     def test_put_and_get_plural_msg(self):
         expected = ['Ящик', 'Ящики']
         msg_collection = MsgCollection()

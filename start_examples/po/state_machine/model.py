@@ -6,7 +6,7 @@ class ParseCommand:
         self.name = name
 
     def execute(self, line, msg_collection):
-        msg_collection.add_msg(id='Box', str=line)
+        msg_collection.add_msg(id='Box')
 
 
 class Controller:

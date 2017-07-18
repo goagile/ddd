@@ -31,6 +31,13 @@ class TestMsg(unittest.TestCase):
 
         self.assertEqual(expected, result)
 
+    def test_change_str(self):
+        msg = Msg(id='Box', str='Ящик')
+        self.assertEqual('Ящик', msg.str)
+
+        msg.str = 'Коробка'
+        self.assertEqual('Коробка', msg.str)
+
     def test_add_path(self):
         expected = [
             '../modules/user/x.js:112',

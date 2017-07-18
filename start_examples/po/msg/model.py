@@ -2,9 +2,9 @@
 
 class Msg:
 
-    def __init__(self, id):
+    def __init__(self, id, str=''):
         self.__is_plural = False
-        self.str = ''
+        self.str = str
         self.__id = id
         self.__paths = []
 
@@ -103,3 +103,7 @@ class MsgCollection:
             if msg.id == id:
                 return msg
         return None
+
+    def add_str_to(self, id, str):
+        msg = self.get_msg(id)
+        msg.str = str

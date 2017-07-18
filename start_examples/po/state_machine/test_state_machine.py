@@ -1,6 +1,8 @@
 import unittest
 
-from nilsson.start_examples.po.state_machine.model import Controller, StateMachine, State, Transition, Event
+from start_examples.po.state_machine.model import Controller, StateMachine, State, Transition, Event
+
+from start_examples.po.msg.model import MsgCollection
 
 
 class Test(unittest.TestCase):
@@ -41,8 +43,8 @@ class Test(unittest.TestCase):
         msgid_finded = Event('msgid_finded')
         waiting_msgstr = State('waiting_msgstr')
         start.add_transition(waiting_msgstr, event=msgid_finded)
-        controller = Controller(machine, [])
+        controller = Controller(machine, [], MsgCollection())
 
-        controller.handle('msgid_finded')
+        controller.handle('msgid_finded', '')
 
         self.assertEqual(waiting_msgstr, controller.current_state)

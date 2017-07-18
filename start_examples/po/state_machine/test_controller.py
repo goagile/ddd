@@ -1,7 +1,8 @@
 import unittest
 
-from nilsson.start_examples.po.state_machine import waiting_new_line
-from nilsson.start_examples.po.state_machine.model import Controller, StateMachine, ParseCommand
+from start_examples.po.msg.model import MsgCollection
+from start_examples.po.state_machine import waiting_new_line
+from start_examples.po.state_machine.model import Controller, StateMachine, ParseCommand
 
 
 class Test(unittest.TestCase):
@@ -11,10 +12,10 @@ class Test(unittest.TestCase):
             'print': ParseCommand('print')
         }
         self.machine = StateMachine(waiting_new_line)
-        self.controller = Controller(self.machine, command_channel)
+        self.controller = Controller(self.machine, command_channel, MsgCollection())
 
     def fire(self, event_name):
-        self.controller.handle(event_name)
+        self.controller.handle(event_name, '')
 
     def assertCurrentState(self, state):
         self.assertEqual(state, self.controller.current_state.name)
