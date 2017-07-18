@@ -1,16 +1,17 @@
 import unittest
 
-from nilsson.start_examples.po.state_machine import waiting_new_line, command_channel
-from nilsson.start_examples.po.state_machine.model import StateMachine, Controller, MsgCollectionBuilder
+from start_examples.po.state_machine import waiting_new_line, command_channel
+from start_examples.po.state_machine.model import StateMachine, Controller, MsgCollectionBuilder
 
 
 class TestParser(unittest.TestCase):
 
     def setUp(self):
-        machine = StateMachine(waiting_new_line)
-        self.construction_builder = MsgCollectionBuilder()
-        controller = Controller(machine, command_channel, self.construction_builder)
-        self.parser = PoParser(controller)
+        self.controller = Controller(
+            StateMachine(waiting_new_line),
+            command_channel,
+            MsgCollectionBuilder())
+        self.parser = PoParser(self.controller)
 
     def test_parse_lines(self):
         lines = [
@@ -23,7 +24,7 @@ class TestParser(unittest.TestCase):
         self.parser.parse_lines(lines)
 
         print('\n'.join(
-            self.construction_builder.lines
+            self.controller.construction_builder.lines
         ))
 
 
