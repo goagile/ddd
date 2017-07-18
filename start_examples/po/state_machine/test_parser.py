@@ -1,14 +1,15 @@
 import unittest
 
 from nilsson.start_examples.po.state_machine import waiting_new_line, command_channel
-from nilsson.start_examples.po.state_machine.model import StateMachine, Controller
+from nilsson.start_examples.po.state_machine.model import StateMachine, Controller, MsgCollectionBuilder
 
 
 class TestParser(unittest.TestCase):
 
     def setUp(self):
         machine = StateMachine(waiting_new_line)
-        controller = Controller(machine, command_channel)
+        self.construction_builder = MsgCollectionBuilder()
+        controller = Controller(machine, command_channel, self.construction_builder)
         self.parser = PoParser(controller)
 
     def test_parse_lines(self):
@@ -19,7 +20,11 @@ class TestParser(unittest.TestCase):
             'msgstr "Ящик"'
         ]
 
-        self.parser.parse(lines)
+        self.parser.parse_lines(lines)
+
+        print('\n'.join(
+            self.construction_builder.lines
+        ))
 
 
 class PoParser:
@@ -27,7 +32,7 @@ class PoParser:
     def __init__(self, controller):
         self.controller = controller
 
-    def parse(self, lines):
+    def parse_lines(self, lines):
         for line in lines:
             if line == '\n':
                 self.controller.handle('new_line_finded', line)

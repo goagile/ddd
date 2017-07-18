@@ -1,4 +1,4 @@
-from nilsson.start_examples.po.state_machine.model import State, Event, PrintCommand
+from nilsson.start_examples.po.state_machine.model import State, Event, ParseCommand, MsgCollectionBuilder
 
 waiting_new_line = State('waiting_new_line')
 new_line_finded = Event('new_line_finded')
@@ -22,5 +22,5 @@ waiting_msgid.add_transition(target=waiting_msgstr, event=msgid_finded)
 waiting_msgstr.add_transition(target=waiting_new_line, event=msgstr_finded)
 
 command_channel = {
-    'print': PrintCommand('print')
+    'print': ParseCommand('print')
 }
