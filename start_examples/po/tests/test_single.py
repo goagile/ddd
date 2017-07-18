@@ -1,7 +1,6 @@
 import unittest
 
-from nilsson.start_examples.po.msg.model import Msg
-
+from start_examples.po.msg_model.msg import Msg
 
 box = Msg(id='Box')
 
@@ -30,6 +29,20 @@ class TestMsg(unittest.TestCase):
         result = box.str
 
         self.assertEqual(expected, result)
+
+    def test_change_str(self):
+        msg = Msg(id='Box', str='Ящик')
+        self.assertEqual('Ящик', msg.str)
+
+        msg.str = 'Коробка'
+        self.assertEqual('Коробка', msg.str)
+
+    def test_path_in_constructor(self):
+        msg = Msg(id='Box', str='Ящик', paths=[
+            '../modules/user/x.js:112'
+        ])
+
+        self.assertIn('../modules/user/x.js:112', msg.paths)
 
     def test_add_path(self):
         expected = [

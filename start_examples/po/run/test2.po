@@ -1,0 +1,3293 @@
+# Russian translations for PROJECT.
+# Copyright (C) 2017 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2017-07-14 18:18+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ru\n"
+"Language-Team: ru <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../constants.py:120 ../www/static/rtsoft/analysis/rza.js:23
+#: ../www/static/rtsoft/analysis/rza.js:360
+#: ../www/static/rtsoft/relaySettingsView.js:959
+#: ../www/static/rtsoft/relaySettingsView.js:982
+#: ../www/static/rtsoft/relaySettingsView.js:1418
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:686
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree.js:44
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:210
+msgid "TZNP"
+msgstr "ТЗНП"
+
+#: ../constants.py:121 ../www/static/rtsoft/analysis/rza.js:21
+#: ../www/static/rtsoft/analysis/rza.js:358
+#: ../www/static/rtsoft/relaySettingsView.js:954
+#: ../www/static/rtsoft/relaySettingsView.js:979
+#: ../www/static/rtsoft/relaySettingsView.js:1421
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:682
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree.js:47
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:206
+msgid "DZFF"
+msgstr "ДЗ Ф-Ф"
+
+#: ../constants.py:192 ../www/static/rtsoft/relaySettingsView_SubStates.js:94
+msgid "AT2x"
+msgstr "АТ,Т 2х"
+
+#: ../constants.py:193 ../www/static/rtsoft/relaySettingsView_SubStates.js:94
+msgid "AT3x"
+msgstr "АТ,Т 3х"
+
+#: ../constants.py:194 ../www/static/rtsoft/analysis/grid.js:494
+#: ../www/static/rtsoft/analysis/shc_place.js:388
+#: ../www/static/rtsoft/analysis/shc_place.js:458
+#: ../www/static/rtsoft/relaySettingsView_MeasPlacesSubstates.js:45
+#: ../www/static/rtsoft/relaySettingsView_MeasPlacesSubstates.js:59
+#: ../www/static/rtsoft/relaySettingsView_MeasPlacesSubstates.js:81
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:364
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:94
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:854
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1718
+msgid "LEP"
+msgstr "ЛЭП"
+
+#: ../constants.py:195
+msgid "ElmVac"
+msgstr "Ист.напр"
+
+#: ../constants.py:196
+msgid "ElmZpu"
+msgstr "Экв.ветвь"
+
+#: ../constants.py:197
+msgid "ElmShnt"
+msgstr "ШР, БСК"
+
+#: ../constants.py:198
+msgid "ElmSind"
+msgstr "Реактор"
+
+#: ../constants.py:199
+msgid "ElmSym"
+msgstr "Генератор"
+
+#: ../constants.py:200
+msgid "ElmCoup"
+msgstr "КА"
+
+#: ../constants.py:201
+msgid "StaSwitch"
+msgstr "КА"
+
+#: ../constants.py:202 ../www/static/rtsoft/analysis/shc_place.js:389
+#: ../www/static/rtsoft/analysis/shc_place.js:448
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:854
+msgid "BranchLEP"
+msgstr "Дисп. ЛЭП"
+
+#: ../constants.py:203
+msgid "ElmTerm"
+msgstr "Узел"
+
+#: ../constants.py:204
+msgid "ElmRelay"
+msgstr "Реле"
+
+#: ../constants.py:205
+msgid "ElmNec"
+msgstr "Заземл."
+
+#: ../constants.py:206 ../www/static/rtsoft/analysis/shc_place.js:392
+#: ../www/static/rtsoft/analysis/shc_place.js:453
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:94
+msgid "CompositeLine"
+msgstr "Сост. ЛЭП"
+
+#: ../analyzer/analisys_data.py:773
+msgid "step"
+msgid_plural "steps"
+msgstr[0] "шаг"
+msgstr[1] "шага"
+msgstr[2] "шагов"
+
+#: ../analyzer/analisys_data.py:811 ../analyzer/status.py:27
+msgid "Ошибка селективности"
+msgstr "Ошибка селективности"
+
+#: ../analyzer/analisys_data.py:817
+msgid "Дальнее резерв. не обеспечивается"
+msgstr "Дальнее резерв. не обеспечивается"
+
+#: ../analyzer/analisys_data.py:824
+msgid "Ближнее резерв. не обеспечивается"
+msgstr "Ближнее резерв. не обеспечивается"
+
+#: ../analyzer/analisys_data.py:849
+msgid "byRelay"
+msgid_plural "byRelays"
+msgstr[0] "защитой"
+msgstr[1] "защитами"
+msgstr[2] "защитами"
+
+#: ../analyzer/analisys_data.py:861
+msgid "Повреждение устранено"
+msgstr "Повреждение устранено"
+
+#: ../analyzer/analisys_data.py:865
+msgid "КЗ отключено за"
+msgstr "КЗ отключено за"
+
+#: ../analyzer/analisys_data.py:866 ../analyzer/analisys_data.py:874
+msgid "sec"
+msgstr "sec"
+
+#: ../analyzer/analisys_data.py:869 ../analyzer/analisys_data.py:877
+msgid "Повреждение не устранено"
+msgstr "Повреждение не устранено"
+
+#: ../analyzer/analisys_data.py:873
+msgid "КЗ не отключено за"
+msgstr "КЗ не отключено за"
+
+#: ../analyzer/analisys_data.py:878
+msgid "В момент КЗ не происходило срабатываний РЗА"
+msgstr "В момент КЗ не происходило срабатываний РЗА"
+
+#: ../analyzer/analysis_pull.py:919
+msgid "Выберите место КЗ"
+msgstr "Выберите место КЗ"
+
+#: ../analyzer/excel_exporter.py:24
+msgid "Шаг и время, сек"
+msgstr "Шаг и время, сек"
+
+#: ../analyzer/excel_exporter.py:25
+msgid "Пояс"
+msgstr "Пояс"
+
+#: ../analyzer/excel_exporter.py:26
+msgid "Uвыкл, кВ"
+msgstr "Uвыкл, кВ"
+
+#: ../analyzer/excel_exporter.py:27
+msgid "Состояние"
+msgstr "Состояние"
+
+#: ../analyzer/excel_exporter.py:28
+msgid "Выключатель"
+msgstr "Выключатель"
+
+#: ../analyzer/excel_exporter.py:29
+msgid "Оборудование"
+msgstr "Оборудование"
+
+#: ../analyzer/excel_exporter.py:30
+msgid "Сигнал от РЗА"
+msgstr "Сигнал от РЗА"
+
+#: ../analyzer/excel_exporter.py:31
+#: ../www/static/rtsoft/analysis/results/execution_grid.js:51
+#: ../www/static/rtsoft/analysis/results/results_grid.js:40
+#: ../www/static/rtsoft/analysis/results/unenergized_grid.js:56
+#: ../www/static/rtsoft/historyView.js:447
+#: ../www/static/rtsoft/historyView.js:1138
+#: ../www/static/rtsoft/relaySettingsView.js:760
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:356
+msgid "Status"
+msgstr "Статус"
+
+#: ../analyzer/status.py:22
+msgid "Не определено"
+msgstr "Не определено"
+
+#: ../analyzer/status.py:23
+msgid "Без замечаний"
+msgstr "Без замечаний"
+
+#: ../analyzer/status.py:24
+msgid "Пуск"
+msgstr "Пуск"
+
+#: ../analyzer/status.py:25
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:96
+msgid "Cascade"
+msgstr "Каскад"
+
+#: ../analyzer/status.py:26
+msgid "Пуск → Сраб"
+msgstr "Пуск → Сраб"
+
+#: ../analyzer/status.py:28
+msgid "Дальнее резерв. не обесп."
+msgstr "Дальнее резерв. не обесп."
+
+#: ../analyzer/status.py:29
+msgid "Ближнее резерв. не обесп."
+msgstr "Ближнее резерв. не обесп."
+
+#: ../analyzer/status.py:30
+msgid "Неселективное отключение"
+msgstr "Неселективное отключение"
+
+#: ../analyzer/status.py:31
+msgid "Ошибка дальнего резерв."
+msgstr "Ошибка дальнего резерв."
+
+#: ../analyzer/status.py:32
+msgid "Срабатывание"
+msgstr "Срабатывание"
+
+#: ../analyzer/status.py:33
+msgid "Возврат"
+msgstr "Возврат"
+
+#: ../analyzer/status.py:34
+msgid "Удержание пуска"
+msgstr "Удержание пуска"
+
+#: ../analyzer/results_view/additional_info.py:31
+#: ../substates/base_substates_pull.py:330
+#: ../substates/setting_substates_pull.py:77
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1286
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1373
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1581
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1649
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:601
+msgid "Substate"
+msgstr "Подрежим"
+
+#: ../analyzer/results_view/additional_info.py:35
+#: ../templates/relay_settings/default_substates.py:258
+msgid "Все включено"
+msgstr "Все включено"
+
+#: ../analyzer/results_view/additional_info.py:67
+msgid "РЗА для анализа"
+msgstr "РЗА для анализа"
+
+#: ../analyzer/results_view/additional_info.py:109
+msgid "Замечания"
+msgstr "Замечания"
+
+#: ../analyzer/results_view/execution_tree.py:343
+msgid "Шаг 0 (момент КЗ)"
+msgstr "Шаг 0 (момент КЗ)"
+
+#: ../analyzer/results_view/execution_tree.py:345
+#: ../analyzer/results_view/results_tree.py:228
+msgid "Шаг"
+msgstr "Шаг"
+
+#: ../analyzer/results_view/execution_tree.py:345
+msgid "сек"
+msgstr "сек"
+
+#: ../analyzer/results_view/results_tree.py:218
+#: ../analyzer/results_view/results_tree.py:228
+msgid "Момент КЗ"
+msgstr "Момент КЗ"
+
+#: ../analyzer/results_view/tags.py:54 ../analyzer/results_view/tags.py:56
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:353
+msgid "s"
+msgstr "с"
+
+#: ../analyzer/results_view/tags.py:67 ../analyzer/results_view/tags.py:73
+msgid "КЗ"
+msgstr "КЗ"
+
+#: ../analyzer/results_view/tags.py:69
+msgid "КЗ не отключено"
+msgstr "КЗ не отключено"
+
+#: ../analyzer/results_view/tags.py:75
+msgid "КЗ отключено"
+msgstr "КЗ отключено"
+
+#: ../analyzer/results_view/tags.py:91
+msgid "ПК"
+msgstr "ПК"
+
+#: ../analyzer/results_view/tags.py:96
+msgid "ВЗ"
+msgstr "ВЗ"
+
+#: ../analyzer/results_view/tags.py:106
+msgid "КД"
+msgstr "КД"
+
+#: ../analyzer/results_view/tags.py:111
+msgid "ПК→"
+msgstr "ПК→"
+
+#: ../analyzer/results_view/tags.py:116
+msgid "СР"
+msgstr "СР"
+
+#: ../analyzer/results_view/tags.py:127
+msgid "НО"
+msgstr "НО"
+
+#: ../analyzer/results_view/tags.py:132
+msgid "БР"
+msgstr "БР"
+
+#: ../analyzer/results_view/tags.py:137 ../analyzer/results_view/tags.py:142
+msgid "ДР"
+msgstr "ДР"
+
+#: ../api/page_init.py:205
+msgid "AllCalculations"
+msgstr "Все расчеты"
+
+#: ../api/page_run.py:143
+msgid "Аutosave"
+msgstr "Автосохранение"
+
+#: ../api/page_run.py:154
+msgid "CalcsReady"
+msgstr "Расчеты произведены!"
+
+#: ../api/page_save.py:178
+msgid "Autosave"
+msgstr "Автосохранение"
+
+#: ../api/page_substates.py:377
+msgid "GuardedObject"
+msgstr "Защищаемый объект"
+
+#: ../api/page_substates.py:378
+msgid "GuardSetupPlace"
+msgstr "Место установки защиты"
+
+#: ../api/page_substates.py:379
+msgid "BusOnReverseEndGuardedLine"
+msgstr "Шина на противоположном конце защищаемой ЛЭП"
+
+#: ../api/page_substates.py:380
+msgid "LinesParallelsGuardedLine"
+msgstr "Линии, параллельные защищаемой ЛЭП"
+
+#: ../api/page_substates.py:381
+msgid "BusesSoldedPS"
+msgstr "Шины отпаечных ПС"
+
+#: ../api/page_substates.py:382
+msgid "BusesBehingTrSoldedPS"
+msgstr "Шины за трансформатором отпаечных ПС"
+
+#: ../api/page_substates.py:383
+msgid "LineWithInduction"
+msgstr "ЛЭП с взаимоиндукцией"
+
+#: ../api/page_substates.py:385
+msgid "FirstZoneNext"
+msgstr "1 пояс последующих"
+
+#: ../api/page_substates.py:386 ../api/page_substates.py:393
+msgid "Buses"
+msgstr "Шины"
+
+#: ../api/page_substates.py:387 ../api/page_substates.py:394
+msgid "ParallLine"
+msgstr "Параллельные ЛЭП"
+
+#: ../api/page_substates.py:388 ../api/page_substates.py:395
+#: ../api/page_substates.py:399
+#: ../www/static/rtsoft/relaySettingsView_TagsBlock.js:41
+#: ../www/static/rtsoft/relaySettingsView_TagsBlock.js:48
+#: ../www/static/rtsoft/relaySettingsView_TagsBlock.js:51
+msgid "Generators"
+msgstr "Генераторы"
+
+#: ../api/page_substates.py:389 ../api/page_substates.py:396
+#: ../api/page_substates.py:400 ../api/page_substates.py:404
+#: ../api/page_substates.py:407 ../www/static/rtsoft/analysis/rza.js:37
+msgid "OtherObjects"
+msgstr "Другие объекты"
+
+#: ../api/page_substates.py:391
+msgid "SecondZonePrev"
+msgstr "2 пояс предыдущих"
+
+#: ../api/page_substates.py:392
+msgid "BusesBehingTrBusOnReverseEnd"
+msgstr "Шины за трансформатором шины на противоположном конце"
+
+#: ../api/page_substates.py:398
+msgid "SecondZoneNext"
+msgstr "2 пояс последующих"
+
+#: ../api/page_substates.py:402
+msgid "ThirdZonePrev"
+msgstr "3 пояс предыдущих"
+
+#: ../api/page_substates.py:403
+msgid "LineBehingTr"
+msgstr "ЛЭП за трансформатором"
+
+#: ../api/page_substates.py:406
+msgid "ThirdZoneNext"
+msgstr "3 пояс последующих"
+
+#: ../api/page_substates.py:639 ../substates/base_substates_pull.py:346
+#: ../substates/base_substates_pull.py:353 ../substates/substate_object.py:498
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:603
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:653
+msgid "FromUsers"
+msgstr "Пользовательские"
+
+#: ../api/page_substates.py:670
+msgid "ZoneFromSch"
+msgstr "пояс от КЗ"
+
+#: ../api/page_substates.py:720
+msgid "ZoneFromLine"
+msgstr "пояс от ЛЭП"
+
+#: ../api/page_substates.py:982
+msgid "Closed"
+msgstr "Замкнут"
+
+#: ../api/page_substates.py:982
+msgid "Opened"
+msgstr "Разомкнут"
+
+#: ../api/page_work.py:227
+msgid "ShowMode"
+msgstr "Просмотр"
+
+#: ../api/page_work.py:230
+msgid "Convert"
+msgstr "Конвертир."
+
+#: ../api/page_work.py:323
+msgid "SubrelaysIIsChange"
+msgstr "Режимы изменены"
+
+#: ../api/page_work.py:323
+msgid "EditDisabled"
+msgstr "Редактирование невозможно"
+
+#: ../api/page_work.py:337 ../api/page_work.py:365
+msgid "CalculationsFromOtherProject"
+msgstr "Расчет был выполнен в другом проекте"
+
+#: ../api/page_work.py:339
+msgid "OnlyEditMode"
+msgstr "Загрузка возможна только в режиме Просмотр"
+
+#: ../api/page_work.py:341
+msgid "WithoutEditAndSave"
+msgstr "без возможности внесения изменений и сохранения"
+
+#: ../api/page_work.py:367
+msgid "ActivateAProject"
+msgstr "Активируйте проект "
+
+#: ../api/page_work.py:369
+msgid "ToContinue"
+msgstr " чтобы продолжить"
+
+#: ../api/page_work.py:386
+msgid "OldVersionCalculations"
+msgstr "Расчет был выполнен в старой версии"
+
+#: ../api/page_work.py:388
+msgid "CalculationsWithDropResults"
+msgstr "возможно редактирование только с потерей результатов"
+
+#: ../api/page_work.py:467
+msgid "Deleted"
+msgstr "Удалено "
+
+#: ../api/page_work.py:467 ../www/static/rtsoft/relaySettingsView_Fault.js:180
+#: ../www/static/rtsoft/relaySettingsView_MeasPlacesSubstates.js:208
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree.js:201
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:254
+msgid "Substates"
+msgstr "Подрежимы"
+
+#: ../substates/base_substates_pull.py:26
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:18
+msgid "IsOff"
+msgstr "Отключено"
+
+#: ../substates/base_substates_pull.py:27
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:15
+msgid "IsOn"
+msgstr "Включено"
+
+#: ../substates/base_substates_pull.py:28
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:21
+msgid "IsOffAndGrounded"
+msgstr "Отключено и заземлено"
+
+#: ../substates/base_substates_pull.py:364
+#: ../www/static/rtsoft/analysis/grid.js:278
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1286
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1581
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1216
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:286
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:341
+msgid "ShcPlace"
+msgstr "Место КЗ"
+
+#: ../substates/base_substates_pull.py:366 ../substates/substate_object.py:461
+#: ../www/static/rtsoft/relaySettingsView_MeasPlacesSubstates.js:18
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1214
+msgid "MeasurementPlace"
+msgstr "Место замера"
+
+#: ../substates/setting_substates_pull.py:234
+#: ../substates/setting_substates_pull.py:241
+#: ../substates/substate_object.py:498
+msgid "BaseSubstate"
+msgstr "Базовые"
+
+#: ../substates/setting_substates_pull.py:245
+#: ../substates/setting_substates_pull.py:252
+#: ../www/static/rtsoft/relaySettingsView_Objects.js:113
+#: ../www/static/rtsoft/relaySettingsView_Objects.js:123
+msgid "FromUser"
+msgstr "Пользовательские"
+
+#: ../substates/setting_substates_pull.py:278
+#: ../substates/substate_object.py:475
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:873
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:883
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:940
+msgid "CalcSubstate"
+msgstr "Расчетный"
+
+#: ../substates/setting_substates_pull.py:280
+#: ../substates/substate_object.py:489
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:584
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:889
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:890
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:899
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:918
+msgid "LocalSubstate"
+msgstr "Локальный"
+
+#: ../substates/setting_substates_pull.py:282
+#: ../substates/substate_object.py:484
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:893
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:898
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:911
+msgid "GlobalSubstate"
+msgstr "Глобальный"
+
+#: ../substates/setting_substates_pull.py:284
+#: ../substates/substate_object.py:479
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:875
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:879
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:925
+msgid "NocalcSubstate"
+msgstr "Нерасчетный"
+
+#: ../substates/substate_object.py:457
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:368
+msgid "ShortPlace"
+msgstr "Место КЗ"
+
+#: ../templates/relay_settings/constants.py:32
+msgid "Detuned"
+msgstr "Отстроено"
+
+#: ../templates/relay_settings/constants.py:33
+msgid "Sensivited"
+msgstr "Чувствительно"
+
+#: ../templates/relay_settings/constants.py:34
+msgid "Coordinated"
+msgstr "Согласовано"
+
+#: ../templates/relay_settings/constants.py:38
+msgid "NotDetuned"
+msgstr "Не отстроено"
+
+#: ../templates/relay_settings/constants.py:39
+msgid "NotSensivited"
+msgstr "Не чувствительно"
+
+#: ../templates/relay_settings/constants.py:40
+msgid "NotCoordinated"
+msgstr "Не согласовано"
+
+#: ../templates/relay_settings/constants.py:44
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1322
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1409
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree.js:32
+msgid "Detuning"
+msgstr "Отстройка"
+
+#: ../templates/relay_settings/constants.py:45
+msgid "Sensivity"
+msgstr "Обеспечение чувствительности"
+
+#: ../templates/relay_settings/constants.py:46
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1622
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree.js:38
+msgid "Coordination"
+msgstr "Согласование"
+
+#: ../templates/relay_settings/constants.py:63
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree.js:9
+msgid "Required"
+msgstr "Обязательный"
+
+#: ../templates/relay_settings/constants.py:64
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree.js:17
+msgid "Alternative"
+msgstr "Альтернативный"
+
+#: ../templates/relay_settings/constants.py:65
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree.js:25
+msgid "Additional"
+msgstr "Дополнительный"
+
+#: ../templates/relay_settings/constants.py:68
+msgid "RequiredShort"
+msgstr "Обяз"
+
+#: ../templates/relay_settings/constants.py:69
+msgid "AlternativeShort"
+msgstr "Альт"
+
+#: ../templates/relay_settings/constants.py:70
+msgid "AdditionalShort"
+msgstr "Доп"
+
+#: ../templates/relay_settings/constants.py:276
+msgid "RU7CH5SAP1T8"
+msgstr "РУ 7. Гл.5. раздел А, п.1, Таб.8"
+
+#: ../templates/relay_settings/constants.py:277
+msgid "RU7CH5SBP3T9"
+msgstr "РУ 7. Гл.5. раздел Б, п.3, Таб.9"
+
+#: ../templates/relay_settings/constants.py:278
+msgid "RU7CH5SAPbT8"
+msgstr "РУ 7. Гл.5. раздел А, п.6, Таб.8"
+
+#: ../templates/relay_settings/constants.py:279
+msgid "RU7CH5SAPbT97"
+msgstr "РУ 7. Гл.5. раздел А, Таб.9(7)"
+
+#: ../templates/relay_settings/constants.py:280
+msgid "RU7CH5Si2"
+msgstr "РУ 7. Гл.5. раздел И, 2"
+
+#: ../templates/relay_settings/constants.py:281
+msgid "RU7CH5SAP9"
+msgstr "РУ 7. Гл.5. раздел А, п.9"
+
+#: ../templates/relay_settings/constants.py:282
+msgid "RU7CH5SAP11a"
+msgstr "РУ 7. Гл.5. раздел А, п.11а)"
+
+#: ../templates/relay_settings/constants.py:283
+msgid "RU12Sb"
+msgstr "РУ 12. раздел Б"
+
+#: ../templates/relay_settings/constants.py:284
+msgid "RU12Sbp1a"
+msgstr "РУ 12. раздел Б п.1, а)"
+
+#: ../templates/relay_settings/constants.py:285
+msgid "RU12Sbp1b"
+msgstr "РУ 12. раздел Б, п.1, б)"
+
+#: ../templates/relay_settings/constants.py:286
+msgid "RU12Svp2av"
+msgstr "РУ 12. раздел В, п.2 а), в)"
+
+#: ../templates/relay_settings/constants.py:287
+msgid "RU12Svp3a"
+msgstr "РУ 12. раздел Б, п.3, а)"
+
+#: ../templates/relay_settings/constants.py:288
+msgid "RU12Sbp8"
+msgstr "РУ 12. раздел Б, п.8"
+
+#: ../templates/relay_settings/constants.py:289
+msgid "RU12Svp8"
+msgstr "РУ 12. раздел В, п.8"
+
+#: ../templates/relay_settings/constants.py:290
+msgid "RU12Svp4a"
+msgstr "РУ 12. раздел В, п.4 а)"
+
+#: ../templates/relay_settings/constants.py:291
+msgid "RU12Svp4v"
+msgstr "РУ 12. раздел В, п.4 в)"
+
+#: ../templates/relay_settings/constants.py:292
+msgid "RU12Svp7a"
+msgstr "РУ 12. раздел В, п.7 а)"
+
+#: ../templates/relay_settings/constants.py:293
+msgid "RU12Svp4b"
+msgstr "РУ 12. раздел В, п.4 б)"
+
+#: ../templates/relay_settings/constants.py:294
+msgid "RU12Svp4"
+msgstr "РУ 12. раздел В, п.4"
+
+#: ../templates/relay_settings/constants.py:295
+msgid "RU12Sjp4v"
+msgstr "РУ 12. раздел Ж п.4, в)"
+
+#: ../templates/relay_settings/constants.py:296
+msgid "RU12Sjp4g"
+msgstr "РУ 12. раздел Ж п.4, г)"
+
+#: ../www/static/rtsoft/app.js:97
+msgid "TKZCalc"
+msgstr "Расчёт ТКЗ"
+
+#: ../www/static/rtsoft/app.js:100
+msgid "BatchCalc"
+msgstr "Пакетный расчёт"
+
+#: ../www/static/rtsoft/app.js:103 ../www/static/rtsoft/historyView.js:149
+#: ../www/static/rtsoft/historyView.js:1161
+msgid "Settings"
+msgstr "Выбор уставок"
+
+#: ../www/static/rtsoft/app.js:106
+msgid "AnalysisRZA"
+msgstr "Анализ РЗА"
+
+#: ../www/static/rtsoft/app.js:109
+msgid "SettingsManager"
+msgstr "Менеджер уставок"
+
+#: ../www/static/rtsoft/app.js:113
+msgid "History"
+msgstr "История"
+
+#: ../www/static/rtsoft/historyView.js:18
+msgid "current_lang"
+msgstr "ru"
+
+#: ../www/static/rtsoft/historyView.js:33
+#: ../www/static/rtsoft/relaySettingsView.js:722
+msgid "Done"
+msgstr "Готово"
+
+#: ../www/static/rtsoft/analysis/rza.js:942
+#: ../www/static/rtsoft/analysis/rza.js:1116
+#: ../www/static/rtsoft/analysis/shc_place.js:667
+#: ../www/static/rtsoft/analysis/tab.js:79
+#: ../www/static/rtsoft/analysis/tab.js:87
+#: ../www/static/rtsoft/analysis/window.js:120
+#: ../www/static/rtsoft/analysis/window.js:128
+#: ../www/static/rtsoft/historyView.js:35
+#: ../www/static/rtsoft/relaySettingsView.js:1348
+msgid "Error"
+msgstr "Ошибка"
+
+#: ../www/static/rtsoft/historyView.js:37
+msgid "AddFile"
+msgstr "Добавить файл"
+
+#: ../www/static/rtsoft/historyView.js:39
+msgid "Download"
+msgstr "Загрузить"
+
+#: ../www/static/rtsoft/analysis/base_card.js:25
+#: ../www/static/rtsoft/analysis/base_card.js:44
+#: ../www/static/rtsoft/analysis/grid.js:27
+#: ../www/static/rtsoft/analysis/grid.js:47
+#: ../www/static/rtsoft/analysis/results/results_grid.js:242
+#: ../www/static/rtsoft/analysis/view.js:264
+#: ../www/static/rtsoft/analysis/view.js:382
+#: ../www/static/rtsoft/analysis/window.js:141
+#: ../www/static/rtsoft/historyView.js:41
+#: ../www/static/rtsoft/historyView.js:852
+#: ../www/static/rtsoft/historyView.js:863
+#: ../www/static/rtsoft/historyView.js:930
+#: ../www/static/rtsoft/historyView.js:1032
+#: ../www/static/rtsoft/relaySettingsView.js:297
+#: ../www/static/rtsoft/relaySettingsView.js:1329
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:891
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:1384
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:666
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1477
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1495
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1508
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1532
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1544
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:191
+#: ../www/static/rtsoft/utility.js:966
+msgid "Cancel"
+msgstr "Отмена"
+
+#: ../www/static/rtsoft/analysis/rza.js:179
+#: ../www/static/rtsoft/analysis/view.js:116
+#: ../www/static/rtsoft/historyView.js:43
+msgid "Clear"
+msgstr "Очистить"
+
+#: ../www/static/rtsoft/historyView.js:46
+msgid "DragTheFileToTheArea"
+msgstr "Перетащите файл в область"
+
+#: ../www/static/rtsoft/historyView.js:87
+msgid "Open"
+msgstr "Открыть"
+
+#: ../www/static/rtsoft/analysis/view.js:111
+#: ../www/static/rtsoft/historyView.js:91
+#: ../www/static/rtsoft/historyView.js:329
+#: ../www/static/rtsoft/historyView.js:1030
+msgid "Export"
+msgstr "Экспорт"
+
+#: ../www/static/rtsoft/analysis/rza.js:273
+#: ../www/static/rtsoft/analysis/shc_place.js:883
+#: ../www/static/rtsoft/analysis/shc_place.js:897
+#: ../www/static/rtsoft/historyView.js:95
+#: ../www/static/rtsoft/historyView.js:331
+#: ../www/static/rtsoft/historyView.js:545
+msgid "Delete"
+msgstr "Удалить"
+
+#: ../www/static/rtsoft/historyView.js:152
+msgid "Analysis"
+msgstr "Анализ"
+
+#: ../www/static/rtsoft/historyView.js:219
+msgid "HistoryOfPayments"
+msgstr "История расчётов"
+
+#: ../www/static/rtsoft/analysis/results/results_grid.js:107
+#: ../www/static/rtsoft/analysis/results/view.js:119
+#: ../www/static/rtsoft/analysis/rza.js:236
+#: ../www/static/rtsoft/historyView.js:264
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:77
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:274
+#: ../www/static/rtsoft/relaySettingsView_ResultsTree.js:429
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:215
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1368
+msgid "ExpandAll"
+msgstr "Развернуть все"
+
+#: ../www/static/rtsoft/analysis/results/results_grid.js:110
+#: ../www/static/rtsoft/analysis/results/view.js:122
+#: ../www/static/rtsoft/analysis/rza.js:239
+#: ../www/static/rtsoft/historyView.js:265
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:80
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:277
+#: ../www/static/rtsoft/relaySettingsView_ResultsTree.js:432
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:217
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1369
+msgid "CollapseAll"
+msgstr "Свернуть все"
+
+#: ../www/static/rtsoft/historyView.js:327
+#: ../www/static/rtsoft/historyView.js:1106
+#: ../www/static/rtsoft/relaySettingsView.js:796
+msgid "Edit"
+msgstr "Редактировать"
+
+#: ../www/static/rtsoft/historyView.js:356
+#: ../www/static/rtsoft/historyView.js:357
+msgid "ResetFilter"
+msgstr "Сбросить фильтры"
+
+#: ../www/static/rtsoft/historyView.js:358
+msgid "Import"
+msgstr "Импорт"
+
+#: ../www/static/rtsoft/historyView.js:419
+msgid "InvalidFile"
+msgstr "Неверный файл"
+
+#: ../www/static/rtsoft/historyView.js:420
+msgid "SelectAFileWithTheExtensionPfp"
+msgstr "Выберите файл с расширением .pfp"
+
+#: ../www/static/rtsoft/historyView.js:436
+msgid "Action"
+msgstr "Действие"
+
+#: ../www/static/rtsoft/historyView.js:437
+msgid "DateTime"
+msgstr "Дата Время"
+
+#: ../www/static/rtsoft/historyView.js:438
+msgid "CalculationsData"
+msgstr "Данные расчета"
+
+#: ../www/static/rtsoft/historyView.js:443
+msgid "CalculationType"
+msgstr "Тип расчета"
+
+#: ../www/static/rtsoft/historyView.js:444
+msgid "RZAType"
+msgstr "Тип РЗА"
+
+#: ../www/static/rtsoft/analysis/view.js:281
+#: ../www/static/rtsoft/historyView.js:445
+#: ../www/static/rtsoft/relaySettingsView.js:365
+#: ../www/static/rtsoft/relaySettingsView_ResultsTree.js:377
+msgid "Description"
+msgstr "Описание"
+
+#: ../www/static/rtsoft/historyView.js:446
+msgid "Variation"
+msgstr "Режим"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:336
+#: ../www/static/rtsoft/analysis/shc_place.js:1148
+#: ../www/static/rtsoft/historyView.js:481
+#: ../www/static/rtsoft/relaySettingsView.js:1251
+#: ../www/static/rtsoft/relaySettingsView_Fault.js:122
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:64
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1301
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1391
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1600
+#: ../www/static/rtsoft/relaySettingsView_ResultsTree.js:312
+#: ../www/static/rtsoft/relaySettingsView_ResultsTree.js:1141
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree.js:232
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:43
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:535
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1636
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:403
+#: ../www/static/rtsoft/utility.js:295 ../www/static/rtsoft/utility.js:323
+msgid "NoRecordsFound"
+msgstr "Записей не найдено"
+
+#: ../www/static/rtsoft/historyView.js:509
+#: ../www/static/rtsoft/historyView.js:518
+msgid "ThereWasAnErrorWritingDescription"
+msgstr "Возникла ошибка при записи описания"
+
+#: ../www/static/rtsoft/historyView.js:542
+#: ../www/static/rtsoft/historyView.js:926
+msgid "DeleteCalculation"
+msgstr "Удалить расчет"
+
+#: ../www/static/rtsoft/historyView.js:544
+#: ../www/static/rtsoft/historyView.js:928
+msgid "ConfirmSelectedDeletion"
+msgstr "Вы точно хотите удалить выделенные расчеты?"
+
+#: ../www/static/rtsoft/historyView.js:546
+msgid "Undo"
+msgstr "Отменить"
+
+#: ../www/static/rtsoft/historyView.js:570
+#: ../www/static/rtsoft/historyView.js:580
+msgid "ThereWasAnErrorDeletingTheRecords"
+msgstr "Возникла ошибка при записи описания"
+
+#: ../www/static/rtsoft/historyView.js:848
+#: ../www/static/rtsoft/historyView.js:858
+msgid "AWarning"
+msgstr "Предупреждение"
+
+#: ../www/static/rtsoft/historyView.js:897
+#: ../www/static/rtsoft/historyView.js:908
+msgid "ErrorWhileLoadingRecordFromDatabase"
+msgstr "Ошибка при загрузке записи из БД"
+
+#: ../www/static/rtsoft/analysis/base_card.js:25
+#: ../www/static/rtsoft/analysis/base_card.js:44
+#: ../www/static/rtsoft/analysis/grid.js:27
+#: ../www/static/rtsoft/analysis/grid.js:47
+#: ../www/static/rtsoft/analysis/view.js:264
+#: ../www/static/rtsoft/analysis/view.js:382
+#: ../www/static/rtsoft/analysis/window.js:141
+#: ../www/static/rtsoft/historyView.js:929
+#: ../www/static/rtsoft/relaySettingsView.js:297
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1477
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1495
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1508
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1544
+msgid "Yes"
+msgstr "Да"
+
+#: ../www/static/rtsoft/historyView.js:948
+#: ../www/static/rtsoft/historyView.js:958
+msgid "ThereWasAnErrorDeletingThePost"
+msgstr "Возникла ошибка при удалении записи"
+
+#: ../www/static/rtsoft/historyView.js:989
+msgid "ExportComplete"
+msgstr "Экспорт завершен"
+
+#: ../www/static/rtsoft/historyView.js:998
+msgid "AnErrorOccurredWhileExporting"
+msgstr "Возникла ошибка при экспорте!"
+
+#: ../www/static/rtsoft/historyView.js:1025
+msgid "ExportOptions"
+msgstr "Параметры экспорта"
+
+#: ../www/static/rtsoft/historyView.js:1027
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:657
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:182
+msgid "FileName"
+msgstr "Имя файла"
+
+#: ../www/static/rtsoft/historyView.js:1063
+msgid "SelectAnAction"
+msgstr "Действие"
+
+#: ../www/static/rtsoft/historyView.js:1090
+#: ../www/static/rtsoft/relaySettingsView.js:774
+msgid "Changes"
+msgstr "Изменения"
+
+#: ../www/static/rtsoft/historyView.js:1096
+msgid "NumberOfChanges"
+msgstr "Количество изменений"
+
+#: ../www/static/rtsoft/historyView.js:1104
+msgid "LookInside"
+msgstr "Просмотр"
+
+#: ../www/static/rtsoft/historyView.js:1110
+msgid "OpenInReadModePart1"
+msgstr "Открыть расчет без возможности сохранения изменений"
+
+#: ../www/static/rtsoft/historyView.js:1111
+msgid "OpenInReadModePart2"
+msgstr "выполнения доп.расчетов."
+
+#: ../www/static/rtsoft/historyView.js:1112
+msgid "HistoryInfo1"
+msgstr "Подрежимы, топология, пользовательский выбор"
+
+#: ../www/static/rtsoft/historyView.js:1112
+msgid "HistoryInfo1_1"
+msgstr "загружаются независимо от текущего состояния схемы."
+
+#: ../www/static/rtsoft/historyView.js:1115
+msgid "HistoryInfo2"
+msgstr "Загрузить расчет в нормальном режиме"
+
+#: ../www/static/rtsoft/historyView.js:1115
+msgid "HistoryInfo2_1"
+msgstr "базовые подрежимы будут сгенерированы заново"
+
+#: ../www/static/rtsoft/historyView.js:1116
+msgid "CustomSubmodesAreLoaded"
+msgstr "пользовательские подрежимы загружены."
+
+#: ../www/static/rtsoft/historyView.js:1117
+msgid "WhenPerformingCalculationsTheResultsWillBeFullyRecalculated"
+msgstr "При выполнении расчетов будет произведен полный перерасчет результатов."
+
+#: ../www/static/rtsoft/historyView.js:1138
+#: ../www/static/rtsoft/relaySettingsView.js:760
+msgid "Element"
+msgstr "Элемент"
+
+#: ../www/static/rtsoft/historyView.js:1165
+msgid "FunctionInDevelopment"
+msgstr "Функция в разработке"
+
+#: ../www/static/rtsoft/historyView.js:1211
+#: ../www/static/rtsoft/historyView.js:1222
+msgid "WhenUnloadingFromTheDatabaseErrorsOccurred"
+msgstr "При выгрузке из БД возникли ошибки!"
+
+#: ../www/static/rtsoft/historyView.js:1297
+#: ../www/static/rtsoft/historyView.js:1300
+msgid "SelectingSettings"
+msgstr "Выбор уставок"
+
+#: ../www/static/rtsoft/relaySettingsView.js:92
+msgid "SubstationBus"
+msgstr "ПС Шина"
+
+#: ../www/static/rtsoft/relaySettingsView.js:96
+msgid "RelayPlace"
+msgstr "Место реле"
+
+#: ../www/static/rtsoft/relaySettingsView.js:100
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:543
+msgid "Relay"
+msgstr "Реле"
+
+#: ../www/static/rtsoft/relaySettingsView.js:104
+#: ../www/static/rtsoft/relaySettingsView.js:1415
+msgid "RelayType"
+msgstr "Тип РЗА"
+
+#: ../www/static/rtsoft/relaySettingsView.js:108
+#: ../www/static/rtsoft/relaySettingsView.js:1425
+msgid "StagesNumber"
+msgstr "Количество ступеней"
+
+#: ../www/static/rtsoft/relaySettingsView.js:112
+msgid "Change"
+msgstr "Изменить"
+
+#: ../www/static/rtsoft/relaySettingsView.js:126
+msgid "BaseData"
+msgstr "Исходные данные"
+
+#: ../www/static/rtsoft/relaySettingsView.js:129
+msgid "Calculations"
+msgstr "Расчеты"
+
+#: ../www/static/rtsoft/relaySettingsView.js:132
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:151
+msgid "PivotTable"
+msgstr "Сводная таблица"
+
+#: ../www/static/rtsoft/relaySettingsView.js:242
+msgid "ToStop"
+msgstr "Остановить"
+
+#: ../www/static/rtsoft/relaySettingsView.js:245
+#: ../www/static/rtsoft/relaySettingsView.js:371
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:662
+#: ../www/static/rtsoft/relaySettingsView_ResultsTree.js:345
+#: ../www/static/rtsoft/relaySettingsView_ResultsTree.js:383
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:187
+msgid "ToSave"
+msgstr "Сохранить"
+
+#: ../www/static/rtsoft/relaySettingsView.js:249
+msgid "ToClear"
+msgstr "Сбросить"
+
+#: ../www/static/rtsoft/relaySettingsView.js:253
+#: ../www/static/rtsoft/relaySettingsView.js:718
+msgid "ToExecute"
+msgstr "Выполнить"
+
+#: ../www/static/rtsoft/relaySettingsView.js:293
+msgid "Warning"
+msgstr "Предупреждение"
+
+#: ../www/static/rtsoft/relaySettingsView.js:300
+msgid "LoadingSubstatesAddedNotForAllCalculations"
+msgstr "Не для всех расчетов введены нагрузочные подрежимы!"
+
+#: ../www/static/rtsoft/relaySettingsView.js:300
+msgid "ToStartCalculation"
+msgstr "Начать расчет"
+
+#: ../www/static/rtsoft/relaySettingsView.js:313
+#: ../www/static/rtsoft/relaySettingsView.js:324
+msgid "ThereWasErrorsWhileLoadingSubstatesChecking"
+msgstr "Возникла ошибка при проверке нагрузочных подрежимов!"
+
+#: ../www/static/rtsoft/relaySettingsView.js:335
+msgid "SettingsAreFilledIncorrectly"
+msgstr "Настройки некорректно заполнены!"
+
+#: ../www/static/rtsoft/relaySettingsView.js:349
+msgid "CalculationIsStopping"
+msgstr "Выполняется остановка расчета..."
+
+#: ../www/static/rtsoft/relaySettingsView.js:361
+#: ../www/static/rtsoft/relaySettingsView_ResultsTree.js:373
+msgid "SavingIntoDataBase"
+msgstr "Сохранение в базу данных"
+
+#: ../www/static/rtsoft/relaySettingsView.js:375
+#: ../www/static/rtsoft/relaySettingsView_ResultsTree.js:387
+msgid "SaveNew"
+msgstr "Сохранить новый"
+
+#: ../www/static/rtsoft/relaySettingsView.js:427
+msgid "StagesNumb"
+msgstr "Кол. ступеней"
+
+#: ../www/static/rtsoft/relaySettingsView.js:468
+#: ../www/static/rtsoft/relaySettingsView.js:484
+msgid "ThereIsErrorWhileTopologyAnalysis"
+msgstr "Возникла ошибка при выполнении топологического анализа!"
+
+#: ../www/static/rtsoft/relaySettingsView.js:532
+#: ../www/static/rtsoft/relaySettingsView.js:551
+msgid "ThereAreErrorsWhileCalculation"
+msgstr "В расчёте возникли ошибки!"
+
+#: ../www/static/rtsoft/relaySettingsView.js:618
+msgid "SavedInDB"
+msgstr "Сохранено в БД"
+
+#: ../www/static/rtsoft/relaySettingsView.js:627
+#: ../www/static/rtsoft/relaySettingsView.js:654
+msgid "ThereAreErrorsWhileSave"
+msgstr "При сохранении возникли ошибки!"
+
+#: ../www/static/rtsoft/relaySettingsView.js:731
+msgid "SelectAction"
+msgstr "Выберите действие"
+
+#: ../www/static/rtsoft/relaySettingsView.js:782
+msgid "MeasurementsCount"
+msgstr "Кол-во изменений"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:923
+#: ../www/static/rtsoft/relaySettingsView.js:793
+msgid "View"
+msgstr "Просмотр"
+
+#: ../www/static/rtsoft/relaySettingsView.js:802
+msgid "OpenCalculation"
+msgstr "Открыть расчет"
+
+#: ../www/static/rtsoft/relaySettingsView.js:802
+msgid "withoutChangeAbility"
+msgstr "без возможности сохранения изменений, выполнения доп.расчетов."
+
+#: ../www/static/rtsoft/relaySettingsView.js:805
+msgid "SubstatesTopologyAndUserChoise"
+msgstr "Подрежимы, топология, пользовательский выбор"
+
+#: ../www/static/rtsoft/relaySettingsView.js:805
+msgid "areLoadingIndependentOfSchemeState"
+msgstr "загружаются независимо от текущего состояния схемы."
+
+#: ../www/static/rtsoft/relaySettingsView.js:810
+msgid "LoadCalculationInNormalMode"
+msgstr "Загрузить расчет в нормальном режиме"
+
+#: ../www/static/rtsoft/relaySettingsView.js:810
+msgid "baseSubstatesWillGeneratedNewly"
+msgstr "базовые подрежимы будут сгенерированы заново,"
+
+#: ../www/static/rtsoft/relaySettingsView.js:813
+msgid "userSubstatesAreLoaded"
+msgstr "пользовательские подрежимы загружены."
+
+#: ../www/static/rtsoft/relaySettingsView.js:816
+msgid "AfterCalculationResultsWillBeRecalculated"
+msgstr "При выполнении расчетов будет произведен полный перерасчет результатов."
+
+#: ../www/static/rtsoft/relaySettingsView.js:846
+#: ../www/static/rtsoft/relaySettingsView.js:859
+msgid "ThereWasErrorsWhileDBUnloading"
+msgstr "При выгрузке из БД возникли ошибки!"
+
+#: ../www/static/rtsoft/relaySettingsView.js:1037
+msgid "ItIsImpossibleToSelectRelayPlace"
+msgstr "Невозможно выбрать место установки реле т.к на схеме нет шин!"
+
+#: ../www/static/rtsoft/relaySettingsView.js:1129
+msgid "SelectionOfRelayPlace"
+msgstr "Выбор места установки реле"
+
+#: ../www/static/rtsoft/relaySettingsView.js:1160
+msgid "SearchByName"
+msgstr "Поиск по имени"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:317
+#: ../www/static/rtsoft/analysis/shc_place.js:1129
+#: ../www/static/rtsoft/relaySettingsView.js:1161
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:364
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:368
+msgid "Unom"
+msgstr "U ном"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:1275
+#: ../www/static/rtsoft/analysis/tab.js:48
+#: ../www/static/rtsoft/relaySettingsView.js:1333
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:894
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:1387
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1534
+msgid "OK"
+msgstr "ОК"
+
+#: ../www/static/rtsoft/relaySettingsView.js:1352
+msgid "WrongPlaceSelectedOrItIsWrongSelectionPlace"
+msgstr "Выбрано некорректное место реле либо выбор не осуществлен."
+
+#: ../www/static/rtsoft/relaySettingsView.js:1352
+msgid "PleaseSelectRelayPlace"
+msgstr "Выберите, пожалуйста, место реле."
+
+#: ../www/static/rtsoft/analysis/results/execution_grid.js:177
+#: ../www/static/rtsoft/analysis/results/results_grid.js:406
+#: ../www/static/rtsoft/analysis/results/unenergized_grid.js:163
+#: ../www/static/rtsoft/analysis/shc_place.js:904
+#: ../www/static/rtsoft/relaySettingsView.js:1457
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:627
+#: ../www/static/rtsoft/relaySettingsView_Objects.js:190
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:906
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:934
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:964
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:986
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1020
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1048
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1725
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:389
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:563
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1020
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:279
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:289
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:299
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:309
+msgid "ShowInDataManager"
+msgstr "Показать в менеджере данных"
+
+#: ../www/static/rtsoft/relaySettingsView.js:1460
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:630
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:909
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:937
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:967
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:989
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1023
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1051
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1728
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:392
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:566
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:282
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:292
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:302
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:312
+msgid "ShowOnScheme"
+msgstr "Показать на схеме сети"
+
+#: ../www/static/rtsoft/analysis/results/execution_grid.js:48
+#: ../www/static/rtsoft/analysis/rza.js:262
+#: ../www/static/rtsoft/relaySettingsView_Fault.js:109
+#: ../www/static/rtsoft/utility.js:20 ../www/static/rtsoft/utility.js:312
+msgid "SS"
+msgstr "ПС"
+
+#: ../www/static/rtsoft/relaySettingsView_Fault.js:109
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:94
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1720
+msgid "Branch"
+msgstr "Дисп. ветвь"
+
+#: ../www/static/rtsoft/analysis/results/unenergized_grid.js:89
+#: ../www/static/rtsoft/relaySettingsView_Fault.js:109
+msgid "Object"
+msgstr "Объект"
+
+#: ../www/static/rtsoft/analysis/results/execution_grid.js:48
+#: ../www/static/rtsoft/analysis/rza.js:257
+#: ../www/static/rtsoft/analysis/shc_place.js:317
+#: ../www/static/rtsoft/analysis/shc_place.js:923
+#: ../www/static/rtsoft/analysis/shc_place.js:1129
+#: ../www/static/rtsoft/relaySettingsView_Fault.js:109
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:199
+#: ../www/static/rtsoft/relaySettingsView_ResultsTree.js:165
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:26
+msgid "Type"
+msgstr "Тип"
+
+#: ../www/static/rtsoft/relaySettingsView_Fault.js:109
+msgid "Voltage"
+msgstr "Напряжение"
+
+#: ../www/static/rtsoft/relaySettingsView_Fault.js:162
+#: ../www/static/rtsoft/relaySettingsView_MeasPlacesSubstates.js:155
+#: ../www/static/rtsoft/relaySettingsView_MeasPlacesSubstates.js:171
+msgid "AddingOfSubstates"
+msgstr "Возникла ошибка создания подрежимов для выбранного места замера"
+
+#: ../www/static/rtsoft/relaySettingsView_Fault.js:184
+msgid "Elements"
+msgstr "Элементы"
+
+#: ../www/static/rtsoft/relaySettingsView_Fault.js:197
+#: ../www/static/rtsoft/relaySettingsView_MeasPlacesSubstates.js:190
+msgid "AddSubstates"
+msgstr "Добавить подрежимы"
+
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:15
+#: ../www/static/rtsoft/relaySettingsView_ResultsTree.js:158
+msgid "SetpointsSelectionConditions"
+msgstr "Условия выбора уставок"
+
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:60
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:241
+msgid "NoOneObjectIsSelected"
+msgstr "Не выбрано ни одного объекта."
+
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:60
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:241
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:991
+msgid "AddAnObject"
+msgstr "Добавьте объект"
+
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:67
+msgid "Conditions"
+msgstr "Условия"
+
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:134
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:146
+msgid "ItIsImpossibleToLoadLoadingSubstatesConditions"
+msgstr "Невозможно загрузить условия для нагрузочных подрежимов!"
+
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:199
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:471
+msgid "NGSubstate"
+msgstr "НГ Подрежим"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:923
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:199
+msgid "Side"
+msgstr "Сторона"
+
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:199
+msgid "FullName"
+msgstr "Полное имя"
+
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:248
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1339
+msgid "SubstatesTotal"
+msgstr "Всего подрежимов"
+
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:265
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1358
+msgid "NumberOfSubstates"
+msgstr "Количество подрежимов"
+
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:268
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1364
+msgid "CreateNewSubstate"
+msgstr "Создать новый подрежим"
+
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:271
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:622
+msgid "RemoveSubstate"
+msgstr "Удалить подрежим"
+
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:360
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:375
+msgid "ItIsImpossibleToLoadSubstates"
+msgstr "Невозможно загрузить подрежимы!"
+
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:405
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:421
+msgid "ItIsImpossibleToSaveSubstates"
+msgstr "Невозможно сохранить подрежимы!"
+
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:717
+msgid "AdditionOfLoadingSubstate"
+msgstr "Добавление нагрузочного подрежима"
+
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:747
+msgid "ObjectSelection"
+msgstr "Выбор объекта"
+
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:751
+msgid "Begin"
+msgstr "Начало"
+
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:755
+msgid "End"
+msgstr "Конец"
+
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:759
+msgid "EnterOfParameters"
+msgstr "Ввод параметров"
+
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:764
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:768
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:30
+msgid "Parameter"
+msgstr "Параметр"
+
+#: ../www/static/rtsoft/analysis/results/unenergized_grid.js:56
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:778
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:786
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:800
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:808
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:1021
+msgid "kV"
+msgstr "кВ"
+
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:795
+msgid "CalculatedValues"
+msgstr "Расчётные значения"
+
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:818
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:826
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:1027
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:368
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:440
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:443
+msgid "A"
+msgstr "А"
+
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:836
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:846
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:1033
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1373
+msgid "MW"
+msgstr "МВт"
+
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:841
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:851
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:1036
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1373
+msgid "MVar"
+msgstr "МВар"
+
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:944
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:956
+msgid "ThereIsError"
+msgstr "Возникла ошибка при топологическом поиске объектов!"
+
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:1010
+msgid "IncorrectInput"
+msgstr "Неверный ввод!"
+
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:1325
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:113
+msgid "SubstatesControl"
+msgstr "Управление подрежимами"
+
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:1431
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:1452
+msgid "ChangesSaveFailed"
+msgstr "Не удалось сохранить изменения!"
+
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:1474
+#: ../www/static/rtsoft/relaySettingsView_LoadSubstates.js:1488
+msgid "ChangesCancelFailed"
+msgstr "Не удалось отменить изменения!"
+
+#: ../www/static/rtsoft/relaySettingsView_MeasPlacesSubstates.js:21
+msgid "GroupsOfSubstates"
+msgstr "Группы подрежимов"
+
+#: ../www/static/rtsoft/relaySettingsView_MeasPlacesSubstates.js:31
+msgid "OffAndIsolate"
+msgstr "Откл. и Земл."
+
+#: ../www/static/rtsoft/relaySettingsView_MeasPlacesSubstates.js:39
+#: ../www/static/rtsoft/relaySettingsView_MeasPlacesSubstates.js:42
+#: ../www/static/rtsoft/relaySettingsView_MeasPlacesSubstates.js:75
+#: ../www/static/rtsoft/relaySettingsView_MeasPlacesSubstates.js:78
+msgid "SSARepair"
+msgstr "Рем.ПС А"
+
+#: ../www/static/rtsoft/relaySettingsView_MeasPlacesSubstates.js:45
+#: ../www/static/rtsoft/relaySettingsView_MeasPlacesSubstates.js:81
+msgid "Rep_"
+msgstr "Рем."
+
+#: ../www/static/rtsoft/relaySettingsView_MeasPlacesSubstates.js:48
+#: ../www/static/rtsoft/relaySettingsView_MeasPlacesSubstates.js:84
+msgid "ToweRepair"
+msgstr "Рем. вз.инд."
+
+#: ../www/static/rtsoft/relaySettingsView_MeasPlacesSubstates.js:51
+#: ../www/static/rtsoft/relaySettingsView_MeasPlacesSubstates.js:87
+msgid "LineAfterATSSB"
+msgstr "ВЛ за АТ ПС Б"
+
+#: ../www/static/rtsoft/relaySettingsView_MeasPlacesSubstates.js:54
+#: ../www/static/rtsoft/relaySettingsView_MeasPlacesSubstates.js:90
+msgid "ThirdZoneRepair"
+msgstr "Рем. 3↑ пояса"
+
+#: ../www/static/rtsoft/relaySettingsView_MeasPlacesSubstates.js:59
+msgid "OffShort"
+msgstr "Откл"
+
+#: ../www/static/rtsoft/relaySettingsView_MeasPlacesSubstates.js:97
+#: ../www/static/rtsoft/relaySettingsView_MeasPlacesSubstates.js:100
+msgid "AT"
+msgstr "АТ"
+
+#: ../www/static/rtsoft/relaySettingsView_MeasPlacesSubstates.js:97
+msgid "LineSSA"
+msgstr "ВЛ ПС А"
+
+#: ../www/static/rtsoft/relaySettingsView_MeasPlacesSubstates.js:100
+msgid "LineSSB"
+msgstr "ВЛ ПС Б"
+
+#: ../www/static/rtsoft/relaySettingsView_MeasPlacesSubstates.js:103
+msgid "TwoLinesSSA"
+msgstr "2хВЛ ПС А"
+
+#: ../www/static/rtsoft/relaySettingsView_MeasPlacesSubstates.js:106
+msgid "TwoLinesSSB"
+msgstr "2хВЛ ПС Б"
+
+#: ../www/static/rtsoft/relaySettingsView_MeasPlacesSubstates.js:109
+msgid "ErrorOfCreatingSelectedShcPlaceSubstates"
+msgstr "2х ВЛ ПС А,Б"
+
+#: ../www/static/rtsoft/relaySettingsView_MeasPlacesSubstates.js:222
+msgid "ToAddSubstates"
+msgstr "Добавить подрежимы"
+
+#: ../www/static/rtsoft/relaySettingsView_Objects.js:186
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1014
+msgid "NewSubstateFromSelectedObjects"
+msgstr "Новый подрежим из выделенных объектов"
+
+#: ../www/static/rtsoft/analysis/results/execution_grid.js:181
+#: ../www/static/rtsoft/analysis/results/results_grid.js:411
+#: ../www/static/rtsoft/analysis/results/unenergized_grid.js:167
+#: ../www/static/rtsoft/analysis/shc_place.js:907
+#: ../www/static/rtsoft/relaySettingsView_Objects.js:193
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1022
+msgid "ShowOnNetworkDiagram"
+msgstr "Показать на схеме сети"
+
+#: ../www/static/rtsoft/relaySettingsView_Objects.js:214
+msgid "ObjectsGrid_Header"
+msgstr "Название,Тип,U ном, "
+
+#: ../www/static/rtsoft/relaySettingsView_Objects.js:276
+msgid "NoOneObjectIsSelected_AddAnObject"
+msgstr "Не выбрано ни одного объекта. Добавьте объект"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:444
+msgid "NameOfCondition"
+msgstr "Название условия"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:460
+msgid "NameOfConditionGroup"
+msgstr "Название группы условий"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:464
+msgid "Ksp"
+msgstr "Ку"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:479
+msgid "ChangeFactor"
+msgstr "Изменить коэффициент"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:482
+msgid "GoToCalculationMode"
+msgstr "Перейти к расчетному режиму"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:485
+msgid "HideExcludedConditions"
+msgstr "Скрыть исключенные условия"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:489
+msgid "ShowExcludedConditions"
+msgstr "Показать исключенные условия"
+
+#: ../www/static/rtsoft/analysis/results/view.js:195
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:492
+msgid "ShowFilter"
+msgstr "Показать фильтр"
+
+#: ../www/static/rtsoft/analysis/results/view.js:200
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:495
+msgid "HideFilter"
+msgstr "Скрыть фильтр"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:500
+msgid "KchzrNorm"
+msgstr "Кчзр норм"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:503
+msgid "RedundanceZoneSensitibilityFactor"
+msgstr "Коэффициент чувствительности зоны резервирования"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:653
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:178
+msgid "ExportToExcelSettings"
+msgstr "Параметры экспорта в Excel"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:675
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:199
+msgid "SelectionOfSSSetpoints"
+msgstr "Выбор уставок ПС"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:758
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:769
+msgid "ThereWasErrorWhileFactorSaving"
+msgstr "Возникла ошибка при сохранении коэффициента"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:893
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:921
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:957
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:979
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1007
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1035
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1712
+msgid "ExcludeSubstate"
+msgstr "Исключить подрежим"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:896
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:924
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1010
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1038
+msgid "ExcludeMeasPlace"
+msgstr "Исключить место КЗ"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:899
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:927
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1016
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1044
+msgid "ExcludeZper"
+msgstr "Исключить Zпер"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:902
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:930
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1013
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1041
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1721
+msgid "ExcludeShcType"
+msgstr "Исключить тип КЗ"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:960
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:982
+msgid "ExcludeNPF"
+msgstr "Исключить НПФ"
+
+#: ../www/static/rtsoft/analysis/results/execution_grid.js:51
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1188
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1206
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1646
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:368
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:433
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:440
+msgid "Measurement"
+msgstr "Замер"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1188
+msgid "Zff"
+msgstr "Zф-ф"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1191
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:436
+msgid "Zcalc"
+msgstr "Zрасч"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1209
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:443
+msgid "3I0calc"
+msgstr "3I0расч"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1225
+msgid "SensitivityArea"
+msgstr "Об. чувствительности"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1225
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1581
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1640
+msgid "Ksens"
+msgstr "Kч"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:221
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1286
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1581
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1658
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:88
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:344
+msgid "ShcType"
+msgstr "Тип КЗ"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1286
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1581
+msgid "Ztrans"
+msgstr "Zпер"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1373
+#: ../www/static/rtsoft/relaySettingsView_ResultsTree.js:163
+msgid "Kch"
+msgstr "Кч"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1373
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:82
+msgid "PhaseOff"
+msgstr "Откл.фазы"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1632
+msgid "RelayComplectInView"
+msgstr "Рассматриваемый комплект РЗ"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1635
+msgid "Condition"
+msgstr "Условие"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1643
+msgid "Ksens_zr"
+msgstr "Кчзр"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1652
+msgid "ProtectionsOfPrevBranches"
+msgstr "Защиты предыдущих ветвей"
+
+#: ../www/static/rtsoft/analysis/results/execution_grid.js:51
+#: ../www/static/rtsoft/analysis/rza.js:263
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1652
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:523
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:306
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:350
+#: ../www/static/rtsoft/relaySettingsView_TagsBlock.js:78
+msgid "ProtectedObject"
+msgstr "Защищаемый объект"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1655
+msgid "CoveragePercent"
+msgstr "Охват %"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1661
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:523
+msgid "RelayComplect"
+msgstr "Комплект РЗ"
+
+#: ../www/static/rtsoft/analysis/results/execution_grid.js:48
+#: ../www/static/rtsoft/analysis/rza.js:258
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1664
+#: ../www/static/rtsoft/relaySettingsView_ResultsTree.js:166
+#: ../www/static/rtsoft/relaySettingsView_ResultsTree.js:1082
+#: ../www/static/rtsoft/relaySettingsView_ResultsTree.js:1150
+#: ../www/static/rtsoft/relaySettingsView_ResultsTree.js:1192
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:102
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:243
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:296
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:347
+msgid "Stage"
+msgstr "Ступень"
+
+#: ../www/static/rtsoft/analysis/rza.js:259
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1667
+#: ../www/static/rtsoft/relaySettingsView_ResultsTree.js:1082
+#: ../www/static/rtsoft/relaySettingsView_ResultsTree.js:1094
+#: ../www/static/rtsoft/relaySettingsView_ResultsTree.js:1117
+#: ../www/static/rtsoft/relaySettingsView_ResultsTree.js:1199
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:243
+msgid "Setpoint"
+msgstr "Уставка"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1670
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:353
+msgid "tst"
+msgstr "tст"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1715
+msgid "ExcludeProtectedObject"
+msgstr "Исключить защищаемый объект"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1718
+msgid "ExcludeRelayComplect"
+msgstr "Исключить комплект РЗ"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1820
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:1832
+msgid "ThereWasErrorWhileTableDataRequest"
+msgstr "Возникла ошибка при запросе данных для таблицы!"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:2098
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:2130
+msgid "ItIsImpossibleToSaveExceptions"
+msgstr "Невозможно сохранить исключения!"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:2168
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:2178
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:2183
+msgid "Enable"
+msgstr "Включить"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:2168
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:2178
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:2183
+msgid "Disable"
+msgstr "Исключить"
+
+#: ../www/static/rtsoft/analysis/results/view.js:162
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:2334
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:559
+msgid "ExportToExcelSuccessful"
+msgstr "Экспорт в Excel успешен"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:2345
+#: ../www/static/rtsoft/relaySettingsView_ResultsGrids.js:2358
+msgid "ThereWasErrorWhileExportToExcel"
+msgstr "Возникла ошибка при экспорте в Excel!"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsTree.js:133
+#: ../www/static/rtsoft/relaySettingsView_ResultsTree.js:137
+msgid "OpenInTable"
+msgstr "Открыть в таблице"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsTree.js:159
+msgid "Account"
+msgstr "Учет"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsTree.js:160
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree.js:202
+msgid "Importance"
+msgstr "Важность"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsTree.js:164
+msgid "TemplateCode"
+msgstr "Код шаблона"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsTree.js:406
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:234
+msgid "RangeTable"
+msgstr "Таблица диапазонов"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsTree.js:423
+#: ../www/static/rtsoft/relaySettingsView_ResultsTree.js:426
+msgid "OpenSelectedConditionInTable"
+msgstr "Открыть выбранное условие в таблице"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsTree.js:484
+#: ../www/static/rtsoft/relaySettingsView_ResultsTree.js:495
+msgid "ThereWasErrorWhileTreeDataRequest"
+msgstr "Возникла ошибка при запросе данных для дерева!"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsTree.js:1082
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:30
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:243
+msgid "Value"
+msgstr "Значение"
+
+#: ../www/static/rtsoft/relaySettingsView_ResultsTree.js:1285
+#: ../www/static/rtsoft/relaySettingsView_ResultsTree.js:1296
+msgid "ThereWasErrorWhileSavingSetpoints"
+msgstr "Возникла ошибка при записи уставок"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsBlock.js:22
+msgid "StateModificatorIsNotSelected"
+msgstr "Модификатор режима не выбран"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsBlock.js:25
+#: ../www/static/rtsoft/relaySettingsView_SettingsBlock.js:216
+msgid "st"
+msgstr "ст."
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsBlock.js:25
+#: ../www/static/rtsoft/relaySettingsView_SettingsBlock.js:204
+#: ../www/static/rtsoft/relaySettingsView_SettingsBlock.js:245
+#: ../www/static/rtsoft/relaySettingsView_SettingsBlock.js:300
+msgid "No"
+msgstr "Нет"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsBlock.js:34
+msgid "BaseSettings"
+msgstr "Основные настройки"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsBlock.js:37
+#: ../www/static/rtsoft/relaySettingsView_SettingsBlock.js:204
+#: ../www/static/rtsoft/relaySettingsView_SettingsBlock.js:246
+#: ../www/static/rtsoft/relaySettingsView_SettingsBlock.js:300
+msgid "AU"
+msgstr "АУ"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsBlock.js:37
+#: ../www/static/rtsoft/relaySettingsView_SettingsBlock.js:204
+#: ../www/static/rtsoft/relaySettingsView_SettingsBlock.js:247
+#: ../www/static/rtsoft/relaySettingsView_SettingsBlock.js:300
+msgid "OU"
+msgstr "ОУ"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsBlock.js:37
+#: ../www/static/rtsoft/relaySettingsView_SettingsBlock.js:204
+#: ../www/static/rtsoft/relaySettingsView_SettingsBlock.js:248
+#: ../www/static/rtsoft/relaySettingsView_SettingsBlock.js:300
+msgid "TU"
+msgstr "ТУ"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsBlock.js:48
+msgid "NGSubstates"
+msgstr "НГ Подрежимы"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsBlock.js:52
+msgid "InitialMode"
+msgstr "Начальный режим"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsBlock.js:60
+msgid "ErrorFactors"
+msgstr "Коэффициенты погрешности"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsBlock.js:76
+msgid "TTError"
+msgstr "Погрешность ТТ"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsBlock.js:76
+msgid "PossibleValuesAre0Or10"
+msgstr "Допустимые значения 0 или 10"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsBlock.js:182
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:250
+msgid "LoadingTypeSubstates"
+msgstr "Нагрузочные подрежимы"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsBlock.js:212
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree.js:509
+msgid "stage"
+msgstr "ступень"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsBlock.js:282
+msgid "modifier"
+msgid_plural "modifiers"
+msgstr[0] "модификатор"
+msgstr[1] "модификатора"
+msgstr[2] "модификаторов"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsBlock.js:282
+msgid "is_selected"
+msgid_plural "are_selected"
+msgstr[0] "выбран"
+msgstr[1] "выбрано"
+msgstr[2] "выбрано"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsBlock.js:297
+msgid "stag_"
+msgstr "ступ."
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsBlock.js:313
+msgid "Acceleration"
+msgstr "Ускорение"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree.js:6
+msgid "Requir"
+msgstr "Обяз"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree.js:14
+msgid "Altern"
+msgstr "Альт"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree.js:22
+msgid "Addit"
+msgstr "Доп"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree.js:35
+msgid "SensitivityEnsuring"
+msgstr "Обеспечение чувствительности"
+
+#: ../www/static/rtsoft/analysis/rza.js:22
+#: ../www/static/rtsoft/analysis/rza.js:359
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree.js:50
+msgid "DZFZ"
+msgstr "ДЗ Ф-З"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree.js:166
+msgid "EnableConditions"
+msgstr "Включить условия"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree.js:170
+msgid "DisableConditions"
+msgstr "Исключить условия"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree.js:197
+msgid "SelectionOfSetpointsCondition"
+msgstr "Условия выбора уставок"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree.js:413
+msgid "ThereAreNoProtectionDevicesToCoordination"
+msgstr "Нет РЗА для соглас."
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree.js:413
+msgid "ThereAreNoShortPlaces"
+msgstr "Нет мест КЗ"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree.js:426
+msgid "NG"
+msgstr "НГ"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree.js:439
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree.js:455
+msgid "ThereWasErrorWhileTreeTemplatesRequest"
+msgstr "Возникла ошибка при запросе шаблонов для дерева!"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree.js:691
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree.js:705
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:315
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:329
+msgid "ThereWasErrorWhileSubstatesRequest"
+msgstr "Возникла ошибка при запросе подрежимов для дерева!"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:26
+msgid "Direction"
+msgstr "Направление"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:91
+msgid "RXtrans"
+msgstr "RX пер"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:99
+msgid "ProtectionDeviceType"
+msgstr "Тип РЗ"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:110
+msgid "DocumentationLink"
+msgstr "Ссылка НТД"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:126
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:138
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:474
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:489
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:639
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:654
+msgid "ThereWasErrorWhileTreeShcPlacesRequest"
+msgstr "Возникла ошибка при запросе мест КЗ для дерева!"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:230
+msgid "CoordinationWith"
+msgstr "Согласуем с"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:285
+msgid "CoordinatingWith"
+msgstr "Согласуем с"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:381
+msgid "ThereWasNoRecords"
+msgstr "Запиcей не найдено"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:546
+msgid "DisableLocally"
+msgstr "Исключить локально"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:549
+msgid "DisableGlobally"
+msgstr "Исключить глобально"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:553
+msgid "EnableLocally"
+msgstr "Включить локально"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:556
+msgid "EnableGlobally"
+msgstr "Включить глобально"
+
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:683
+#: ../www/static/rtsoft/relaySettingsView_SettingsTree_InformationWindow.js:696
+msgid "ThereWasErrorWhileExcludingRelayComplect"
+msgstr "Возникла ошибка при исключении комплекта РЗ!"
+
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:204
+msgid "AddObjectFromES"
+msgstr "Добавить объект из ЭС"
+
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:305
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:319
+msgid "SubstatesTreeRequestError"
+msgstr "Возникла ошибка при запросе подрежимов для дерева!"
+
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:424
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:437
+msgid "SubstatesTreeSaveError"
+msgstr "Возникла ошибка при сохранении дерева подрежимов!"
+
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:460
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:473
+msgid "SubstatesCreationCancelError"
+msgstr "Возникла ошибка при отмене создания подрежимов!"
+
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:490
+msgid "SubstatesViewing"
+msgstr "Просмотр подрежимов"
+
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:550
+msgid "MoveObjectsToCreateNewSubstate"
+msgstr "Перенесите объекты для создания нового подрежима"
+
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:961
+msgid "RelaySettingsView_SubstatesGridHeader"
+msgstr "Название,Тип,U ном,Состояние, , , "
+
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:991
+msgid "NoOneObjectSelected"
+msgstr "Не выбрано ни одного объекта"
+
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1011
+msgid "OneSideShutdown"
+msgstr "Одностороннее отключение"
+
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1016
+msgid "ToRemoveSelectedObjectsOrSubstates"
+msgstr "Удалить выделенные объекты / подрежимы"
+
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1326
+msgid "NameSpacesAndLengthRule1"
+msgstr "Имя не может состоять из пробелов"
+
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1326
+msgid "NameSpacesAndLengthRule2"
+msgstr "быть длиннее 100 символов или быть пустым"
+
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1360
+msgid "SubstatesCases"
+msgstr "Случаи повреждения"
+
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1362
+msgid "CreateTopologyBasedSubstates"
+msgstr "Создать подрежимы на основе топологии"
+
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1366
+msgid "DeleteObjectsOrSubstates"
+msgstr "Удалить объекты / подрежимы"
+
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1458
+msgid "ToOffAndGround"
+msgstr "Откл. и заземлить"
+
+#: ../www/static/rtsoft/analysis/base_card.js:24
+#: ../www/static/rtsoft/analysis/base_card.js:41
+#: ../www/static/rtsoft/analysis/grid.js:24
+#: ../www/static/rtsoft/analysis/grid.js:44
+#: ../www/static/rtsoft/analysis/view.js:263
+#: ../www/static/rtsoft/analysis/view.js:379
+#: ../www/static/rtsoft/analysis/window.js:138
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1475
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1494
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1507
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1543
+msgid "Confirmation"
+msgstr "Подтверждение"
+
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1478
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1496
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1509
+msgid "CreateSubstateFromAllSelectedObjects"
+msgstr "Создать подрежим из всех выбранных объектов?"
+
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1545
+msgid "AllChangesWillBeCancelled_AreYouSure"
+msgstr "Все изменения будут отменены. Вы уверены?"
+
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1583
+msgid "AddingObject"
+msgstr "Добавление объекта"
+
+#: ../www/static/rtsoft/relaySettingsView_SubStates.js:1609
+msgid "ManualAddObjectGrid_Header"
+msgstr "ПС / Дисп. ветвь,Объект,Тип,U ном,Полное имя"
+
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:66
+msgid "EXCLUDED_NECCES_CONDITION"
+msgstr "ИСКЛ.ОБЯЗ.УСЛОВИЕ"
+
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:70
+msgid "NECCES_CONDITION_NOT_CALCULATED"
+msgstr "ОБЯЗ.УСЛ.НЕ РАССЧИТАНО"
+
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:74
+msgid "ALT_CONDITIONS"
+msgstr "АЛЬТ.УСЛОВИЯ"
+
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:78
+msgid "DETUNED"
+msgstr "ОТСТРОЕНА"
+
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:82
+msgid "NOT_DETUNED"
+msgstr "НЕ ОТСТРОЕНА"
+
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:86
+msgid "COORDINATED"
+msgstr "СОГЛАСОВАНА"
+
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:90
+msgid "NOT_COORDINATED"
+msgstr "НЕ СОГЛАСОВАНА"
+
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:94
+msgid "SENS"
+msgstr "ЧУВСТВ."
+
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:98
+msgid "NOT_SENS"
+msgstr "НЕ ЧУВСТВ."
+
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:102
+msgid "EXCLUSIONS"
+msgstr "ИСКЛЮЧЕНИЯ"
+
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:106
+msgid "EXCL_CONDITIONS"
+msgstr "ИСКЛ.УСЛОВИЯ"
+
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:110
+msgid "NOT_CALC_SUBSTATES"
+msgstr "НЕРАСЧ.ПОДРЕЖИМЫ"
+
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:114
+msgid "K_NE_NORM"
+msgstr "К≠НОРМ"
+
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:160
+msgid "ExportToExcel"
+msgstr "Экспорт в Excel"
+
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:164
+msgid "SetpointsForm"
+msgstr "Бланк уставок"
+
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:276
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:365
+msgid "CalculatedSubstate"
+msgstr "Расчетный подрежим"
+
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:286
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:341
+msgid "CoordinatedWith"
+msgstr "Согласовано с"
+
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:335
+msgid "St"
+msgstr "Ст."
+
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:338
+msgid "ConditionOfSetpointSelection"
+msgstr "Условие выбора уставок"
+
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:359
+msgid "K"
+msgstr "К"
+
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:362
+msgid "KsensToKsenszr"
+msgstr "Кч / Кчзр"
+
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:371
+msgid "CalculatedValue"
+msgstr "Расчетное значение"
+
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:433
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:436
+msgid "Ohm"
+msgstr "Ом"
+
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:515
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:527
+msgid "ThereWasErrorWhilePivotTableBuilding"
+msgstr "Возникла ошибка при формировании сводной таблицы"
+
+#: ../www/static/rtsoft/analysis/results/view.js:172
+#: ../www/static/rtsoft/analysis/results/view.js:184
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:563
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:569
+#: ../www/static/rtsoft/relaySettingsView_Summary.js:578
+msgid "ExcelExportError"
+msgstr "Ошибка экспорта в Excel"
+
+#: ../www/static/rtsoft/relaySettingsView_TagsBlock.js:10
+msgid "Single"
+msgstr "Одиночная"
+
+#: ../www/static/rtsoft/relaySettingsView_TagsBlock.js:13
+msgid "V"
+msgstr "В"
+
+#: ../www/static/rtsoft/relaySettingsView_TagsBlock.js:13
+msgid "Tower"
+msgstr "Взаимоиндукция"
+
+#: ../www/static/rtsoft/relaySettingsView_TagsBlock.js:16
+#: ../www/static/rtsoft/relaySettingsView_TagsBlock.js:38
+#: ../www/static/rtsoft/relaySettingsView_TagsBlock.js:45
+msgid "Parallel"
+msgstr "Параллельные"
+
+#: ../www/static/rtsoft/relaySettingsView_TagsBlock.js:19
+msgid "B"
+msgstr "Б"
+
+#: ../www/static/rtsoft/relaySettingsView_TagsBlock.js:19
+msgid "WithNoTaps"
+msgstr "Без отпаек"
+
+#: ../www/static/rtsoft/relaySettingsView_TagsBlock.js:22
+msgid "Z"
+msgstr "З"
+
+#: ../www/static/rtsoft/relaySettingsView_TagsBlock.js:22
+msgid "EntranceExit"
+msgstr "Заход-выход"
+
+#: ../www/static/rtsoft/relaySettingsView_TagsBlock.js:25
+msgid "O"
+msgstr "О"
+
+#: ../www/static/rtsoft/relaySettingsView_TagsBlock.js:25
+msgid "Tabs"
+msgstr "Отпайки"
+
+#: ../www/static/rtsoft/relaySettingsView_TagsBlock.js:28
+msgid "OneSideFeed"
+msgstr "Одност. питание"
+
+#: ../www/static/rtsoft/relaySettingsView_TagsBlock.js:31
+msgid "ThowSidesFeed"
+msgstr "Двуст. питание"
+
+#: ../www/static/rtsoft/relaySettingsView_TagsBlock.js:34
+msgid "T"
+msgstr "Т"
+
+#: ../www/static/rtsoft/relaySettingsView_TagsBlock.js:34
+msgid "Tupik"
+msgstr "Тупиковая"
+
+#: ../www/static/rtsoft/relaySettingsView_TagsBlock.js:41
+#: ../www/static/rtsoft/relaySettingsView_TagsBlock.js:51
+msgid "Gdown"
+msgstr "Г↓"
+
+#: ../www/static/rtsoft/relaySettingsView_TagsBlock.js:48
+msgid "Gup"
+msgstr "Г↑"
+
+#: ../www/static/rtsoft/relaySettingsView_TagsBlock.js:82
+msgid "FirstZone"
+msgstr "Первый пояс"
+
+#: ../www/static/rtsoft/relaySettingsView_TagsBlock.js:86
+msgid "SecondZone"
+msgstr "Второй пояс"
+
+#: ../www/static/rtsoft/relaySettingsView_TagsBlock.js:135
+msgid "ObjectsTree"
+msgstr "Дерево объектов"
+
+#: ../www/static/rtsoft/utility.js:20 ../www/static/rtsoft/utility.js:312
+msgid "Name"
+msgstr "Имя"
+
+#: ../www/static/rtsoft/utility.js:20 ../www/static/rtsoft/utility.js:312
+msgid "OnOff"
+msgstr "Вкл/Выкл"
+
+#: ../www/static/rtsoft/utility.js:31
+msgid "NoObjectsSelected_AddAnObject"
+msgstr "Не выбрано ни одного объекта. Добавьте объект"
+
+#: ../www/static/rtsoft/utility.js:947
+msgid "ExcelExportParams"
+msgstr "Параметры экспорта в Excel"
+
+#: ../www/static/rtsoft/utility.js:957
+msgid "Filename"
+msgstr "Имя файла"
+
+#: ../www/static/rtsoft/analysis/results/results_grid.js:238
+#: ../www/static/rtsoft/analysis/view.js:113
+#: ../www/static/rtsoft/analysis/view.js:287
+#: ../www/static/rtsoft/utility.js:962
+msgid "Save"
+msgstr "Сохранить"
+
+#: ../www/static/rtsoft/analysis/base_card.js:26
+#: ../www/static/rtsoft/analysis/grid.js:30
+msgid "DeleteCardQuestion"
+msgstr "Удалить карточку?"
+
+#: ../www/static/rtsoft/analysis/base_card.js:47
+#: ../www/static/rtsoft/analysis/grid.js:50
+#: ../www/static/rtsoft/analysis/view.js:265
+msgid "ResetCalculationResultsQuestion"
+msgstr "Сбросить результаты расчетов?"
+
+#: ../www/static/rtsoft/analysis/base_card.js:54
+#: ../www/static/rtsoft/analysis/grid.js:59
+#: ../www/static/rtsoft/analysis/grid.js:389
+msgid "New"
+msgstr "Новая"
+
+#: ../www/static/rtsoft/analysis/base_card.js:58
+#: ../www/static/rtsoft/analysis/grid.js:65
+msgid "Calculated"
+msgstr "Рассчитано"
+
+#: ../www/static/rtsoft/analysis/container.js:61
+msgid "ChangesDeleted"
+msgstr "Изменения удалены!"
+
+#: ../www/static/rtsoft/analysis/grid.js:163
+#: ../www/static/rtsoft/analysis/grid.js:170
+msgid "RenameCardError"
+msgstr "Ошибка изменения имени карточки!"
+
+#: ../www/static/rtsoft/analysis/grid.js:189
+#: ../www/static/rtsoft/analysis/grid.js:196
+msgid "CopyCardError"
+msgstr "Ошибка копирования карточки!"
+
+#: ../www/static/rtsoft/analysis/grid.js:220
+#: ../www/static/rtsoft/analysis/grid.js:227
+msgid "DeleteCardError"
+msgstr "Ошибка удаления карточки!"
+
+#: ../www/static/rtsoft/analysis/grid.js:309
+#: ../www/static/rtsoft/analysis/grid.js:316
+msgid "LoadingCardError"
+msgstr "Ошибка загрузки карточки!"
+
+#: ../www/static/rtsoft/analysis/grid.js:350
+msgid "AdditionalRZA"
+msgstr "Доп. РЗА"
+
+#: ../www/static/rtsoft/analysis/grid.js:350
+msgid "CountRZA"
+msgstr "Кол-во РЗА"
+
+#: ../www/static/rtsoft/analysis/grid.js:381
+msgid "RzaFromZones"
+msgstr "РЗА по поясам"
+
+#: ../www/static/rtsoft/analysis/grid.js:382
+msgid "stages"
+msgstr "ступени"
+
+#: ../www/static/rtsoft/analysis/grid.js:383
+msgid "fBlocks"
+msgstr "ф. блоки"
+
+#: ../www/static/rtsoft/analysis/grid.js:384
+msgid "ShcTypes"
+msgstr "Типы КЗ"
+
+#: ../www/static/rtsoft/analysis/grid.js:385
+#: ../www/static/rtsoft/analysis/rza.js:139
+#: ../www/static/rtsoft/analysis/rza.js:167
+msgid "RZATypes"
+msgstr "Типы РЗА"
+
+#: ../www/static/rtsoft/analysis/grid.js:386
+msgid "NumbOfSubstates"
+msgstr "Кол-во подрежимов"
+
+#: ../www/static/rtsoft/analysis/grid.js:387
+msgid "variationsCount"
+msgstr "режимов"
+
+#: ../www/static/rtsoft/analysis/grid.js:388
+msgid "CardName"
+msgstr "Название"
+
+#: ../www/static/rtsoft/analysis/grid.js:491
+msgid "AlongLep"
+msgstr "Вдоль ЛЭП"
+
+#: ../www/static/rtsoft/analysis/grid.js:497
+msgid "BUSBAR"
+msgstr "ШИНА"
+
+#: ../www/static/rtsoft/analysis/grid.js:500
+msgid "GROUP"
+msgstr "ГРУППА"
+
+#: ../www/static/rtsoft/analysis/grid.js:503
+msgid "TERMINAL"
+msgstr "УЗЕЛ"
+
+#: ../www/static/rtsoft/analysis/rza.js:24
+msgid "MTZ_TO"
+msgstr "МТЗ,ТО"
+
+#: ../www/static/rtsoft/analysis/rza.js:25
+#: ../www/static/rtsoft/analysis/rza.js:363
+msgid "TZOP"
+msgstr "ТЗОП"
+
+#: ../www/static/rtsoft/analysis/rza.js:26
+#: ../www/static/rtsoft/analysis/rza.js:364
+msgid "DIFF"
+msgstr "Дифф"
+
+#: ../www/static/rtsoft/analysis/rza.js:117
+#: ../www/static/rtsoft/analysis/rza.js:1072
+msgid "WholeNetwork"
+msgstr "Вся сеть"
+
+#: ../www/static/rtsoft/analysis/results/execution_grid.js:48
+#: ../www/static/rtsoft/analysis/results/unenergized_grid.js:56
+#: ../www/static/rtsoft/analysis/rza.js:142
+#: ../www/static/rtsoft/analysis/rza.js:261
+msgid "Zone"
+msgstr "Пояс"
+
+#: ../www/static/rtsoft/analysis/rza.js:145
+#: ../www/static/rtsoft/analysis/rza.js:175
+msgid "Stages"
+msgstr "Ступени"
+
+#: ../www/static/rtsoft/analysis/rza.js:159
+msgid "ApplyFilter"
+msgstr "Применить фильтр"
+
+#: ../www/static/rtsoft/analysis/rza.js:164
+msgid "RZAFromShcPlace"
+msgstr "Учет РЗА от места КЗ"
+
+#: ../www/static/rtsoft/analysis/rza.js:171
+msgid "Zones"
+msgstr "Пояса"
+
+#: ../www/static/rtsoft/analysis/rza.js:217
+#: ../www/static/rtsoft/analysis/rza.js:854
+msgid "RZA"
+msgstr "РЗА"
+
+#: ../www/static/rtsoft/analysis/rza.js:221
+#: ../www/static/rtsoft/analysis/rza.js:857
+msgid "FBlocks"
+msgstr "Ф.Блоки"
+
+#: ../www/static/rtsoft/analysis/rza.js:227
+#: ../www/static/rtsoft/analysis/rza.js:509
+msgid "AddRZA"
+msgstr "Добавить данные"
+
+#: ../www/static/rtsoft/analysis/rza.js:230
+msgid "DeleteSelected"
+msgstr "Удалить выделенные"
+
+#: ../www/static/rtsoft/analysis/rza.js:233
+msgid "DelAllRecords"
+msgstr "Удалить все записи"
+
+#: ../www/static/rtsoft/analysis/rza.js:233
+msgid "withoutTableFilters"
+msgstr "без учета табличных фильтров"
+
+#: ../www/static/rtsoft/analysis/rza.js:256
+msgid "RZA_FuncBlock"
+msgstr "РЗА / Ф.Блок"
+
+#: ../www/static/rtsoft/analysis/rza.js:276
+msgid "EnableRZA"
+msgstr "Ввести в работу"
+
+#: ../www/static/rtsoft/analysis/rza.js:280
+msgid "ShowRZAInPFManager"
+msgstr "Показать РЗА в менеджере данных"
+
+#: ../www/static/rtsoft/analysis/rza.js:283
+msgid "ShowRZAOnGraphics"
+msgstr "Показать РЗА на схеме сети"
+
+#: ../www/static/rtsoft/analysis/rza.js:286
+msgid "OpenRZABlank"
+msgstr "Открыть бланк уставок"
+
+#: ../www/static/rtsoft/analysis/rza.js:357
+msgid "DZMF"
+msgstr "ДЗ МФ"
+
+#: ../www/static/rtsoft/analysis/rza.js:361
+msgid "TO"
+msgstr "ТО"
+
+#: ../www/static/rtsoft/analysis/rza.js:362
+msgid "MTZ"
+msgstr "МТЗ"
+
+#: ../www/static/rtsoft/analysis/rza.js:369
+msgid "PO"
+msgstr "ПО"
+
+#: ../www/static/rtsoft/analysis/rza.js:494
+msgid "MaxWindowsCount"
+msgstr "Максимально разрешенное количество окон: 1!"
+
+#: ../www/static/rtsoft/analysis/rza.js:549
+msgid "RZASearchByName"
+msgstr "Поиск РЗА по имени"
+
+#: ../www/static/rtsoft/analysis/rza.js:552
+msgid "RZASearch"
+msgstr "Поиск"
+
+#: ../www/static/rtsoft/analysis/rza.js:563
+msgid "RZAInstr1"
+msgstr "Введите имя\\номер искомого устройства или нажмите"
+
+#: ../www/static/rtsoft/analysis/rza.js:563
+msgid "RZAInstr2"
+msgstr "с пустым запросом, чтобы отобразить дерево всех устройств РЗА"
+
+#: ../www/static/rtsoft/analysis/rza.js:623
+#: ../www/static/rtsoft/analysis/rza.js:628
+#: ../www/static/rtsoft/analysis/rza.js:703
+#: ../www/static/rtsoft/analysis/rza.js:708
+msgid "RZAAddingError"
+msgstr "Ошибка добавления РЗА!"
+
+#: ../www/static/rtsoft/analysis/rza.js:673
+msgid "RZASettingsError"
+msgstr "Ошибка"
+
+#: ../www/static/rtsoft/analysis/rza.js:677
+#: ../www/static/rtsoft/analysis/rza.js:1120
+msgid "RZASettingsIsNotFilled"
+msgstr "Не все настройки заполнены!"
+
+#: ../www/static/rtsoft/analysis/rza.js:698
+msgid "RZANotFoundByRequest"
+msgstr "РЗА по заданным настройкам не найдены!"
+
+#: ../www/static/rtsoft/analysis/rza.js:761
+#: ../www/static/rtsoft/analysis/rza.js:767
+msgid "RZADeletingError"
+msgstr "Ошибка удаления РЗА!"
+
+#: ../www/static/rtsoft/analysis/rza.js:834
+#: ../www/static/rtsoft/analysis/rza.js:840
+msgid "RZASwitchOnBlockError"
+msgstr "Ошибка включения блоков РЗА!"
+
+#: ../www/static/rtsoft/analysis/rza.js:884
+#: ../www/static/rtsoft/analysis/rza.js:889
+msgid "RZAValidateError"
+msgstr "Ошибка валидации остава РЗА!"
+
+#: ../www/static/rtsoft/analysis/rza.js:928
+#: ../www/static/rtsoft/analysis/rza.js:933
+msgid "RZAContentSaveError"
+msgstr "Ошибка сохранения состава РЗА!"
+
+#: ../www/static/rtsoft/analysis/rza.js:946
+msgid "RZADataInputError"
+msgstr "Не все требуемые данные введены!"
+
+#: ../www/static/rtsoft/analysis/rza.js:976
+#: ../www/static/rtsoft/analysis/rza.js:981
+msgid "RZACompareError"
+msgstr "Ошибка сравнения состава РЗА!"
+
+#: ../www/static/rtsoft/analysis/rza.js:1003
+#: ../www/static/rtsoft/analysis/rza.js:1008
+msgid "RZALoadContentError"
+msgstr "Ошибка восстановления состава РЗА!"
+
+#: ../www/static/rtsoft/analysis/rza.js:1036
+#: ../www/static/rtsoft/analysis/rza.js:1041
+msgid "RZALoadTabError"
+msgstr "Ошибка загрузки вкладки РЗА!"
+
+#: ../www/static/rtsoft/analysis/rza.js:1062
+msgid "AllStages"
+msgstr "Все ступени"
+
+#: ../www/static/rtsoft/analysis/rza.js:1104
+msgid "AddToCalculate"
+msgstr "Добавить в расчет"
+
+#: ../www/static/rtsoft/analysis/rza.js:1139
+#: ../www/static/rtsoft/analysis/rza.js:1145
+#: ../www/static/rtsoft/analysis/rza.js:1167
+#: ../www/static/rtsoft/analysis/rza.js:1173
+msgid "RZAFilterApplyError"
+msgstr "Ошибка применения фильтров!"
+
+#: ../www/static/rtsoft/analysis/rza.js:1214
+msgid "RZANotChosen"
+msgstr "Не выбраны"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:107
+#: ../www/static/rtsoft/analysis/shc_place.js:942
+msgid "shcPlace"
+msgstr "Место КЗ"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:110
+#: ../www/static/rtsoft/analysis/shc_place.js:553
+msgid "SelectShcPlace"
+msgstr "Выберите место КЗ"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:117
+#: ../www/static/rtsoft/analysis/shc_place.js:1023
+msgid "PointOnLEP"
+msgstr "Точка на ЛЭП"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:120
+#: ../www/static/rtsoft/analysis/shc_place.js:1026
+msgid "AlongLepStep"
+msgstr "Вдоль ЛЭП, шаг"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:136
+#: ../www/static/rtsoft/analysis/shc_place.js:923
+msgid "km"
+msgstr "км"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:150
+msgid "From"
+msgstr "От"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:154
+#: ../www/static/rtsoft/analysis/shc_place.js:421
+msgid "Side1"
+msgstr "Сторона 1"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:157
+#: ../www/static/rtsoft/analysis/shc_place.js:424
+msgid "Side2"
+msgstr "Сторона 2"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:187
+msgid "AddShcType"
+msgstr "Добавить тип КЗ"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:190
+msgid "DeleteShcType"
+msgstr "Удалить тип КЗ"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:200
+msgid "DeleteRow"
+msgstr "Удалить строку"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:203
+msgid "AddRow"
+msgstr "Добавить строку"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:235
+#: ../www/static/rtsoft/analysis/shc_place.js:937
+msgid "RzaGridInstruction1"
+msgstr "Добавьте одно или несколько типов КЗ в расчет, нажав"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:236
+msgid "RzaGridInstruction2"
+msgstr "Далее выберите тип КЗ из выпадающего меню"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:236
+msgid "RzaGridInstruction3"
+msgstr "задайте переходные сопротивления"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:317
+#: ../www/static/rtsoft/analysis/shc_place.js:1129
+msgid "Substation_DispatchName"
+msgstr "ПС/Дисп.имя"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:317
+#: ../www/static/rtsoft/analysis/shc_place.js:1129
+msgid "object"
+msgstr "Объект"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:382
+msgid "Busbar"
+msgstr "Шина"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:385
+msgid "Terminal"
+msgstr "Узел"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:464
+msgid "Length"
+msgstr "Длина"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:468
+msgid "DistanceKm"
+msgstr "Дистанция, км"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:600
+#: ../www/static/rtsoft/analysis/shc_place.js:607
+msgid "ErrorValidatingShcLocations"
+msgstr "Ошибка валидации мест КЗ!"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:652
+#: ../www/static/rtsoft/analysis/shc_place.js:658
+msgid "ShcPlaceError"
+msgstr "Ошибка мест КЗ!"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:671
+msgid "NotAllRequiredAttributesAreEntered"
+msgstr "Не все требуемые данные введены"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:697
+#: ../www/static/rtsoft/analysis/shc_place.js:704
+msgid "loadingShcPlaceError"
+msgstr "Ошибка загрузки места КЗ"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:748
+#: ../www/static/rtsoft/analysis/shc_place.js:755
+msgid "ErrorComparingShcLocations"
+msgstr "Ошибка сравнения мест КЗ"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:776
+#: ../www/static/rtsoft/analysis/shc_place.js:783
+#: ../www/static/rtsoft/analysis/shc_place.js:877
+msgid "ErrorRestoringShcLocations"
+msgstr "Ошибка восстановления мест КЗ!"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:880
+msgid "AddShcLocationsFromGivenSteps"
+msgstr "Добавить места КЗ из наборов"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:886
+#: ../www/static/rtsoft/analysis/shc_place.js:900
+msgid "Duplicate"
+msgstr "Дублировать"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:923
+msgid "ShcObject"
+msgstr "Объект КЗ"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:923
+msgid "LengthKm"
+msgstr "Длина (км)"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:1200
+msgid "shcPlaces"
+msgstr "Мест КЗ"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:1255
+msgid "SelectsSets"
+msgstr "Выберите набор(ы)"
+
+#: ../www/static/rtsoft/analysis/shc_place.js:1266
+msgid "NoSetsAreFound"
+msgstr "Наборы не найдены"
+
+#: ../www/static/rtsoft/analysis/substates.js:19
+msgid "Apply"
+msgstr "Применить"
+
+#: ../www/static/rtsoft/analysis/tab.js:47
+msgid "Next"
+msgstr "Далее"
+
+#: ../www/static/rtsoft/analysis/tab.js:63
+msgid "CardDetailsAreNotFilled"
+msgstr "Данные карты не заполнены"
+
+#: ../www/static/rtsoft/analysis/variation.js:76
+#: ../www/static/rtsoft/analysis/variation.js:83
+msgid "loadingVaraitionsError"
+msgstr "Ошибка загрузки режимов"
+
+#: ../www/static/rtsoft/analysis/variation.js:177
+#: ../www/static/rtsoft/analysis/variation.js:184
+msgid "ErrorComparingVariations"
+msgstr "Ошибка сравнения режимов"
+
+#: ../www/static/rtsoft/analysis/view.js:54
+#: ../www/static/rtsoft/analysis/view.js:85
+#: ../www/static/rtsoft/analysis/view.js:459
+#: ../www/static/rtsoft/analysis/view.js:477
+msgid "ErrorAnalysing"
+msgstr "Ошибка анализа"
+
+#: ../www/static/rtsoft/analysis/view.js:115
+msgid "Stop"
+msgstr "Остановить"
+
+#: ../www/static/rtsoft/analysis/view.js:117
+#: ../www/static/rtsoft/analysis/view.js:502
+msgid "Calculate"
+msgstr "Рассчитать"
+
+#: ../www/static/rtsoft/analysis/view.js:127
+msgid "ThereIsErrorWhileExport"
+msgstr "Возникла ошибка при экспорте"
+
+#: ../www/static/rtsoft/analysis/view.js:159
+msgid "ExportCompleted"
+msgstr "Экспорт завершен"
+
+#: ../www/static/rtsoft/analysis/view.js:171
+msgid "ExportCalculationResults"
+msgstr "Экспорт расчета"
+
+#: ../www/static/rtsoft/analysis/view.js:171
+msgid "ExportSettings"
+msgstr "Параметры экспорта"
+
+#: ../www/static/rtsoft/analysis/view.js:175
+msgid "ExportOfResultsAndCalculationCards"
+msgstr "Экспорт расчетов и карточек анализа РЗА"
+
+#: ../www/static/rtsoft/analysis/view.js:178
+msgid "ResetAllCalculations"
+msgstr "Произвести сброс всех расчетов"
+
+#: ../www/static/rtsoft/analysis/view.js:181
+msgid "CalculateRelayCards"
+msgstr "Произвести расчет карточек анализа РЗА"
+
+#: ../www/static/rtsoft/analysis/view.js:208
+msgid "ErrorCaclulatingRelayCards"
+msgstr "Ошибка расчета карточек РЗА"
+
+#: ../www/static/rtsoft/analysis/view.js:231
+msgid "AnalysysOfRelyaCompletedSuccessfully"
+msgstr "Расчет анализа РЗА успешно выполнен"
+
+#: ../www/static/rtsoft/analysis/view.js:248
+msgid "calculation_stopped"
+msgstr "Выполняется остановка расчета..."
+
+#: ../www/static/rtsoft/analysis/view.js:278
+msgid "SavingToDatabase"
+msgstr "Сохранение в базу данных"
+
+#: ../www/static/rtsoft/analysis/view.js:291
+msgid "SaveAsNew"
+msgstr "Сохранить новый"
+
+#: ../www/static/rtsoft/analysis/view.js:323
+#: ../www/static/rtsoft/analysis/view.js:341
+msgid "ErrorSavingCalculation"
+msgstr "Ошибка сохранения расчета"
+
+#: ../www/static/rtsoft/analysis/view.js:331
+msgid "Saved"
+msgstr "Сохранено"
+
+#: ../www/static/rtsoft/analysis/view.js:354
+msgid "AddNewCard"
+msgstr "Добавить карточку"
+
+#: ../www/static/rtsoft/analysis/view.js:358
+msgid "AddNewGroupCard"
+msgstr "Добавить групповую карточку"
+
+#: ../www/static/rtsoft/analysis/view.js:362
+msgid "DeleteAllCards"
+msgstr "Удалить все карточки"
+
+#: ../www/static/rtsoft/analysis/view.js:385
+msgid "DeleteAllCardsQuestion"
+msgstr "Удалить все карточки?"
+
+#: ../www/static/rtsoft/analysis/view.js:397
+msgid "InitialConditions"
+msgstr "Исходные данные"
+
+#: ../www/static/rtsoft/analysis/view.js:400
+msgid "CALCULATIONS"
+msgstr "РАСЧЕТЫ"
+
+#: ../www/static/rtsoft/analysis/view.js:506
+msgid "Completed"
+msgstr "Выполнено"
+
+#: ../www/static/rtsoft/analysis/window.js:26
+#: ../www/static/rtsoft/analysis/window.js:33
+msgid "Error_creating_card"
+msgstr "Ошибка создания карточки"
+
+#: ../www/static/rtsoft/analysis/window.js:81
+msgid "Step_1_Variation"
+msgstr "Шаг 1 (Режим)"
+
+#: ../www/static/rtsoft/analysis/window.js:82
+msgid "Step_2_SHC place"
+msgstr "Шаг 2 (Место КЗ)"
+
+#: ../www/static/rtsoft/analysis/window.js:83
+msgid "Step_3_RZA structure"
+msgstr "Шаг 3 (Состав РЗА)"
+
+#: ../www/static/rtsoft/analysis/window.js:84
+msgid "Step_4_Substates"
+msgstr "Шаг 4 (Подрежимы)"
+
+#: ../www/static/rtsoft/analysis/window.js:144
+msgid "AllChangesWillBeResedAreYouSureQuestion"
+msgstr "Все изменения будут сброшены. Вы уверены?"
+
+#: ../www/static/rtsoft/analysis/window.js:189
+msgid "FormingNewGroupCard"
+msgstr "Формирование групповой карточки расчета"
+
+#: ../www/static/rtsoft/analysis/window.js:193
+msgid "FormingNewCard"
+msgstr "Формирование карточки расчета"
+
+#: ../www/static/rtsoft/analysis/results/additional_info.js:6
+#: ../www/static/rtsoft/analysis/results/execution_grid.js:126
+msgid "NoInfoOnRelayOperation"
+msgstr "Данные о срабатываниях РЗА отсутствуют"
+
+#: ../www/static/rtsoft/analysis/results/execution_grid.js:51
+msgid "t_trip"
+msgstr "t сраб"
+
+#: ../www/static/rtsoft/analysis/results/execution_grid.js:51
+msgid "t_set"
+msgstr "t уст"
+
+#: ../www/static/rtsoft/analysis/results/execution_grid.js:51
+msgid "Setpoint_Measurement"
+msgstr "Уст. / Замер"
+
+#: ../www/static/rtsoft/analysis/results/execution_grid.js:54
+msgid "Kch_Measurement"
+msgstr "Кч / Замер"
+
+#: ../www/static/rtsoft/analysis/results/execution_grid.js:54
+msgid "Units"
+msgstr "Ед.Изм."
+
+#: ../www/static/rtsoft/analysis/results/execution_grid.js:54
+msgid "DirectionSP"
+msgstr "Направл.Уст."
+
+#: ../www/static/rtsoft/analysis/results/execution_grid.js:54
+msgid "ONM"
+msgstr "ОНМ"
+
+#: ../www/static/rtsoft/analysis/results/execution_grid.js:185
+msgid "ShowRXProtectionDiagram"
+msgstr "Показать характеристику срабатывания ДЗ (Protection)"
+
+#: ../www/static/rtsoft/analysis/results/execution_grid.js:188
+msgid "ShowRXPowerFactoryDiagram"
+msgstr "Показать характеристику срабатывания ДЗ (PowerFactory)"
+
+#: ../www/static/rtsoft/analysis/results/execution_grid.js:191
+msgid "SetpointsBlank"
+msgstr "Бланк уставок"
+
+#: ../www/static/rtsoft/analysis/results/results_grid.js:60
+msgid "CalculationsAreNotFound"
+msgstr "Расчетов не найдено"
+
+#: ../www/static/rtsoft/analysis/results/results_grid.js:98
+msgid "ResultsTree"
+msgstr "Дерево результатов"
+
+#: ../www/static/rtsoft/analysis/results/results_grid.js:101
+msgid "SaveDimensions"
+msgstr "Сохранить размеры"
+
+#: ../www/static/rtsoft/analysis/results/results_grid.js:104
+#: ../www/static/rtsoft/analysis/results/results_grid.js:192
+msgid "MeasurementsDisplayConfiguration"
+msgstr "Конфигурация отображения замеров"
+
+#: ../www/static/rtsoft/analysis/results/results_grid.js:166
+#: ../www/static/rtsoft/analysis/results/results_grid.js:274
+msgid "ChooseIsNotSave"
+msgstr "Не удалось сохранить выбор!"
+
+#: ../www/static/rtsoft/analysis/results/results_grid.js:195
+msgid "CTMeasurements"
+msgstr "Замеры ТТ"
+
+#: ../www/static/rtsoft/analysis/results/results_grid.js:198
+msgid "Iph_Ix"
+msgstr "Iф (Ia, Ib, Ic)"
+
+#: ../www/static/rtsoft/analysis/results/results_grid.js:201
+msgid "Iseq_I1_I2_3I0"
+msgstr "I посл (I1, I2, 3I0)"
+
+#: ../www/static/rtsoft/analysis/results/results_grid.js:204
+msgid "Ilin_Ixx"
+msgstr "Iлин (Iab, Ibc, Ica)"
+
+#: ../www/static/rtsoft/analysis/results/results_grid.js:208
+msgid "VTMeasurements"
+msgstr "Замеры ТН"
+
+#: ../www/static/rtsoft/analysis/results/results_grid.js:211
+msgid "Uphase"
+msgstr "Uф (Ua, Ub, Uc)"
+
+#: ../www/static/rtsoft/analysis/results/results_grid.js:214
+msgid "Usequence"
+msgstr "Uпосл (U1, U2, 3U0)"
+
+#: ../www/static/rtsoft/analysis/results/results_grid.js:217
+msgid "Ulinear"
+msgstr "Uлин (Uab, Ubc, Uca)"
+
+#: ../www/static/rtsoft/analysis/results/results_grid.js:221
+msgid "ZRelayPolarizationBlock"
+msgstr "Блок поляризации (Z реле)"
+
+#: ../www/static/rtsoft/analysis/results/results_grid.js:224
+msgid "Zphph"
+msgstr "Zф-ф (Zab,Zbc,Zca)"
+
+#: ../www/static/rtsoft/analysis/results/results_grid.js:227
+msgid "Zphgnd"
+msgstr "Zф-з (Za,Zb,Zc)"
+
+#: ../www/static/rtsoft/analysis/results/results_grid.js:230
+msgid "ZphphRX"
+msgstr "Zф-ф RX (Zab,Zbc,Zca)"
+
+#: ../www/static/rtsoft/analysis/results/results_grid.js:233
+msgid "ZphgndRX"
+msgstr "Zф-з RX (Za,Zb,Zc)"
+
+#: ../www/static/rtsoft/analysis/results/results_grid.js:386
+msgid "OpenExecutionGridInWindow1"
+msgstr "Открыть таблицу \"Пуски\" в окне 1"
+
+#: ../www/static/rtsoft/analysis/results/results_grid.js:391
+msgid "OpenExecutionGridInWindow2"
+msgstr "Открыть таблицу \"Пуски\" в окне 2"
+
+#: ../www/static/rtsoft/analysis/results/results_grid.js:396
+msgid "OpenUnenergizedGridInWindow1"
+msgstr "Открыть таблицу \"События\" в окне 1"
+
+#: ../www/static/rtsoft/analysis/results/results_grid.js:401
+msgid "OpenUnenergizedGridInWindow2"
+msgstr "Открыть таблицу \"События\" в окне 2"
+
+#: ../www/static/rtsoft/analysis/results/results_grid.js:576
+#: ../www/static/rtsoft/analysis/results/results_grid.js:581
+msgid "ShowIn"
+msgstr "Показать в"
+
+#: ../www/static/rtsoft/analysis/results/results_grid.js:586
+msgid "Close"
+msgstr "Закрыть"
+
+#: ../www/static/rtsoft/analysis/results/unenergized_grid.js:56
+msgid "StepAndTime"
+msgstr "Шаг и время"
+
+#: ../www/static/rtsoft/analysis/results/unenergized_grid.js:56
+msgid "State"
+msgstr "Сост."
+
+#: ../www/static/rtsoft/analysis/results/unenergized_grid.js:56
+msgid "StaSwitchAndType"
+msgstr "Выключатель/Тип обест.обор."
+
+#: ../www/static/rtsoft/analysis/results/unenergized_grid.js:56
+msgid "Equipment"
+msgstr "Оборудование"
+
+#: ../www/static/rtsoft/analysis/results/unenergized_grid.js:56
+msgid "RZASignal"
+msgstr "Сигнал от РЗА"
+
+#: ../www/static/rtsoft/analysis/results/view.js:104
+msgid "Executions"
+msgstr "Пуски"
+
+#: ../www/static/rtsoft/analysis/results/view.js:104
+msgid "ExecutionGrid"
+msgstr "Таблица срабатывания РЗА"
+
+#: ../www/static/rtsoft/analysis/results/view.js:107
+msgid "UnenergizedEvents"
+msgstr "События"
+
+#: ../www/static/rtsoft/analysis/results/view.js:107
+msgid "UnenergizedGrid"
+msgstr "Таблица отключенного оборудования"
+
+#: ../www/static/rtsoft/analysis/results/view.js:110
+msgid "Remarks"
+msgstr "Замечания"
+
+#: ../www/static/rtsoft/analysis/results/view.js:114
+msgid "ExportExcel"
+msgstr "Экспорт в Excel"
+
+#: ../www/static/rtsoft/analysis/results/view.js:146
+msgid "RZAAnalyse"
+msgstr "Анализ работы РЗА"
