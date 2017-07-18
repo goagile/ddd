@@ -10,7 +10,9 @@ class MsgPlural:
         self.__paths = [] if not paths else paths
 
     def __repr__(self):
-        return '{}: {}, {}, {}'.format(self.__class__.__name__, self.__id_plural, self.strs, self.__paths)
+        return '{}(id={}, id_plural={}, strs={}, paths={})'.format(
+            self.__class__.__name__, self.__id, self.__id_plural, self.strs, self.__paths
+        )
 
     def __eq__(self, other):
         if not isinstance(other, MsgPlural):

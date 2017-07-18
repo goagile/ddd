@@ -9,10 +9,9 @@ class MsgCollection:
         self.current_msg = None
 
     def __repr__(self):
-        result = 'MsgCollection: ['
+        result = 'MsgCollection:'
         for m in self.msgs:
-            result += repr(m)
-        result += ']'
+            result += '\n\t{}'.format(m)
         return result
 
     @property

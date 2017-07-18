@@ -9,7 +9,9 @@ class Msg:
         self.__paths = [] if not paths else paths
 
     def __repr__(self):
-        return '{}: {}, {}, {}'.format(self.__class__.__name__, self.__id, self.str, self.__paths)
+        return '{}(str={}, id={}, paths={})'.format(
+            self.__class__.__name__, self.__id, self.str, self.__paths
+        )
 
     def __eq__(self, other):
         if not isinstance(other, Msg):
