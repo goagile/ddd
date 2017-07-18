@@ -17,9 +17,24 @@ class PoWriter:
     def write_lines(self, msg_collection):
         result = []
         for msg in msg_collection:
-            result.append('\n')
-            for path in msg.paths:
-                result.append('#: {}'.format(path))
-            result.append('msgid "{}"'.format(msg.id))
-            result.append('msgstr "{}"'.format(msg.str))
+            if msg.is_plural:
+                self.write_msg_plural_to(result, msg)
+            else:
+                self.write_msg_to(result, msg)
         return result
+
+    def write_msg_plural_to(self, result, msg):
+        result.append('\n')
+        for path in msg.paths:
+            result.append('#: {}'.format(path))
+        result.append('msgid "{}"'.format(msg.id))
+        result.append('msgid_plural "{}"'.format(msg.id_plural))
+        for i, str in enumerate(msg.strs):
+            result.append('msgstr[{}] "{}"'.format(i, str))
+
+    def write_msg_to(self, result, msg):
+        result.append('\n')
+        for path in msg.paths:
+            result.append('#: {}'.format(path))
+        result.append('msgid "{}"'.format(msg.id))
+        result.append('msgstr "{}"'.format(msg.str))
