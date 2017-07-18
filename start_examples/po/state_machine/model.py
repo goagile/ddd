@@ -5,8 +5,8 @@ class PrintCommand:
     def __init__(self, name):
         self.name = name
 
-    def execute(self):
-        print(self.name)
+    def execute(self, line):
+        print(line)
 
 
 class Controller:
@@ -16,16 +16,17 @@ class Controller:
         self.command_channel = command_channel
         self.current_state = machine.start
 
-    def handle(self, event_name):
+    def handle(self, event_name, line):
         if self.current_state.has_transition(event_name):
-            self.transition_to(self.current_state.target_state(event_name))
+            target = self.current_state.target_state(event_name)
+            self.transition_to(target, line)
 
-    def transition_to(self, target):
+    def transition_to(self, target, line):
         self.current_state = target
         for command_name in self.current_state.command_names:
             command = self.command_channel.get(command_name)
             if command:
-                command.execute()
+                command.execute(line)
 
 
 class StateMachine:
