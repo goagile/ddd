@@ -7,6 +7,7 @@ class MsgCollection:
     def __init__(self):
         self.__msgs = []
         self.current_msg = None
+        self.header_lines = []
 
     def __repr__(self):
         result = 'MsgCollection:'

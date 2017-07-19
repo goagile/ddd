@@ -20,7 +20,22 @@ class PoParser:
         result = self.parse_lines(lines)
         return result
 
-    def parse_lines(self, lines):
+    def parse_lines(self, lines) -> MsgCollection:
+        self.collect_header_lines(lines)
+        self.handle(lines)
+        result = self.__controller.msg_collection
+        self.__ignore_empty_and_current(result)
+        return result
+
+    def collect_header_lines(self, lines):
+        header_lines = []
+        for line in lines:
+            if line == '\n':
+                break
+            header_lines.append(line)
+        self.__controller.msg_collection.header_lines = header_lines
+
+    def handle(self, lines):
         for line in lines:
             if line.startswith('\n') or line.startswith('\r'):
                 self.__controller.handle('new_line_finded', line)
@@ -48,11 +63,6 @@ class PoParser:
 
             else:
                 continue
-
-        result = self.__controller.msg_collection
-        self.__ignore_empty_and_current(result)
-
-        return result
 
     @classmethod
     def __ignore_empty_and_current(cls, result):
