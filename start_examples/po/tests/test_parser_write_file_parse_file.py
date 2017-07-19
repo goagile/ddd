@@ -1,16 +1,16 @@
 import unittest
 import os
 
-from nilsson.start_examples.po.msg_model.msg_collection import MsgCollection
-from nilsson.start_examples.po.parser.po_parser import PoParser
-from nilsson.start_examples.po.writer.po_writer import PoWriter
+from start_examples.po.msg_model.msg_collection import MsgCollection
+from start_examples.po.parser.po_parser import PoParser
+from start_examples.po.writer.po_writer import PoWriter
 
 
 PATH = os.path.join(
-    'nilsson',
-    'start_examples',
-    'po',
-    'tests',
+    # 'nilsson',
+    # 'start_examples',
+    # 'po',
+    # 'tests',
     'parsed_po.po'
 )
 

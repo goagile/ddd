@@ -1,9 +1,9 @@
 import codecs
 
 # from nilsson.start_examples.po.parser.excel_parser import ExcelParser
-from nilsson.start_examples.po.parser.po_parser import PoParser
+from start_examples.po.parser.po_parser import PoParser
 # from nilsson.start_examples.po.writer.excel_writer import ExcelWriter
-from nilsson.start_examples.po.writer.po_writer import PoWriter
+from start_examples.po.writer.po_writer import PoWriter
 
 if __name__ == '__main__':
     path = 'test_simple.po'

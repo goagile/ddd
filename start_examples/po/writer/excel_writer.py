@@ -2,7 +2,7 @@ from openpyxl import Workbook
 from openpyxl.styles import PatternFill, colors, Alignment
 from openpyxl.utils import get_column_letter
 
-from nilsson.start_examples.po.utils import join_by_new_line
+from start_examples.po.utils import join_by_new_line
 
 
 class ExcelWriter:

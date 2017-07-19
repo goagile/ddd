@@ -1,5 +1,5 @@
-from nilsson.start_examples.po.parser.po_parser import PoParser
-from nilsson.start_examples.po.writer.po_writer import PoWriter
+from start_examples.po.parser.po_parser import PoParser
+from start_examples.po.writer.po_writer import PoWriter
 
 
 if __name__ == '__main__':
