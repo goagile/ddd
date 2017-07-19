@@ -12,27 +12,19 @@ class RuEnExcelParser:
 
         ru_msg_collection = MsgCollection()
         en_msg_collection = MsgCollection()
+        new_ru_msg_collection = MsgCollection()
+        new_en_msg_collection = MsgCollection()
 
         for row in ws.iter_rows(min_row=2):
-            cls.__parse_ru_to(ru_msg_collection, row)
-            cls.__parse_en_to(en_msg_collection, row)
+            cls.__parse_to(ru_msg_collection, row, str_col=1)
+            cls.__parse_to(en_msg_collection, row, str_col=2)
 
         return ru_msg_collection, en_msg_collection
 
     @classmethod
-    def __parse_ru_to(cls, ru_msg_collection, row):
-        id_, ru = row[0].value, row[1].value
-        paths = cls.__split_by_new_line(row[6].value)
-        if cls.__is_plural(id_, ru):
-            ids = cls.__split_by_new_line(id_)
-            ru_msg_collection.add_msg_plural(*ids, strs=cls.__split_by_new_line(ru), paths=paths)
-        else:
-            ru_msg_collection.add_msg(id=id_, str=ru, paths=paths)
-
-    @classmethod
-    def __parse_en_to(cls, en_msg_collection, row):
-        id_, en = row[0].value, row[2].value
-        paths = cls.__split_by_new_line(row[6].value)
+    def __parse_to(cls, en_msg_collection, row, id_col=0, str_col=1, path_col=6):
+        id_, en = row[id_col].value, row[str_col].value
+        paths = cls.__split_by_new_line(row[path_col].value)
         if cls.__is_plural(id_, en):
             ids = cls.__split_by_new_line(id_)
             en_msg_collection.add_msg_plural(*ids, strs=cls.__split_by_new_line(en), paths=paths)
