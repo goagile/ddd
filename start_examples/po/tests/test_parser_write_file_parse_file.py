@@ -6,11 +6,11 @@ from start_examples.po.parser.po_parser import PoParser
 from start_examples.po.writer.po_writer import PoWriter
 
 
-PATH = os.path.join(
-    # 'nilsson',
-    # 'start_examples',
-    # 'po',
-    # 'tests',
+path = os.path.join(
+    'start_examples',
+    'po',
+    'tests',
+    'generated',
     'parsed_po.po'
 )
 
@@ -35,7 +35,7 @@ class TestParserWriteFileParseFile(unittest.TestCase):
             '../path.js:30'
         ])
 
-        PoWriter.new().write_file(PATH, msg_collection)
-        parsed_msg_collection = PoParser.new().parse_file(PATH)
+        PoWriter.new().write_file(path, msg_collection)
+        parsed_msg_collection = PoParser.new().parse_file(path)
 
         self.assertEqual(msg_collection, parsed_msg_collection)
