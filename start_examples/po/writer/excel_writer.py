@@ -2,6 +2,8 @@ from openpyxl import Workbook
 from openpyxl.styles import PatternFill, colors, Alignment
 from openpyxl.utils import get_column_letter
 
+from nilsson.start_examples.po.utils import join_by_new_line
+
 
 class ExcelWriter:
 
@@ -15,15 +17,15 @@ class ExcelWriter:
             if msg.is_plural:
                 cell_id = ws.cell(row=row_index, column=1)
                 cell_id.alignment = alignment
-                cell_id.value = cls.join_by_new_line([msg.id, msg.id_plural])
+                cell_id.value = join_by_new_line([msg.id, msg.id_plural])
 
                 cell_en = ws.cell(row=row_index, column=2)
                 cell_en.alignment = alignment
-                cell_en.value = cls.join_by_new_line(msg.strs)
+                cell_en.value = join_by_new_line(msg.strs)
 
                 cell_paths = ws.cell(row=row_index, column=3)
                 cell_paths.alignment = alignment
-                cell_paths.value = cls.join_by_new_line(msg.paths)
+                cell_paths.value = join_by_new_line(msg.paths)
             else:
                 cell_id = ws.cell(row=row_index, column=1)
                 cell_id.alignment = alignment
@@ -35,7 +37,7 @@ class ExcelWriter:
 
                 cell_paths = ws.cell(row=row_index, column=3)
                 cell_paths.alignment = alignment
-                cell_paths.value = cls.join_by_new_line(msg.paths)
+                cell_paths.value = join_by_new_line(msg.paths)
 
             # ws.row_dimensions[row_index].height = 15
 
@@ -44,7 +46,3 @@ class ExcelWriter:
             ws.column_dimensions[get_column_letter(col)].width = width
 
         wb.save(excel_path)
-
-    @classmethod
-    def join_by_new_line(cls, collection):
-        return '\n'.join(p for p in collection)

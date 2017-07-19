@@ -1,7 +1,9 @@
-from start_examples.po.config_po_states import waiting_new_line, command_channel
-from start_examples.po.msg_model.msg_collection import MsgCollection
-from start_examples.po.state_machine_model.controller import Controller
-from start_examples.po.state_machine_model.state_machine import StateMachine
+import codecs
+
+from nilsson.start_examples.po.config_po_states import waiting_new_line, command_channel
+from nilsson.start_examples.po.msg_model.msg_collection import MsgCollection
+from nilsson.start_examples.po.state_machine_model.controller import Controller
+from nilsson.start_examples.po.state_machine_model.state_machine import StateMachine
 
 
 class PoParser:
@@ -9,17 +11,19 @@ class PoParser:
     def __init__(self, controller):
         self.controller = controller
 
-    @staticmethod
-    def new():
-        return PoParser(Controller(
-            StateMachine(waiting_new_line),
-            command_channel,
-            MsgCollection()
-        ))
+    @classmethod
+    def new(cls):
+        controller = cls.__new_controller()
+        return PoParser(controller)
 
     @property
-    def msg_collection(self):
+    def msg_collection(self) -> MsgCollection:
         return self.controller.msg_collection
+
+    def parse_file(self, path) -> MsgCollection:
+        lines = self.__read_lines(path)
+        self.parse_lines(lines)
+        return self.msg_collection
 
     def parse_lines(self, lines):
         for line in lines:
@@ -49,3 +53,15 @@ class PoParser:
 
             else:
                 continue
+
+    @classmethod
+    def __new_controller(cls):
+        return Controller(
+            StateMachine(waiting_new_line),
+            command_channel,
+            MsgCollection()
+        )
+
+    def __read_lines(self, path) -> list:
+        with codecs.open(path, "r", "utf-8") as file:
+            return file.readlines()

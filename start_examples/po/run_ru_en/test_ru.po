@@ -1,0 +1,10 @@
+
+#: ../modules/user/x.js:112 ../modules/user/x.js:300
+msgid "Fox"
+msgstr "Лиса"
+
+#: ../modules/user/x.js:112 ../modules/user/x.js:300
+msgid "Box"
+msgid_plural "Boxes"
+msgstr[0] "Ящик"
+msgstr[1] "Ящики"
