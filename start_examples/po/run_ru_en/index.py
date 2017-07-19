@@ -8,15 +8,17 @@ if __name__ == '__main__':
     ru_path = 'test_ru.po'
     en_path = 'test_en.po'
 
-    ru_msg_collection = PoParser.new().parse_file(ru_path)
-    en_msg_collection = PoParser.new().parse_file(en_path)
+    # WRITE
+    # ru_msg_collection = PoParser.new().parse_file(ru_path)
+    # en_msg_collection = PoParser.new().parse_file(en_path)
+    # # print('\nRU: \n'); print(ru_msg_collection)
+    # # print('\nEN: \n'); print(en_msg_collection)
+    # RuEnExcelWriter().write(excel_path, ru_msg_collection, en_msg_collection)
 
-    # print('\nRU: \n'); print(ru_msg_collection)
-    # print('\nEN: \n'); print(en_msg_collection)
 
-    RuEnExcelWriter().write(excel_path, ru_msg_collection, en_msg_collection)
-
-    ru_msg_collection, en_msg_collection = RuEnExcelParser().parse(excel_path)
-
-    print('\nRU: \n'); print(ru_msg_collection)
-    print('\nEN: \n'); print(en_msg_collection)
+    # PARSE
+    parse_result = RuEnExcelParser().parse(excel_path)
+    print('\nRU: \n'); print(parse_result.ru_msg_collection)
+    print('\nEN: \n'); print(parse_result.en_msg_collection)
+    print('\nEN: \n'); print(parse_result.new_ru_msg_collection)
+    print('\nEN: \n'); print(parse_result.new_en_msg_collection)
