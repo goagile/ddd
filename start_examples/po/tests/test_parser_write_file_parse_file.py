@@ -21,8 +21,8 @@ class TestParserWriteFileParseFile(unittest.TestCase):
 
     def test_write_file_parse_file_(self):
         msg_collection = MsgCollection()
-        msg_collection.add_msg(id='Box', str='Ящик', paths=[
-            '../path.js:10'
+        msg_collection.add_msg(id='Fax', str='Факс', paths=[
+            '../path.js:12'
         ])
         msg_collection.add_msg_plural(id='Box', id_plural='Boxes', strs=[
             'Ящик', 'Ящика'
@@ -36,6 +36,6 @@ class TestParserWriteFileParseFile(unittest.TestCase):
         ])
 
         PoWriter.new().write_file(PATH, msg_collection)
-        # parsed_msg_collection = PoParser.new().parse_file(path_to_write_po)
-        #
-        # self.assertEqual(msg_collection, parsed_msg_collection)
+        parsed_msg_collection = PoParser.new().parse_file(PATH)
+
+        self.assertEqual(msg_collection, parsed_msg_collection)

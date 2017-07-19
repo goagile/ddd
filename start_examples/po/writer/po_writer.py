@@ -8,7 +8,10 @@ class PoWriter:
     def write_file(self, path, msg_collection: MsgCollection):
         lines = self.write_lines(msg_collection)
         with codecs.open(path, "w", "utf-8") as file:
-            file.write('\n'.join(lines))
+            for line in lines:
+                if line == '\n':
+                    line = ''
+                file.write(line + '\n')
 
     @staticmethod
     def new():
