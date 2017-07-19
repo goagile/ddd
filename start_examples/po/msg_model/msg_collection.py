@@ -21,6 +21,9 @@ class MsgCollection:
     def __iter__(self):
         return iter(self.msgs)
 
+    def __len__(self):
+        return len([m for m in self.msgs])
+
     def __eq__(self, other):
         return all(msg1 == msg2 for msg1, msg2 in zip(self.__msgs, other.msgs))
 

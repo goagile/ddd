@@ -7,6 +7,7 @@ from start_examples.po.utils import join_by_new_line
 
 EXCEL_READY = '\n\t\tExcel готов.\n'
 CLOSE_EXCEL = '\n\t\t!!! Закройте Excel !!!\n'
+COLLECTIONS_MUST_BE_SAME_LENS = 'Коллекции должны быть одинаковой длины'
 
 
 class ExcelWriter:
@@ -62,37 +63,34 @@ class RuEnExcelWriter:
         self.ws = self.wb.get_active_sheet()
 
     def write(self, excel_path, ru_msg_collection, en_msg_collection):
+        if len(ru_msg_collection) != len(en_msg_collection):
+            raise ValueError(COLLECTIONS_MUST_BE_SAME_LENS)
         try:
             self.__write_header()
-            self.__write_collections(zip(ru_msg_collection, en_msg_collection))
+            for row_index, (ru_msg, en_msg) in enumerate(zip(ru_msg_collection, en_msg_collection), start=2):
+                self.__write_ru_msg_to(row_index, ru_msg)
+                self.__write_en_msg_to(row_index, en_msg)
             self.__set_dimensions()
             self.wb.save(excel_path)
             print(EXCEL_READY)
         except PermissionError:
             print(CLOSE_EXCEL)
 
-    def __write_collections(self, collections):
-        for row, (ru, en) in enumerate(collections, start=2):
-            if ru.is_plural:
-                self.__write_values_to(row, values=[
-                    join_by_new_line([ru.id, ru.id_plural]),
-                    join_by_new_line(ru.strs),
-                    '',
-                    '',
-                    '',
-                    '',
-                    join_by_new_line(ru.paths)
-                ])
-            else:
-                self.__write_values_to(row, values=[
-                    ru.id,
-                    ru.str,
-                    '',
-                    '',
-                    '',
-                    '',
-                    join_by_new_line(ru.paths)
-                ])
+    def __write_ru_msg_to(self, row_index, msg):
+        if msg.is_plural:
+            self.__write_row(row_index, 1, join_by_new_line([msg.id, msg.id_plural]))
+            self.__write_row(row_index, 2, join_by_new_line(msg.strs))
+            self.__write_row(row_index, 7, join_by_new_line(msg.paths))
+        else:
+            self.__write_row(row_index, 1, msg.id)
+            self.__write_row(row_index, 2, msg.str)
+            self.__write_row(row_index, 7, join_by_new_line(msg.paths))
+
+    def __write_en_msg_to(self, row_index, msg):
+        if msg.is_plural:
+            self.__write_row(row_index, 3, join_by_new_line(msg.strs))
+        else:
+            self.__write_row(row_index, 3, msg.str)
 
     def __write_header(self):
         for i, name in enumerate(self.names, start=1):
@@ -103,9 +101,9 @@ class RuEnExcelWriter:
             self.__write_row(row, col, value)
 
     def __write_row(self, row, col, value):
-        cell_en = self.ws.cell(row=row, column=col)
-        cell_en.alignment = self.align
-        cell_en.value = value
+        cell = self.ws.cell(row=row, column=col)
+        cell.alignment = self.align
+        cell.value = value
 
     def __set_dimensions(self):
         # ws.row_dimensions[row_index].height = 15

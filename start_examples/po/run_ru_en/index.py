@@ -1,6 +1,6 @@
 from start_examples.po.parser.po_parser import PoParser
+from start_examples.po.parser.excel_parser import RuEnExcelParser
 from start_examples.po.writer.excel_writer import RuEnExcelWriter
-from start_examples.po.writer.po_writer import PoWriter
 
 
 if __name__ == '__main__':
@@ -11,4 +11,12 @@ if __name__ == '__main__':
     ru_msg_collection = PoParser.new().parse_file(ru_path)
     en_msg_collection = PoParser.new().parse_file(en_path)
 
+    # print('\nRU: \n'); print(ru_msg_collection)
+    # print('\nEN: \n'); print(en_msg_collection)
+
     RuEnExcelWriter().write(excel_path, ru_msg_collection, en_msg_collection)
+
+    ru_msg_collection, en_msg_collection = RuEnExcelParser().parse(excel_path)
+
+    print('\nRU: \n'); print(ru_msg_collection)
+    print('\nEN: \n'); print(en_msg_collection)

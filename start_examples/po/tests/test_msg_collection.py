@@ -49,6 +49,16 @@ class TestMsgCollection(unittest.TestCase):
 
         self.assertEqual(expected, result)
 
+    def test_len(self):
+        expected = 2
+        msg_collection = MsgCollection()
+        msg_collection.add_msg(id='Fox', str='Лиса')
+        msg_collection.add_msg_plural(id='Box', id_plural='Boxes', strs=['Ящик', 'Ящики'])
+
+        result = len(msg_collection)
+
+        self.assertEqual(expected, result)
+
     def test_put_and_get_single_msg(self):
         expected = 'Ящик'
         msg_collection = MsgCollection()
