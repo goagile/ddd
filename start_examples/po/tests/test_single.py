@@ -7,6 +7,13 @@ box = Msg(id='Box')
 
 class TestMsg(unittest.TestCase):
 
+    def test_is_id_empty(self):
+        box1 = Msg(id='')
+
+        result = box1.is_id_empty
+
+        self.assertTrue(result)
+
     def test_eq(self):
         box1 = Msg(id='Box')
         box2 = Msg(id='Box')

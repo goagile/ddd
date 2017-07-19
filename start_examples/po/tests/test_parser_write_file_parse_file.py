@@ -1,10 +1,9 @@
-import unittest
 import os
+import unittest
 
 from start_examples.po.msg_model.msg_collection import MsgCollection
-from start_examples.po.parser.po_parser import PoParser
-from start_examples.po.writer.po_writer import PoWriter
-
+from start_examples.po.parsers_and_writers.po_parser import PoParser
+from start_examples.po.parsers_and_writers.po_writer import PoWriter
 
 path = os.path.join(
     'start_examples',

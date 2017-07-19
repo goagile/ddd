@@ -40,3 +40,7 @@ class Msg:
     @property
     def paths(self):
         return iter(self.__paths)
+
+    @property
+    def is_id_empty(self):
+        return bool(not self.id)

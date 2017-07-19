@@ -2,8 +2,6 @@ from openpyxl import Workbook
 from openpyxl.styles import PatternFill, colors, Alignment
 from openpyxl.utils import get_column_letter
 
-from start_examples.po.utils import join_by_new_line
-
 
 EXCEL_READY = '\n\t\tExcel готов.\n'
 CLOSE_EXCEL = '\n\t\t!!! Закройте Excel !!!\n'
@@ -66,3 +64,7 @@ class RuEnExcelWriter:
         # ws.row_dimensions[row_index].height = 15
         for col, width in enumerate(self.widths, start=1):
             self.ws.column_dimensions[get_column_letter(col)].width = width
+
+
+def join_by_new_line(collection):
+    return '\n'.join(p for p in collection)

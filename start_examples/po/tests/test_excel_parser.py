@@ -1,6 +1,6 @@
 import unittest
 
-from start_examples.po.parser.excel_parser import RuEnExcelParser
+from start_examples.po.parsers_and_writers.excel_parser import RuEnExcelParser
 
 
 class TestExcelParser(unittest.TestCase):

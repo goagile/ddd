@@ -1,7 +1,7 @@
 import unittest
 
 from start_examples.po.msg_model.msg_collection import MsgCollection
-from start_examples.po.writer.po_writer import PoWriter
+from start_examples.po.parsers_and_writers.po_writer import PoWriter
 
 
 class TestParser(unittest.TestCase):

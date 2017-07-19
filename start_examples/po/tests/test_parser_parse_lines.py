@@ -1,7 +1,7 @@
 import unittest
 
 from start_examples.po.msg_model.msg_collection import MsgCollection
-from start_examples.po.parser.po_parser import PoParser
+from start_examples.po.parsers_and_writers.po_parser import PoParser
 
 
 class TestParser(unittest.TestCase):
@@ -18,9 +18,8 @@ class TestParser(unittest.TestCase):
             '\n',
             '#: ../path/to/file.js:300'
         ]
-        self.parser.parse_lines(lines)
 
-        result = self.parser.msg_collection
+        result = self.parser.parse_lines(lines)
 
         self.assertEqual(expected, result)
 
@@ -32,9 +31,8 @@ class TestParser(unittest.TestCase):
             '#: ../path/to/file.js:300',
             'msgid "Box"'
         ]
-        self.parser.parse_lines(lines)
 
-        result = self.parser.msg_collection
+        result = self.parser.parse_lines(lines)
 
         self.assertEqual(expected, result)
 
@@ -47,9 +45,8 @@ class TestParser(unittest.TestCase):
             'msgid "Box"',
             'msgstr "Ящик"'
         ]
-        self.parser.parse_lines(lines)
 
-        result = self.parser.msg_collection
+        result = self.parser.parse_lines(lines)
 
         self.assertEqual(expected, result)
 
@@ -67,9 +64,8 @@ class TestParser(unittest.TestCase):
             'msgid "Box"',
             'msgstr "Ящик"'
         ]
-        self.parser.parse_lines(lines)
 
-        result = self.parser.msg_collection
+        result = self.parser.parse_lines(lines)
 
         self.assertEqual(expected, result)
 
@@ -85,9 +81,8 @@ class TestParser(unittest.TestCase):
             'msgid_plural "Boxes"',
             'msgstr[0] "Ящик"'
         ]
-        self.parser.parse_lines(lines)
 
-        result = self.parser.msg_collection
+        result = self.parser.parse_lines(lines)
 
         self.assertEqual(expected, result)
 
@@ -106,9 +101,8 @@ class TestParser(unittest.TestCase):
             'msgstr[1] "Ящика"'
 
         ]
-        self.parser.parse_lines(lines)
 
-        result = self.parser.msg_collection
+        result = self.parser.parse_lines(lines)
 
         self.assertEqual(expected, result)
 
@@ -129,9 +123,8 @@ class TestParser(unittest.TestCase):
             'msgstr[2] "Ящиков"',
 
         ]
-        self.parser.parse_lines(lines)
 
-        result = self.parser.msg_collection
+        result = self.parser.parse_lines(lines)
 
         self.assertEqual(expected, result)
 
@@ -157,9 +150,8 @@ class TestParser(unittest.TestCase):
             'TRASH',
 
         ]
-        self.parser.parse_lines(lines)
 
-        result = self.parser.msg_collection
+        result = self.parser.parse_lines(lines)
 
         self.assertEqual(expected, result)
 
@@ -179,8 +171,7 @@ class TestParser(unittest.TestCase):
             'msgid_plural "Boxes"',
             'msgstr[0] "Ящик"',
         ]
-        self.parser.parse_lines(lines)
 
-        result = self.parser.msg_collection
+        result = self.parser.parse_lines(lines)
 
         self.assertEqual(expected, result)
