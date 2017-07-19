@@ -1,4 +1,4 @@
-from start_examples.po.state_machine_model.commands import (
+from start_examples.po.config.commands import (
     ParseMsgPath,
     ParseMsgId,
     ParseMsgStr,
