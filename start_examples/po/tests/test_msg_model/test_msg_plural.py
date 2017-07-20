@@ -1,11 +1,18 @@
 import unittest
 
-from nilsson.start_examples.po.msg_model.msg_plural import MsgPlural
+from start_examples.po.msg_model.msg_plural import MsgPlural
 
 boxes = MsgPlural(id='Box', id_plural='Boxes')
 
 
 class TestMsgPlural(unittest.TestCase):
+
+    def test_is_id_empty(self):
+        boxes1 = MsgPlural(id='', id_plural='Boxes')
+        boxes2 = MsgPlural(id='Box', id_plural='')
+
+        self.assertTrue(boxes1.is_id_empty)
+        self.assertTrue(boxes2.is_id_empty)
 
     def test_eq(self):
         boxes1 = MsgPlural(id='Box', id_plural='Boxes')

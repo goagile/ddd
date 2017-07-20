@@ -1,7 +1,7 @@
 import unittest
 
-from nilsson.start_examples.po.msg_model.msg_collection import MsgCollection
-from nilsson.start_examples.po.state_machine_model.commands import ParseMsgPath
+from start_examples.po.config.commands import ParseMsgPath
+from start_examples.po.msg_model.msg_collection import MsgCollection
 
 
 class TestParseMsgPath(unittest.TestCase):

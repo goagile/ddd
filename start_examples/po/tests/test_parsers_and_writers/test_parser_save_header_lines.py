@@ -1,18 +1,14 @@
 import unittest
 
-from nilsson.start_examples.po.parser.po_parser import PoParser
+from start_examples.po.parsers_and_writers.po_parser import PoParser
 
 
 class TestParser(unittest.TestCase):
 
     maxDiff = None
 
-    def setUp(self):
-        self.parser = PoParser.new()
-
-    @unittest.skip('idea')
-    def test_parse_path_line(self):
-        lines = [
+    def test_get_header_lines(self):
+        header_lines = [
             '# Russian translations for X.\n',
             '# Copyright (C) 2000 ORGANIZATION\n',
             '# This file is distributed under the same license as the X project.\n',
@@ -32,19 +28,16 @@ class TestParser(unittest.TestCase):
             '"MIME-Version: 1.0\n"\n',
             '"Content-Type: text/plain; charset=utf-8\n"\n',
             '"Content-Transfer-Encoding: 8bit\n"\n',
-            '"Generated-By: Babel 2.3.4\n"\n',
+            '"Generated-By: Babel 2.3.4\n"\n'
+        ]
+        msg_lines = [
             '\n',
             '#: ../modules/user/x.js:112 ../modules/user/x.js:300\n',
             'msgid "Box"\n',
             'msgstr "Ящик\n"'
         ]
-        expected = [
-            '\n'
-            '#: ../modules/user/x.js:112 ../modules/user/x.js:300',
-            'msgid "Box"',
-            'msgstr "Ящик"',
-        ]
+        lines = header_lines + msg_lines
 
-        result = self.parser.remove_head_lines(lines)
+        result = PoParser.new().parse_lines(lines)
 
-        self.assertEqual(expected, result)
+        self.assertEqual(header_lines, result.header_lines)

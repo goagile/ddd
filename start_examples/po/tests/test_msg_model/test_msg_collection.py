@@ -1,8 +1,8 @@
 import unittest
 
-from nilsson.start_examples.po.msg_model.msg_collection import MsgCollection
-from nilsson.start_examples.po.msg_model.msg import Msg
-from nilsson.start_examples.po.msg_model.msg_plural import MsgPlural
+from start_examples.po.msg_model.msg_collection import MsgCollection
+from start_examples.po.msg_model.msg import Msg
+from start_examples.po.msg_model.msg_plural import MsgPlural
 
 
 class TestMsgCollection(unittest.TestCase):
@@ -46,6 +46,16 @@ class TestMsgCollection(unittest.TestCase):
         msg_collection.add_msg_plural(id='Box', id_plural='Boxes', strs=['Ящик', 'Ящики'])
 
         result = [msg for msg in msg_collection]
+
+        self.assertEqual(expected, result)
+
+    def test_len(self):
+        expected = 2
+        msg_collection = MsgCollection()
+        msg_collection.add_msg(id='Fox', str='Лиса')
+        msg_collection.add_msg_plural(id='Box', id_plural='Boxes', strs=['Ящик', 'Ящики'])
+
+        result = len(msg_collection)
 
         self.assertEqual(expected, result)
 

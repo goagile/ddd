@@ -1,5 +1,5 @@
-from nilsson.start_examples.po.msg_model.msg import Msg
-from nilsson.start_examples.po.msg_model.msg_plural import MsgPlural
+from start_examples.po.msg_model.msg import Msg
+from start_examples.po.msg_model.msg_plural import MsgPlural
 
 
 class MsgCollection:
@@ -7,6 +7,7 @@ class MsgCollection:
     def __init__(self):
         self.__msgs = []
         self.current_msg = None
+        self.header_lines = []
 
     def __repr__(self):
         result = 'MsgCollection:'
@@ -20,6 +21,9 @@ class MsgCollection:
 
     def __iter__(self):
         return iter(self.msgs)
+
+    def __len__(self):
+        return len([m for m in self.msgs])
 
     def __eq__(self, other):
         return all(msg1 == msg2 for msg1, msg2 in zip(self.__msgs, other.msgs))

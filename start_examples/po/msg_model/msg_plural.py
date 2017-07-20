@@ -47,3 +47,10 @@ class MsgPlural:
 
     def add_path(self, path: str):
         self.__paths.append(path)
+
+    @property
+    def is_id_empty(self):
+        return any([
+            not self.id,
+            not self.id_plural,
+        ])

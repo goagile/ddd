@@ -1,11 +1,18 @@
 import unittest
 
-from nilsson.start_examples.po.msg_model.msg import Msg
+from start_examples.po.msg_model.msg import Msg
 
 box = Msg(id='Box')
 
 
 class TestMsg(unittest.TestCase):
+
+    def test_is_id_empty(self):
+        box1 = Msg(id='')
+
+        result = box1.is_id_empty
+
+        self.assertTrue(result)
 
     def test_eq(self):
         box1 = Msg(id='Box')

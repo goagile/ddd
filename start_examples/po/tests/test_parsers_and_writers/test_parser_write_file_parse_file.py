@@ -1,16 +1,15 @@
-import unittest
 import os
+import unittest
 
-from nilsson.start_examples.po.msg_model.msg_collection import MsgCollection
-from nilsson.start_examples.po.parser.po_parser import PoParser
-from nilsson.start_examples.po.writer.po_writer import PoWriter
+from start_examples.po.msg_model.msg_collection import MsgCollection
+from start_examples.po.parsers_and_writers.po_parser import PoParser
+from start_examples.po.parsers_and_writers.po_writer import PoWriter
 
-
-PATH = os.path.join(
-    'nilsson',
+path = os.path.join(
     'start_examples',
     'po',
     'tests',
+    'generated',
     'parsed_po.po'
 )
 
@@ -35,7 +34,7 @@ class TestParserWriteFileParseFile(unittest.TestCase):
             '../path.js:30'
         ])
 
-        PoWriter.new().write_file(PATH, msg_collection)
-        parsed_msg_collection = PoParser.new().parse_file(PATH)
+        PoWriter.new().write_file(path, msg_collection)
+        parsed_msg_collection = PoParser.new().parse_file(path)
 
         self.assertEqual(msg_collection, parsed_msg_collection)
