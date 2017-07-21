@@ -5,20 +5,25 @@ from nilsson.start_examples.state.model.factories import StateMachineFactory
 
 class TestStateMachine(unittest.TestCase):
 
+    def setUp(self):
+        self.machine = StateMachineFactory.new_turnstile_machine()
+
     def test_create_state_machine(self):
-        locked = StateMachineFactory.LOCKED
-
-        machine = StateMachineFactory.new_turnstile_machine()
-
-        result = machine.state
-        self.assertEqual(locked, result)
+        self.assertEqual(StateMachineFactory.LOCKED, self.machine.state)
 
     def test_transition_locked_coin_unlocked(self):
-        unlocked = StateMachineFactory.UNLOCKED
-        machine = StateMachineFactory.new_turnstile_machine()
+        self.machine.coin()
 
-        machine.coin()
+        self.assertMachineController(StateMachineFactory.UNLOCKED, 'is_coin')
 
-        result = machine.state
-        self.assertEqual(unlocked, result)
-        self.assertTrue(machine.controller.is_coin)
+    def test_transition_locked_turn_locked(self):
+        self.machine.turn()
+
+        self.assertMachineController(StateMachineFactory.LOCKED, 'is_turn')
+
+    def assertMachineController(self, state, controller_attr):
+        self.assertEqual(state, self.machine.state)
+
+        controller = self.machine.controller
+        attr = getattr(controller, controller_attr)
+        self.assertTrue(attr)

@@ -19,3 +19,11 @@ class TestTurnstileController(unittest.TestCase):
 
         result = controller.is_coin
         self.assertTrue(result)
+
+    def test_is_turn_true_by_controller_turn(self):
+        controller = TurnstileController()
+
+        controller.turn()
+
+        result = controller.is_turn
+        self.assertTrue(result)
