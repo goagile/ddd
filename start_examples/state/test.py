@@ -1,7 +1,7 @@
 import unittest
 
 
-class Test(unittest.TestCase):
+class TestStateMachine(unittest.TestCase):
 
     def test_is_coin_false_by_default(self):
         controller = TurnstileController()
@@ -18,7 +18,7 @@ class Test(unittest.TestCase):
         result = controller.is_coin
         self.assertTrue(result)
 
-    def test_create_statemachine(self):
+    def test_create_state_machine(self):
         locked = Locked()
         controller = TurnstileController()
 
@@ -32,7 +32,7 @@ class Test(unittest.TestCase):
         state = Locked()
         self.assertEqual(locked, state)
 
-    def test_transition(self):
+    def test_transition_locked_coin_unlocked(self):
         unlocked = Unlocked()
         controller = TurnstileController()
         machine = StateMachine(controller)
@@ -41,6 +41,7 @@ class Test(unittest.TestCase):
 
         result = machine.state
         self.assertEqual(unlocked, result)
+        self.assertTrue(controller.is_coin)
 
 
 class State:
@@ -68,6 +69,7 @@ class StateMachine:
 
     def coin(self):
         self.state = Unlocked()
+        self.controller.coin()
 
 
 class TurnstileController:
