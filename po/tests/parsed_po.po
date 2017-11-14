@@ -1,0 +1,16 @@
+
+#: ../path.js:12
+msgid "Fax"
+msgstr "Факс"
+
+#: ../path.js:20
+msgid "Box"
+msgid_plural "Boxes"
+msgstr[0] "Ящик"
+msgstr[1] "Ящика"
+
+#: ../path.js:30
+msgid "Fox"
+msgid_plural "Foxes"
+msgstr[0] "Лиса"
+msgstr[1] "Лис"
