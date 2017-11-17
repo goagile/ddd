@@ -1,8 +1,4 @@
-"""
-
-Пример из 90-х
-
-"""
+import abc
 
 import sqlite3
 
@@ -16,39 +12,28 @@ class Idea:
         self.votes = None
         self.email = None
 
-    def add_rating(self, rating):
+    def add_rating(self, rating: float):
         self.rating += int(rating)
 
 
-class IdeaController:
+class IdeaRepository(abc.ABC):
 
-    def __init__(self, request, idea_repository):
-        self.request = request
-        self.idea_repository = idea_repository
+    @abc.abstractmethod
+    def find_by_id(self, idea_id: str):
+        pass
 
-    def rate_action(self):
-        idea_id = self.request.get('id')
-        new_rating = self.request.get('rating')
-
-        # find idea
-        idea = self.idea_repository.find_by_id(idea_id)
-        if not idea:
-            raise ValueError('Idea does not exist')
-
-        # add user rating
-        idea.add_rating(new_rating)
-
-        # save rating to repository
-        self.idea_repository.update(idea)
+    @abc.abstractmethod
+    def update(self, idea: Idea):
+        pass
 
 
-class IdeaRepository:
+class Sqlite3IdeaRepository(IdeaRepository):
 
     def __init__(self, db_path):
         self.connection = sqlite3.connect(db_path)
         self.cursor = self.connection.cursor()
 
-    def find_by_id(self, idea_id):
+    def find_by_id(self, idea_id: str):
         # finding the idea in the database
         sql = 'SELECT * from Ideas where IdeaId = ?'
         row = self.cursor.execute(sql, idea_id).fetchone()
@@ -67,10 +52,33 @@ class IdeaRepository:
 
         return idea
 
-    def update(self, idea):
+    def update(self, idea: Idea):
         update_statement = "UPDATE Ideas SET Rating='{}' WHERE IdeaId='{}'"
         self.cursor.execute(update_statement.format(idea.rating, idea.idea_id))
         self.connection.commit()
+
+
+class IdeaController:
+
+    def __init__(self, request: dict):
+        self.request = request
+
+    def rate_action(self):
+        idea_id = self.request.get('id')
+        new_rating = self.request.get('rating')
+
+        idea_repository = Sqlite3IdeaRepository('../db.sqlite3')
+
+        # find idea
+        idea = idea_repository.find_by_id(idea_id)
+        if not idea:
+            raise ValueError('Idea does not exist')
+
+        # add user rating
+        idea.add_rating(new_rating)
+
+        # save rating to repository
+        idea_repository.update(idea)
 
 
 if __name__ == '__main__':
@@ -79,7 +87,6 @@ if __name__ == '__main__':
         'rating': 100
     }
 
-    repository = IdeaRepository('../db.sqlite3')
-    controller = IdeaController(request, repository)
+    controller = IdeaController(request)
 
     controller.rate_action()

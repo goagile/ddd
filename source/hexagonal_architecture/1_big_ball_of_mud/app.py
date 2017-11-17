@@ -34,7 +34,7 @@ class IdeaController:
 
         # finding the idea in the database
         sql = 'SELECT * from Ideas where IdeaId = ?'
-        row = c.execute(sql, '1').fetchone()
+        row = c.execute(sql, idea_id).fetchone()
         if not row:
             raise ValueError('Idea does not exist')
 

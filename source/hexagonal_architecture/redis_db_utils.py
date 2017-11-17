@@ -13,7 +13,7 @@ idea_dict = dict(
     email='xxx@gmail.com'
 )
 
-client.hmset('1', idea_dict)
+# client.hmset('1', idea_dict)
 
 
 print(client.hmget('1', [

@@ -101,16 +101,18 @@ class RedisIdeaRepository(IdeaRepository):
 
 class IdeaController:
 
-    def __init__(self, request: dict, idea_repository: IdeaRepository):
+    def __init__(self, request: dict):
         self.request = request
-        self.idea_repository = idea_repository
 
     def rate_action(self):
         idea_id = self.request.get('id')
         new_rating = self.request.get('rating')
 
+        # idea_repository = Sqlite3IdeaRepository('../db.sqlite3')
+        idea_repository = RedisIdeaRepository()
+
         # find idea
-        idea = self.idea_repository.find_by_id(idea_id)
+        idea = idea_repository.find_by_id(idea_id)
         if not idea:
             raise ValueError('Idea does not exist')
 
@@ -118,7 +120,7 @@ class IdeaController:
         idea.add_rating(new_rating)
 
         # save rating to repository
-        self.idea_repository.update(idea)
+        idea_repository.update(idea)
 
 
 if __name__ == '__main__':
@@ -127,10 +129,5 @@ if __name__ == '__main__':
         'rating': 4
     }
 
-    # repository = Sqlite3IdeaRepository('../db.sqlite3')
-    repository = RedisIdeaRepository()
-    controller = IdeaController(request, repository)
+    controller = IdeaController(request)
     controller.rate_action()
-
-    idea = repository.find_by_id('1')
-    print(idea)
