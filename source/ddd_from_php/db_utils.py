@@ -1,10 +1,7 @@
 import sqlite3
 
 
-DB_NAME = 'db.sqlite3'
-
-
-conn = sqlite3.connect(DB_NAME)
+conn = sqlite3.connect('db.sqlite3')
 
 c = conn.cursor()
 

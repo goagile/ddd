@@ -29,7 +29,7 @@ class IdeaController:
         idea_id = self.request.get('id')
         new_rating = self.request.get('rating')
 
-        conn = sqlite3.connect('db.sqlite3')
+        conn = sqlite3.connect('../db.sqlite3')
         c = conn.cursor()
 
         # finding the idea in the database
