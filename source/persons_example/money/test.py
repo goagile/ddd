@@ -1,7 +1,6 @@
 import unittest
 
-from money.model import Currency, Currencies, Money, Price
-
+from persons_example.money import Currencies, Money, Price
 
 RU20K = '20000 ₽'
 
