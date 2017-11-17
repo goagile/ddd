@@ -15,6 +15,9 @@ class Idea:
     def add_rating(self, rating: float):
         self.rating += int(rating)
 
+    def __str__(self):
+        return 'Idea(idea_id={}, title={}, rating={})'.format(self.idea_id, self.title, self.rating)
+
 
 class IdeaRepository(abc.ABC):
 
@@ -80,6 +83,8 @@ class IdeaController:
         # save rating to repository
         idea_repository.update(idea)
 
+        return idea
+
 
 if __name__ == '__main__':
     request = {
@@ -89,4 +94,6 @@ if __name__ == '__main__':
 
     controller = IdeaController(request)
 
-    controller.rate_action()
+    result = controller.rate_action()
+
+    print(result)

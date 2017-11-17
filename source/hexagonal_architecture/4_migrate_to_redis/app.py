@@ -122,6 +122,8 @@ class IdeaController:
         # save rating to repository
         idea_repository.update(idea)
 
+        return idea
+
 
 if __name__ == '__main__':
     request = {
@@ -130,4 +132,6 @@ if __name__ == '__main__':
     }
 
     controller = IdeaController(request)
-    controller.rate_action()
+    result = controller.rate_action()
+
+    print(result)

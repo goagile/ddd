@@ -112,7 +112,9 @@ class IdeaController:
         repository = RedisIdeaRepository()
 
         use_case = RateIdeaUseCase(repository)
-        use_case.execute(idea_id, new_rating)
+        idea = use_case.execute(idea_id, new_rating)
+
+        return idea
 
 
 class RateIdeaUseCase:
@@ -120,17 +122,33 @@ class RateIdeaUseCase:
     def __init__(self, idea_repository: IdeaRepository):
         self.idea_repository = idea_repository
 
-    def execute(self, idea_id, rating):
+    def execute(self, idea_id, rating) -> Idea:
         # find idea
-        idea = self.idea_repository.find_by_id(idea_id)
+        try:
+            idea = self.idea_repository.find_by_id(idea_id)
+        except Exception:
+            raise RepositoryNotAvailableException()
+
         if not idea:
-            raise ValueError('Idea does not exist')
+            raise IdeaDoesNotExistException()
 
         # add user rating
-        idea.add_rating(rating)
-
         # save rating to repository
-        self.idea_repository.update(idea)
+        try:
+            idea.add_rating(rating)
+            self.idea_repository.update(idea)
+        except Exception:
+            raise RepositoryNotAvailableException('Update is not work')
+
+        return idea
+
+
+class RepositoryNotAvailableException(Exception):
+    pass
+
+
+class IdeaDoesNotExistException(Exception):
+    pass
 
 
 if __name__ == '__main__':
@@ -140,4 +158,6 @@ if __name__ == '__main__':
     }
 
     controller = IdeaController(request)
-    controller.rate_action()
+    result = controller.rate_action()
+
+    print(result)

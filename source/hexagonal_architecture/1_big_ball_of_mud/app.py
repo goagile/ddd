@@ -19,6 +19,9 @@ class Idea:
     def add_rating(self, rating):
         self.rating += int(rating)
 
+    def __str__(self):
+        return 'Idea(idea_id={}, title={}, rating={})'.format(self.idea_id, self.title, self.rating)
+
 
 class IdeaController:
 
@@ -55,6 +58,8 @@ class IdeaController:
         c.execute(update_statement.format(idea.rating, idea.idea_id))
         conn.commit()
 
+        return idea
+
 
 if __name__ == '__main__':
     request = {
@@ -64,4 +69,6 @@ if __name__ == '__main__':
 
     controller = IdeaController(request)
 
-    controller.rate_action()
+    result = controller.rate_action()
+
+    print(result)
