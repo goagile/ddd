@@ -1,8 +1,9 @@
 import abc
+import json
 
 import sqlite3
 import redis
-from flask import Flask
+from flask import Flask, request
 
 
 class Idea:
@@ -19,6 +20,17 @@ class Idea:
 
     def __str__(self):
         return 'Idea(idea_id={}, title={}, rating={})'.format(self.idea_id, self.title, self.rating)
+
+    def json(self):
+        result_dict = dict(
+            idea_id=self.idea_id,
+            title=self.title,
+            description=self.description,
+            rating=self.rating,
+            votes=self.votes,
+            email=self.email
+        )
+        return json.dumps(result_dict)
 
 
 class IdeaRepository(abc.ABC):
@@ -100,25 +112,6 @@ class RedisIdeaRepository(IdeaRepository):
         self.client.hmset(idea_id, idea_dict)
 
 
-class IdeaController:
-
-    def __init__(self, request: dict):
-        self.request = request
-
-    def rate_action(self):
-        idea_id = self.request.get('id')
-        new_rating = self.request.get('rating')
-
-        # repository = Sqlite3IdeaRepository('../db.sqlite3')
-        repository = RedisIdeaRepository()
-
-        use_case = RateIdeaUseCase(repository)
-        input_data = RateIdeaRequest(idea_id, new_rating)
-        idea = use_case.execute(input_data)
-
-        return RateIdeaResponse(idea)
-
-
 class RateIdeaRequest:
 
     def __init__(self, idea_id, rating):
@@ -137,7 +130,7 @@ class RateIdeaUseCase:
     def __init__(self, idea_repository: IdeaRepository):
         self.idea_repository = idea_repository
 
-    def execute(self, request: RateIdeaRequest) -> Idea:
+    def execute(self, request: RateIdeaRequest) -> RateIdeaResponse:
         # find idea
         try:
             idea = self.idea_repository.find_by_id(request.idea_id)
@@ -155,7 +148,7 @@ class RateIdeaUseCase:
         except Exception:
             raise RepositoryNotAvailableException('Update is not work')
 
-        return idea
+        return RateIdeaResponse(idea)
 
 
 class RepositoryNotAvailableException(Exception):
@@ -169,18 +162,22 @@ class IdeaDoesNotExistException(Exception):
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/rate/', methods=['POST'])
 def rate_action():
-    pass
+    data = json.loads(request.data.decode('utf-8'))
+
+    idea_id = data.get('id')
+    new_rating = data.get('rating')
+
+    # repository = Sqlite3IdeaRepository('../db.sqlite3')
+    repository = RedisIdeaRepository()
+
+    use_case = RateIdeaUseCase(repository)
+    input_data = RateIdeaRequest(idea_id, new_rating)
+    result = use_case.execute(input_data)
+
+    return result.idea.json()
 
 
 if __name__ == '__main__':
-    request = {
-        'id': '1',
-        'rating': 4
-    }
-
-    controller = IdeaController(request)
-    result = controller.rate_action()
-
-    print(result.idea)
+    app.run(debug=True, port=8080)
