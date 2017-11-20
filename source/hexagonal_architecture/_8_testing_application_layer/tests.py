@@ -1,6 +1,6 @@
 import unittest
 
-from ddd.source.hexagonal_architecture._8_testing.app import (
+from ddd.source.hexagonal_architecture._8_testing_application_layer.app import (
     RedisIdeaRepository,
     RateIdeaUseCase,
     RateIdeaRequest,
@@ -11,7 +11,7 @@ from ddd.source.hexagonal_architecture._8_testing.app import (
 )
 
 
-class TestCase(unittest.TestCase):
+class TestRateIdeaUseCase(unittest.TestCase):
 
     def test_when_repository_not_available_an_exception_should_be_raised(self):
         repository = NotAvailableRepository()
