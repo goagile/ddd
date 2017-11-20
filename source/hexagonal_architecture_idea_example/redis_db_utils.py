@@ -10,12 +10,13 @@ idea_dict = dict(
     description='Making figures by paper',
     rating=3.0,
     votes=1,
-    email='xxx@gmail.com'
+    email='xxx@gmail.com',
+    author='Daniel'
 )
 
-# client.hmset('1', idea_dict)
+client.hmset('1', idea_dict)
 
 
 print(client.hmget('1', [
-    'idea_id', 'title', 'description', 'rating', 'votes', 'email'
+    'idea_id', 'title', 'description', 'rating', 'votes', 'email', 'author'
 ]))

@@ -1,6 +1,6 @@
 import unittest
 
-from ddd.source.hexagonal_architecture._8_testing_application_layer.app import (
+from ddd.source.hexagonal_architecture_idea_example._8_testing_application_layer.app import (
     RedisIdeaRepository,
     RateIdeaUseCase,
     RateIdeaRequest,
