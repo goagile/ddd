@@ -2,6 +2,8 @@ import abc
 import json
 
 import sqlite3
+import traceback
+
 import redis
 from flask import Flask, request
 
@@ -135,6 +137,7 @@ class RateIdeaUseCase:
         try:
             idea = self.idea_repository.find_by_id(request.idea_id)
         except Exception:
+            traceback.print_exc()
             raise RepositoryNotAvailableException()
 
         if not idea:
@@ -146,6 +149,7 @@ class RateIdeaUseCase:
             idea.add_rating(request.rating)
             self.idea_repository.update(idea)
         except Exception:
+            traceback.print_exc()
             raise RepositoryNotAvailableException('Update is not work')
 
         return RateIdeaResponse(idea)
