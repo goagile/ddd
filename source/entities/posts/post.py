@@ -13,8 +13,20 @@
     >>> title = 'My new post'
     >>> p = Post(content, title)
 
+Проверяем, что Пост не опубликован
+
+    >>> p.is_published()
+    False
     >>> str(p.status)
-    'UNPUBLISHED'
+    'DRAFT'
+
+Публикуем пост
+
+    >>> p.publish()
+    >>> p.is_published()
+    True
+    >>> str(p.status)
+    'PUBLISHED'
 
 """
 
@@ -30,16 +42,23 @@ class Status:
     def __init__(self, value):
         self.__value = value
 
+    @property
+    def value(self):
+        return self.__value
+
     def __str__(self):
         return self.__value
+
+    def __eq__(self, other):
+        return bool(self.value == other.value)
 
     @classmethod
     def published(cls):
         return Status('PUBLISHED')
 
     @classmethod
-    def unpublished(cls):
-        return Status('UNPUBLISHED')
+    def draft(cls):
+        return Status('DRAFT')
 
 
 class Post:
@@ -81,4 +100,7 @@ class Post:
         self.__status = Status.published()
 
     def unpublish(self):
-        self.__status = Status.unpublished()
+        self.__status = Status.draft()
+
+    def is_published(self):
+        return bool(self.status == Status.published())
