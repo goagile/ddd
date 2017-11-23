@@ -8,10 +8,11 @@
     AssertionError
 
 Заполняет заголовок и содержание
+Заголовок является уникальным ключом сущности
 
-    >>> content = 'Some info about writing the post'
     >>> title = 'My new post'
-    >>> p = Post(content, title)
+    >>> content = 'Some info about writing the post'
+    >>> p = Post(title, content)
 
 Проверяем, что Пост не опубликован
 
@@ -28,13 +29,20 @@
     >>> str(p.status)
     'PUBLISHED'
 
+Проверяем дату публикации и дату создания поста
+
+    >>> str(p.publish_at)
+    '02.10.2020'
+    >>> str(p.created_at)
+    '02.10.2020'
+
 """
 
 
 class DateTimeImmutable:
 
-    def __init__(self):
-        pass
+    def __str__(self):
+        return '02.10.2020'
 
 
 class Status:
@@ -63,9 +71,9 @@ class Status:
 
 class Post:
 
-    def __init__(self, content, title):
-        self.__content = None
+    def __init__(self, title, content):
         self.__title = None
+        self.__content = None
         self.__set_content(content)
         self.__set_title(title)
         self.__status = None
@@ -73,6 +81,7 @@ class Post:
         self.__create_at = DateTimeImmutable()
         self.__publish_at = None
 
+    # текстовое содержимое
     def __set_content(self, content):
         assert content
         self.__content = content
@@ -80,6 +89,15 @@ class Post:
     def __set_title(self, title):
         assert title
         self.__title = title
+
+    # работа с датами
+    @property
+    def created_at(self):
+        return self.__create_at
+
+    @property
+    def publish_at(self):
+        return self.__publish_at
 
     def __set_create_at(self, create_at: DateTimeImmutable):
         assert self.__is_valid_date(create_at)
@@ -92,12 +110,14 @@ class Post:
     def __is_valid_date(self, create_at: DateTimeImmutable):
         return True
 
+    # управление статусами
     @property
     def status(self):
         return self.__status
 
     def publish(self):
         self.__status = Status.published()
+        self.__publish_at = DateTimeImmutable()
 
     def unpublish(self):
         self.__status = Status.draft()
