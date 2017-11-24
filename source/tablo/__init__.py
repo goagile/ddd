@@ -72,27 +72,25 @@ class Tablo:
 class SplitTabloColumn(TabloColumn):
 
     def __str__(self):
-        return joinsequence(self.rows)
+        return ''
 
 
 class SplitTabloRow(TabloRow):
 
-    def __init__(self, headers, row_data, margin=3):
+    def __init__(self, headers, row_data):
         super().__init__(headers, row_data)
-        self.margin = margin
 
-    def __str__(self):
-        formatted_sequence = []
-        for d in self.data:
-            x = self.__format(d)
-            formatted_sequence.append(x)
-        return joinrow(formatted_sequence)
-
-    def __format(self, data):
-        margin = max(self.margin, len(data))
-        format = Format(Align.Left, margin)
-        result = (data, format)
-        return result
+    # def __str__(self):
+    #     formatted_sequence = []
+    #     for d in self.data:
+    #         x = self.__format(d)
+    #         formatted_sequence.append(x)
+    #     return joinrow(formatted_sequence)
+    #
+    # def __format(self, data):
+    #     format = Format(Align.Left, margin=len(data))
+    #     result = (data, format)
+    #     return result
 
 
 class SplitTablo(Tablo):
@@ -102,13 +100,32 @@ class SplitTablo(Tablo):
 
     def __init__(self, headers):
         super().__init__(headers)
-        self.margin = 3
+        margins = {k: 3 for k in headers}
 
     def append(self, row_data):
-        max_len = max(len(r) for r in row_data)
-        self.margin = max(self.margin, max_len)
-        row = self.Row(self.headers, row_data, margin=self.margin)
+        row = self.Row(self.headers, row_data)
         self.rows.append(row)
+
+    def print(self):
+        result = []
+        for r in self.rows:
+            self.set_margins(r)
+            result.append(r)
+        return result
+
+    def set_margins(self, row):
+        for k, v in self.margins.items():
+            row
+        formatted_sequence = []
+        for d in self.data:
+            x = self.__format(d)
+            formatted_sequence.append(x)
+        return joinrow(formatted_sequence)
+
+    def __format(self, data):
+        format = Format(Align.Left, margin=len(data))
+        result = (data, format)
+        return result
 
 
 class AlignTemplate:
@@ -127,13 +144,6 @@ class Format:
     def __init__(self, align, margin):
         self.align = align
         self.margin = margin
-
-
-# deprecated
-def joinsequence(sequence, separator='|', margin=3, align: AlignTemplate=Align.Center):
-    template = align.template.format(separator, margin) * len(sequence) + separator
-    result = template.format(*sequence)
-    return result
 
 
 def joinrow(formatted_sequence, separator='|'):
