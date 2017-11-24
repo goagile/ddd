@@ -1,6 +1,6 @@
 
 
-class SplitTable:
+class Tablo:
 
     def __init__(self, headers):
         self.headers = headers

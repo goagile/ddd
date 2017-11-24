@@ -3,12 +3,17 @@
 Таблица с разделителями
 =======================
 
-    >>> from splittable import SplitTable
+Создание и доступ
+-----------------
+
+Подключаем таблицу
+
+    >>> from splittable import Tablo
 
 Создание таблицы (с указанием заголовков)
 
     >>> headers = 'X Y Z A B'.split()
-    >>> table = SplitTable(headers)
+    >>> table = Tablo(headers)
 
 Добавление строки в таблицу
 
@@ -65,5 +70,10 @@
     ...     [col for col in row]
     ['@', 4, 2.1, False, 'Нет']
     ['&', 22, 5.03, True, 'Да']
+
+Печать таблицы
+--------------
+
+    >>> table.print()
 
 """
