@@ -1,42 +1,66 @@
 """
 
-Создаем валидный адрес
+Проверяем как обработчик ошибок печатает сообщения
 
-    >>> moscow = Location(country='Russia', city='Moscow', postcode='12345')
-
-Абстрактный Валидотор не разрешается создавать
-
-    >>> av = AbstractValidator()
-    Traceback (most recent call last):
-      ...
-    TypeError: Can't instantiate abstract class AbstractValidator with abstract methods handle_error, valildate
-
-    >>> vh = ValidationHandler()
-    >>> vh.handle_error('XXX')
+    >>> handler = ValidationHandler()
+    >>> handler.handle_error('XXX')
     XXX
 
+Создаем валидный адрес
+
+    >>> postcode = '123-456'
+    >>> moscow = City('Moscow')
+    >>> moscow.add_postcode(postcode)
+    >>> ru = Country('Russia')
+    >>> ru.add_city(moscow)
+    >>> location = Location(ru, moscow, postcode)
+    >>> location.validate(handler)
+
+Создаем адрес с невалидным Городом
+
+    >>> postcode = '123-456'
+    >>> moscow = City('Moscow')
+    >>> moscow.add_postcode(postcode)
+    >>> ru = Country('Russia')
+    >>> ru.add_city(moscow)
+    >>> newyork = City('New-Yourk')
+    >>> location = Location(ru, newyork, postcode)
+    >>> location.validate(handler)
+    City not found
+
+Создаем адрес с невалидным Индексом
+
+    >>> postcode = '123----456'
+    >>> moscow = City('Moscow')
+    >>> moscow.add_postcode(postcode)
+    >>> ru = Country('Russia')
+    >>> ru.add_city(moscow)
+    >>> location = Location(ru, moscow, postcode)
+    >>> location.validate(handler)
+    Postcode is invalid
 
 """
 
-import abc
+import re
 
 
 class ValidationHandler:
+
+    def __init__(self):
+        pass
 
     def handle_error(self, message):
         print(message)
 
 
-class AbstractValidator(abc.ABC):
+class AbstractValidator:
 
     def __init__(self, validation_handler):
         self.validation_handler = validation_handler
 
-    @abc.abstractmethod
     def handle_error(self, message):
         self.validation_handler.handle_error(message)
 
-    @abc.abstractmethod
     def valildate(self):
         pass
 
@@ -49,8 +73,40 @@ class LocationValidator(AbstractValidator):
 
     def valildate(self):
         city = self.location.city
-        if not self.location.country.has_city(city):
+        if not self.location.country.has_city(city.name):
             self.handle_error('City not found')
+
+        postcode = self.location.postcode
+        if not self.location.city.is_postcode_valid(postcode):
+            self.handle_error('Postcode is invalid')
+
+
+class City:
+
+    def __init__(self, name):
+        self.name = name
+        self.postcodes = []
+        self.format = re.compile('^(\d){3}-(\d){3}$')
+
+    def add_postcode(self, postcode):
+        self.postcodes.append(postcode)
+
+    def is_postcode_valid(self, postcode):
+        return bool(self.format.match(postcode))
+
+
+class Country:
+
+    def __init__(self, name):
+        self.name = name
+        self.cities = {}
+
+    def add_city(self, city: City):
+        name = city.name
+        self.cities[name] = city
+
+    def has_city(self, name):
+        return bool(self.cities.get(name, False))
 
 
 class Location:
