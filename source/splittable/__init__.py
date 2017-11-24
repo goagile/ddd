@@ -8,7 +8,7 @@ class SplitTable:
 
     def __getattr__(self, item):
         if item in self.headers:
-            return None
+            return SplitTableColumn(item, self.rows)
         return self.__getattribute__(item)
 
     def __getitem__(self, item):
@@ -35,4 +35,25 @@ class SplitTableRow:
 
 
 class InvalidColumnName(Exception):
+    pass
+
+
+class SplitTableColumn:
+
+    def __init__(self, name, rows):
+        self.rows = self.collect_rows(name, rows)
+
+    def collect_rows(self, name, rows):
+        result = []
+        for row in rows:
+            result.append(getattr(row, name))
+        return result
+
+    def __getitem__(self, item):
+        if len(self.rows) < item:
+            raise InvalidRowIndex(item)
+        return self.rows[item]
+
+
+class InvalidRowIndex(Exception):
     pass
