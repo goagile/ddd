@@ -8,7 +8,7 @@
 
 Подключаем таблицу
 
-    >>> from splittable import Tablo
+    >>> from tablo import Tablo
 
 Создание таблицы (с указанием заголовков)
 
@@ -37,7 +37,7 @@
     >>> row.G
     Traceback (most recent call last):
       ...
-    splittable.InvalidColumnName: G
+    tablo.InvalidColumnName: G
 
 Добавление строки в таблицу
 
@@ -55,7 +55,7 @@
     >>> column_X[10]
     Traceback (most recent call last):
       ...
-    splittable.InvalidRowIndex: 10
+    tablo.InvalidRowIndex: 10
 
 Перебор строк и доступ к данным строки
 
@@ -71,9 +71,5 @@
     ['@', 4, 2.1, False, 'Нет']
     ['&', 22, 5.03, True, 'Да']
 
-Печать таблицы
---------------
-
-    >>> table.print()
 
 """
