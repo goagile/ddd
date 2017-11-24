@@ -23,15 +23,22 @@ class SplitTableRow:
 
     def __init__(self, headers, row_data):
         self.headers = headers
-        self.row_data = row_data
+        self.__row_data = row_data
+
+    @property
+    def data(self):
+        return [d for d in self.__row_data]
 
     def __getattr__(self, item):
         if item not in self.headers and item not in self.__dict__:
             raise InvalidColumnName(item)
         if item in self.headers:
             i = self.headers.index(item)
-            return self.row_data[i]
+            return self.__row_data[i]
         return self.__getattribute__(item)
+
+    def __getitem__(self, item):
+        return self.__row_data[item]
 
 
 class InvalidColumnName(Exception):
