@@ -1,6 +1,6 @@
 """
 
-    >>> from tablo import joinrow, Align, Format
+    >>> from tablo.split_tablo_format import joinrow, Align, Format
 
     >>> sequence = ['X', 'Y', 'Z', 'A', 'B']
 

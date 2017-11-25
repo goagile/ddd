@@ -8,7 +8,7 @@
 
 Подключаем таблицу
 
-    >>> from tablo import Tablo
+    >>> from tablo.tablo import Tablo
 
 Создание таблицы (с указанием заголовков)
 
@@ -37,7 +37,7 @@
     >>> row.G
     Traceback (most recent call last):
       ...
-    tablo.InvalidColumnName: G
+    tablo.tablo.InvalidColumnName: G
 
 Добавление строки в таблицу
 
@@ -55,7 +55,7 @@
     >>> column_X[10]
     Traceback (most recent call last):
       ...
-    tablo.InvalidRowIndex: 10
+    tablo.tablo.InvalidRowIndex: 10
 
 Перебор строк и доступ к данным строки
 
