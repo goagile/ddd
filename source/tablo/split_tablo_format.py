@@ -37,5 +37,5 @@ def joinrow(formatted_sequence, separator='|'):
             sp=format.spacer,
             sep=separator,
             mgn=format.margin)
-        result += template.format(data)
+        result += template.format(str(data))
     return result + separator

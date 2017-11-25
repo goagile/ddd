@@ -6,5 +6,5 @@ R = 67.232
 U = 'INVALID DATA'
 
 tablo = SplitTablo(headers='I R U'.split())
-tablo.append_row([I, R, U])
+tablo.append_row([I, R])
 tablo.print()

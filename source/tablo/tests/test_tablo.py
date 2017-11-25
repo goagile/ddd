@@ -69,6 +69,14 @@
         ...
     ValueError: '['invalid', 'data']' Invalid Primitive type
 
+Неполная строка
+
+    >>> row = ('45', 18.2)
+    >>> tablo.append_row(row)
+    >>> row = tablo[2]
+    >>> row.X, row.Y, row.Z, row.A, row.B
+    ('45', 18.2, None, None, None)
+
 Доступ к несуществующей строке
 
     >>> column_X[10]

@@ -34,6 +34,8 @@ class TabloRow:
             raise AttributeError(ERROR_TEMPLATE.format(item, INVALID_COLUMN_NAME))
         if item in self._headers:
             i = self._headers.index(item)
+            if i >= len(self.__row_data):
+                return None
             return self.__row_data[i]
         return self.__getattribute__(item)
 
