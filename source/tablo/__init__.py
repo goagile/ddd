@@ -1,3 +1,4 @@
+from collections import OrderedDict
 
 
 class TabloRow:
@@ -55,10 +56,12 @@ class Tablo:
     def __init__(self, headers):
         self.headers = headers
         self.rows = []
+        self.columns = OrderedDict()
 
     def __getattr__(self, item):
-        if item in self.headers:
-            return self.Column(item, self.rows)
+        col = self.columns.get(item)
+        if col:
+            return col
         return self.__getattribute__(item)
 
     def __getitem__(self, item):
@@ -67,9 +70,24 @@ class Tablo:
     def append(self, row_data):
         row = self.Row(self.headers, row_data)
         self.rows.append(row)
+        for x in self.headers:
+            new_column = self.Column(x, self.rows)
+            self.columns[x] = new_column
 
 
 class SplitTabloColumn(TabloColumn):
+
+    def __init__(self, name, rows):
+        super().__init__(name, rows)
+        self.format = Format(align=Align.Left, margin=3)
+
+    @property
+    def margin(self):
+        return self.format.margin
+
+    @margin.setter
+    def margin(self, value):
+        self.format.margin = value
 
     def __str__(self):
         return ''
@@ -80,18 +98,6 @@ class SplitTabloRow(TabloRow):
     def __init__(self, headers, row_data):
         super().__init__(headers, row_data)
 
-    # def __str__(self):
-    #     formatted_sequence = []
-    #     for d in self.data:
-    #         x = self.__format(d)
-    #         formatted_sequence.append(x)
-    #     return joinrow(formatted_sequence)
-    #
-    # def __format(self, data):
-    #     format = Format(Align.Left, margin=len(data))
-    #     result = (data, format)
-    #     return result
-
 
 class SplitTablo(Tablo):
 
@@ -100,31 +106,21 @@ class SplitTablo(Tablo):
 
     def __init__(self, headers):
         super().__init__(headers)
-        margins = {k: 3 for k in headers}
-
-    def append(self, row_data):
-        row = self.Row(self.headers, row_data)
-        self.rows.append(row)
 
     def print(self):
         result = []
-        for r in self.rows:
-            self.set_margins(r)
-            result.append(r)
+        for row in self.rows:
+            formatted_row = self.format_row(row)
+            result.append(joinrow(formatted_row))
         return result
 
-    def set_margins(self, row):
-        for k, v in self.margins.items():
-            row
-        formatted_sequence = []
-        for d in self.data:
-            x = self.__format(d)
-            formatted_sequence.append(x)
-        return joinrow(formatted_sequence)
-
-    def __format(self, data):
-        format = Format(Align.Left, margin=len(data))
-        result = (data, format)
+    def format_row(self, row):
+        result = []
+        for header_name in self.headers:
+            data = getattr(row, header_name)
+            column = getattr(self, header_name)
+            formatted_data = (data, column.format)
+            result.append(formatted_data)
         return result
 
 
