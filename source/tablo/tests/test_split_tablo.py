@@ -7,15 +7,18 @@
 
     >>> from tablo.split_tablo import SplitTablo
 
-Авто-выравнивание ширины колонок
-
     >>> t = SplitTablo('X  Y  Z  A  B'.split())
     >>> t.append('@ 4   2.1 False Нет'.split())
     >>> t.append('$ 5.2 8   True  Да '.split())
 
+Печать таблицы (Авто-выравнивание ширины колонок)
+
+    # >>> [x for x in dir(t[0]) if not x.startswith('_')]
+
     >>> t.print()
-    |@|4  |2.1|False|Нет|
-    |$|5.2|8  |True |Да |
+    | X | Y   | Z   | A     | B   |
+    | @ | 4   | 2.1 | False | Нет |
+    | $ | 5.2 | 8   | True  | Да  |
 
 Ручное выравнивание + автовыравнивание колонки
 
@@ -24,20 +27,11 @@
     >>> t.B.margin = 15
     >>> t.B.centred()
 
-    >>> [name for name in t.columns]
-    ['X', 'Y', 'Z', 'A', 'B']
-
-    >>> for name, column in t.columns.items():
-    ...     column.margin
-    10
-    3
-    3
-    5
-    15
+    >>> t.A.not_spaced()
 
     >>> t.print()
-    |    @     |4  |2.1|False|      Нет      |
-    |    $     |5.2|8  |True |      Да       |
-
+    |     X      | Y   | Z   |A    |        B        |
+    |     @      | 4   | 2.1 |False|       Нет       |
+    |     $      | 5.2 | 8   |True |       Да        |
 
 """
