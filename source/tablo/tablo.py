@@ -1,6 +1,11 @@
 from collections import OrderedDict
 
 
+ERROR_TEMPLATE = "'{}' {}"
+INVALID_ROW_INDEX = 'Invalid row index'
+INVALID_COLUMN_NAME = 'Invalid column name'
+
+
 class TabloRow:
 
     def __init__(self, headers, row_data):
@@ -13,7 +18,7 @@ class TabloRow:
 
     def __getattr__(self, item):
         if item not in self._headers and item not in self.__dict__:
-            raise InvalidColumnName(item)
+            raise AttributeError(ERROR_TEMPLATE.format(item, INVALID_COLUMN_NAME))
         if item in self._headers:
             i = self._headers.index(item)
             return self.__row_data[i]
@@ -33,7 +38,7 @@ class TabloColumn:
 
     def __getitem__(self, item):
         if len(self._rows) < item:
-            raise InvalidRowIndex(item)
+            raise AttributeError(ERROR_TEMPLATE.format(item, INVALID_ROW_INDEX))
         return self._rows[item]
 
 
@@ -56,17 +61,12 @@ class Tablo:
     def __getitem__(self, item):
         return self._rows[item]
 
-    def append(self, row_data):
-        row = self._Row(self._headers, row_data)
-        self._rows.append(row)
+    def append_row(self, row_data):
+        new_row = self._Row(self._headers, row_data)
+        self._rows.append(new_row)
+        self.__recreate_columns()
+
+    def __recreate_columns(self):
         for h in self._headers:
             new_column = self._Column(h, self._rows)
             self._columns[h] = new_column
-
-
-class InvalidColumnName(Exception):
-    pass
-
-
-class InvalidRowIndex(Exception):
-    pass

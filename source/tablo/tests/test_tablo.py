@@ -1,7 +1,7 @@
 """
 
-Таблица с разделителями
-=======================
+Таблица
+=======
 
 Создание и доступ
 -----------------
@@ -18,7 +18,7 @@
 Добавление строки в таблицу
 
     >>> row = '@', 4, 2.1, False, 'Нет'
-    >>> table.append(row)
+    >>> table.append_row(row)
 
 Доступ к строке по индексу, доступ к ячейке по имени столбца
 
@@ -37,12 +37,12 @@
     >>> row.G
     Traceback (most recent call last):
       ...
-    tablo.tablo.InvalidColumnName: G
+    AttributeError: 'G' Invalid column name
 
 Добавление строки в таблицу
 
     >>> row = '&', 22, 5.03, True, 'Да'
-    >>> table.append(row)
+    >>> table.append_row(row)
 
 Доступ к столбцу по индексу строки
 
@@ -55,7 +55,7 @@
     >>> column_X[10]
     Traceback (most recent call last):
       ...
-    tablo.tablo.InvalidRowIndex: 10
+    AttributeError: '10' Invalid row index
 
 Перебор строк и доступ к данным строки
 

@@ -8,8 +8,8 @@
     >>> from tablo.split_tablo import SplitTablo
 
     >>> t = SplitTablo('X  Y  Z  A  B'.split())
-    >>> t.append('@ 4   2.1 False Нет'.split())
-    >>> t.append('$ 5.2 8   True  Да '.split())
+    >>> t.append_row('@ 4   2.1 False Нет'.split())
+    >>> t.append_row('$ 5.2 8   True  Да '.split())
 
 Печать таблицы (Авто-выравнивание ширины колонок)
 
