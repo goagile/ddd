@@ -23,7 +23,7 @@ class SplitTabloColumn(TabloColumn):
         self._format.margin = value
 
     def __max_margin(self, rows):
-        return max(len(r) for r in rows)
+        return max(len(str(r)) for r in rows)
 
     def centred(self):
         self._format.align = Align.Center

@@ -4,13 +4,26 @@ from collections import OrderedDict
 ERROR_TEMPLATE = "'{}' {}"
 INVALID_ROW_INDEX = 'Invalid row index'
 INVALID_COLUMN_NAME = 'Invalid column name'
+INVALID_PRIMITIVE_TYPE = 'Invalid Primitive type'
 
 
 class TabloRow:
 
+    data_types = (int, float, str, bool)
+
     def __init__(self, headers, row_data):
         self._headers = headers
+        self.__validate_row_data(row_data)
         self.__row_data = row_data
+
+    def __validate_row_data(self, row_data):
+        for d in row_data:
+            if not self.__is_supported_type(d):
+                raise ValueError(ERROR_TEMPLATE.format(d, INVALID_PRIMITIVE_TYPE))
+
+    def __is_supported_type(self, data):
+        result = any([isinstance(data, t) for t in self.data_types])
+        return result
 
     @property
     def data(self):
