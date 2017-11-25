@@ -20,6 +20,9 @@ class SplitTabloColumn(TabloColumn):
     def max_margin(self, rows):
         return max(len(r) for r in rows)
 
+    def centred(self):
+        self.format.align = Align.Center
+
 
 class SplitTablo(Tablo):
 
@@ -29,17 +32,16 @@ class SplitTablo(Tablo):
         super().__init__(headers)
 
     def print(self):
-        result = []
-        for row in self.rows:
-            formatted_row = self.format_row(row)
-            result.append(joinrow(formatted_row))
-        return result
+        for row in self.formatted_rows():
+            print(joinrow(row))
+
+    def formatted_rows(self):
+        return [self.format_row(row) for row in self.rows]
 
     def format_row(self, row):
-        result = []
-        for header_name in self.headers:
-            data = getattr(row, header_name)
-            column = getattr(self, header_name)
-            formatted_data = (data, column.format)
-            result.append(formatted_data)
-        return result
+        return [self.format_data(row, h) for h in self.headers]
+
+    def format_data(self, row, h):
+        data = getattr(row, h)
+        column = getattr(self, h)
+        return (data, column.format)
