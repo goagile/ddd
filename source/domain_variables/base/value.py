@@ -1,6 +1,7 @@
 
 
 class DomainValue:
+
     def __init__(self, value, name, label, units, path, description):
         self.__value = value
         self.__name = name

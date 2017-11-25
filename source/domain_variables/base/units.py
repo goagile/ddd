@@ -7,3 +7,10 @@ class Unit:
 
     def __eq__(self, other):
         return bool(self.__class__.__name__ == other.__class__.__name__)
+
+
+class UnitTranslation:
+
+    def __init__(self, new_value, new_units):
+        self.new_value = new_value
+        self.new_units = new_units

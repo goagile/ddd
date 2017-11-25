@@ -1,20 +1,29 @@
-import operator
-
-from domain_variables.base.units import Unit
+from domain_variables.base.units import Unit, UnitTranslation
 
 
-class A(Unit):
+class CurrentUnit(Unit):
 
     @staticmethod
-    def kA(value):
-        return operator.truediv(value, 1e3), kA()
+    def A(value) -> UnitTranslation:
+        return UnitTranslation(value, A())
 
 
-class kA(Unit):
+class A(CurrentUnit):
 
     @staticmethod
-    def A(value):
-        return operator.mul(value, 1e3), A()
+    def kA(value) -> UnitTranslation:
+        return UnitTranslation(
+            new_value=value / 1e3,
+            new_units=kA())
+
+
+class kA(CurrentUnit):
+
+    @staticmethod
+    def A(value) -> UnitTranslation:
+        return UnitTranslation(
+            new_value=value * 1e3,
+            new_units=A())
 
 
 class Units:
