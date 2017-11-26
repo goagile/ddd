@@ -3,7 +3,7 @@
 Подключаем деньги
 
     >>> from value_objects.money.money import Money
-    >>> from value_objects.money.currency import USD
+    >>> from value_objects.money.currency import USD, RUR
 
 Создаем объект деньги
 
@@ -36,6 +36,25 @@
     >>> print(hundred_dollars)
     $100
     >>> print(hundred_dollars.increase_amount(20))
+    $120
+
+Складываем деньги в разных валютах
+
+    >>> d100 = Money(100, USD)
+    >>> d100
+    $100
+    >>> r2000 = Money(2000, RUR)
+    >>> r2000
+    ₽2000
+    >>> x = d100 + r2000
+    Traceback (most recent call last):
+      ...
+    ValueError: USD != RUR Currency are not equal
+    >>> d20 = Money(20, USD)
+    >>> d20
+    $20
+    >>> y = d100 + d20
+    >>> y
     $120
 
 """

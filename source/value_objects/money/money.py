@@ -1,6 +1,9 @@
 from value_objects.money.currency import CurrencyModel
 
 
+CURRENCY_ARE_NOT_EQUAL = 'Currency are not equal'
+
+
 class Money:
 
     def __init__(self, amount, currency: CurrencyModel):
@@ -34,3 +37,8 @@ class Money:
 
     def increase_amount(self, amount):
         return self.__class__(self.amount + amount, self.__currency)
+
+    def __add__(self, other):
+        if self.currency != other.currency:
+            raise ValueError('{} != {} {}'.format(self.currency, other.currency, CURRENCY_ARE_NOT_EQUAL))
+        return self.__class__(self.amount + other.amount, self.currency)
