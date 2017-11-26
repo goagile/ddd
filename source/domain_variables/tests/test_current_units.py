@@ -2,7 +2,7 @@
 
 Подключение
 
-    >>> from domain_variables.currents.currents_units import Units
+    >>> from domain_variables.current.units import Units
 
 Перевод
 

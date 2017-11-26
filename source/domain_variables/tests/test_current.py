@@ -5,7 +5,7 @@
 
 Подключаем модуль токов
 
-    >>> from domain_variables.currents.currents import Ikz, Units
+    >>> from domain_variables.current.current import Ikz, Units
 
 Создание тока
 
