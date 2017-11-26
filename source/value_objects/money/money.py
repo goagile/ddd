@@ -1,3 +1,4 @@
+from value_objects.money.currency import CurrencyModel
 
 
 class Money:
@@ -5,6 +6,9 @@ class Money:
     def __init__(self, amount, currency):
         self.__amount = amount
         self.__currency = currency
+
+    def __repr__(self):
+        return '{}{}'.format(self.currency.sign, self.amount)
 
     @property
     def amount(self):
@@ -16,9 +20,11 @@ class Money:
 
     @classmethod
     def from_money(cls, money):
-        return cls(
-            money.amount,
-            money.currency)
+        return cls(money.amount, money.currency)
+
+    @classmethod
+    def from_currency(cls, currency: CurrencyModel):
+        return cls(0, currency)
 
     def __eq__(self, other):
         return all([
