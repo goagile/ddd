@@ -1,4 +1,4 @@
-from tactical_patterns.value_objects import CurrencyModel
+from tactical_patterns.value_objects.money.currency_model import CurrencyModel
 
 
 CURRENCY_ARE_NOT_EQUAL = 'Currency are not equal'
