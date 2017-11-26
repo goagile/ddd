@@ -28,4 +28,14 @@
     >>> print(zero_dollars)
     $0
 
+Добавляем деньги
+
+    >>> hundred_dollars = zero_dollars.increase_amount(100)
+    >>> hundred_dollars.amount
+    100
+    >>> print(hundred_dollars)
+    $100
+    >>> print(hundred_dollars.increase_amount(20))
+    $120
+
 """

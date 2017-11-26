@@ -3,7 +3,7 @@ from value_objects.money.currency import CurrencyModel
 
 class Money:
 
-    def __init__(self, amount, currency):
+    def __init__(self, amount, currency: CurrencyModel):
         self.__amount = amount
         self.__currency = currency
 
@@ -31,3 +31,6 @@ class Money:
             self.amount == other.amount,
             self.currency == other.currency
         ])
+
+    def increase_amount(self, amount):
+        return self.__class__(self.amount + amount, self.__currency)
