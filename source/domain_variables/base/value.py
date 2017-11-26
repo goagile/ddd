@@ -1,3 +1,4 @@
+EQUALITY_DELTA = 0.000001
 
 
 class DomainValue:
@@ -35,19 +36,15 @@ class DomainValue:
         return int(self.__value)
 
     def __eq__(self, other):
+        return self.equal(other, delta=EQUALITY_DELTA)
+
+    def equal(self, other, delta=EQUALITY_DELTA):
         return all([
-            self.name == other.name,
-            self.value == other.value,
-            self.units == other.units
+            # self.name == other.name,
+            self.are_values_equal(self.value, other.value, delta),
+            # self.units == other.units
         ])
 
-    def equal(self, other, delta=0.01):
-        return all([
-            self.name == other.name,
-            self.__are_values_equal(other, delta),
-            self.units == other.units
-        ])
-
-    def __are_values_equal(self, other, delta):
-        x = abs(self.value - other.value)
+    def are_values_equal(self, v1, v2, delta):
+        x = abs(v1 - v2)
         return bool(x <= delta)
