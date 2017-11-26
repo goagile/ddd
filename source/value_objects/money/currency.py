@@ -1,16 +1,3 @@
-"""
-
-    >>> usd = Currency('AAA22323')
-    Traceback (most recent call last):
-      ...
-    ValueError: Invalid Iso code
-
-    >>> usd = Currency('USD')
-    >>> usd
-    USD
-
-"""
-
 import re
 
 INVALID_ISO_CODE = 'Invalid Iso code'
