@@ -1,5 +1,13 @@
 """
 
+Сущность Книга поддерживает свою уникальность с помощью ISBN.
+ISBN - International Standard Book Number.
+В этом примере:
+    Book - сущность
+    ISBN - объект-значение
+
+Создаем книгу
+
     >>> isbn = '1234567890X'
     >>> title = 'Python programming'
     >>> book = Book(isbn, title)

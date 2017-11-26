@@ -2,8 +2,8 @@
 
 Подключаем деньги
 
-    >>> from value_objects.money.money import Money
-    >>> from value_objects.money.currency import USD, RUR
+    >>> from tactical_patterns.value_objects import Money
+    >>> from tactical_patterns.value_objects import USD, RUR
 
 Создаем объект деньги.
 Проверяем его свойства, Печатем на консоли.

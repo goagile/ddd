@@ -2,7 +2,7 @@
 
 Создаем валюту
 
-    >>> from value_objects.money.currency import CurrencyModel
+    >>> from tactical_patterns.value_objects import CurrencyModel
 
 ISO код валюты должен быть валидным
 
