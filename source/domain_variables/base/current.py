@@ -1,6 +1,9 @@
 from domain_variables.base.value import DomainValue, EQUALITY_DELTA
 
 
+WRONG_MUL_OPERAND = 'Wrong mul operand'
+
+
 class CurrentValue(DomainValue):
 
     def scale(self, func):
@@ -45,6 +48,38 @@ class CurrentValue(DomainValue):
     def __sub__(self, other):
         i1, i2 = self.__scale_to_si(other)
         new_value = i1.value - i2.value
+        new_units = i1.units
+        result = self._new_result(new_value, new_units)
+        return result
+
+    def __mul__(self, other):
+        if isinstance(other, float) or isinstance(other, int):
+            result = self._mul_scalar(other)
+        elif isinstance(other, CurrentValue):
+            result = self._mul_current(other)
+        else:
+            raise TypeError("'{}' {}".format(other, WRONG_MUL_OPERAND))
+        return result
+
+    # def __matmul__(self, other):
+    #     if isinstance(other, float) or isinstance(other, int):
+    #         result = self._mul_scalar(other)
+    #     elif isinstance(other, CurrentValue):
+    #         result = self._mul_current(other)
+    #     else:
+    #         raise TypeError("'{}' {}".format(other, WRONG_MUL_OPERAND))
+    #     return result
+
+    def _mul_scalar(self, other):
+        i1 = self.scale(self.units.A)
+        new_value = i1.value * other
+        new_units = i1.units
+        result = self.__class__(new_value, new_units)
+        return result
+
+    def _mul_current(self, other):
+        i1, i2 = self.__scale_to_si(other)
+        new_value = i1.value * i2.value
         new_units = i1.units
         result = self._new_result(new_value, new_units)
         return result
