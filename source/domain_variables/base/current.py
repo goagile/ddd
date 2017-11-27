@@ -1,5 +1,5 @@
 from domain_variables.base.value import DomainValue, EQUALITY_DELTA
-
+from domain_variables.current.units import Units
 
 WRONG_MUL_OPERAND = 'Wrong mul operand'
 
@@ -84,10 +84,20 @@ class CurrentValue(DomainValue):
         result = self._new_result(new_value, new_units)
         return result
 
-    def _new_result(
-            self, value, units,
-            name='I', label='I', path='',
-            description='Результирующий ток', fpointdigits=2):
-        result = CurrentValue(
-            value, name, label, units, path, description, fpointdigits)
+    def _new_result(self, value, units):
+        result = I(value, units)
         return result
+
+
+class I(CurrentValue):
+    """ Ток, который получается в результате расчетов """
+
+    def __init__(self, value, units=Units.A):
+        super().__init__(
+            value=value,
+            name='I',
+            label='I',
+            units=units,
+            path='',
+            description='Результирующий ток',
+            fpointdigits=2)
