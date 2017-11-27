@@ -1,7 +1,7 @@
-from domain_variables.base.units import BaseUnit, UnitsScaleResults
+from domain_variables.base.units import BaseUnits, UnitsScaleResults
 
 
-class StandardCurrentUnit(BaseUnit):
+class StandardCurrentUnit(BaseUnits):
 
     @staticmethod
     def A(value) -> UnitsScaleResults:
