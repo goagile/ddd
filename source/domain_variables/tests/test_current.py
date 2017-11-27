@@ -203,6 +203,8 @@
 
 Разные имена токов
 
+    >>> from domain_variables.current.current import Ied
+
     >>> ikz = Ikz(80)
     >>> print(ikz)
     Iкз=80.00, A
@@ -225,5 +227,3 @@
     I=180.00, A
 
 """
-
-from domain_variables.current.current import Ied
