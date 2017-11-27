@@ -39,12 +39,20 @@ class CurrentValue(DomainValue):
         i1, i2 = self.__scale_to_si(other)
         new_value = i1.value + i2.value
         new_units = i1.units
-        result = self.__class__(new_value, new_units)
+        result = self._new_result(new_value, new_units)
         return result
 
     def __sub__(self, other):
         i1, i2 = self.__scale_to_si(other)
         new_value = i1.value - i2.value
         new_units = i1.units
-        result = self.__class__(new_value, new_units)
+        result = self._new_result(new_value, new_units)
+        return result
+
+    def _new_result(
+            self, value, units,
+            name='I', label='I', path='',
+            description='Результирующий ток', fpointdigits=2):
+        result = CurrentValue(
+            value, name, label, units, path, description, fpointdigits)
         return result

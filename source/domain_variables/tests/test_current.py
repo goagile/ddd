@@ -151,12 +151,26 @@
     >>> i1 = Ikz(100)
     >>> print(i1)
     Iкз=100.00, A
+
     >>> i2 = Ikz(200)
     >>> print(i2)
     Iкз=200.00, A
+
+Сложим два тока
+
     >>> i3 = i1 + i2
+    >>> print(i3)
+    I=300.00, A
+    >>> print(i3.description)
+    Результирующий ток
+
+Значение результирующего тока
+
     >>> float(i3)
     300.0
+
+Единицы измерения результирующего тока
+
     >>> i3.units == Units.A
     True
 
@@ -185,6 +199,31 @@
     Iкз=100.00, A
     >>> i3 = i2 - i1
     >>> print(i3)
-    Iкз=20.00, A
+    I=20.00, A
+
+Разные имена токов
+
+    >>> ikz = Ikz(80)
+    >>> print(ikz)
+    Iкз=80.00, A
+    >>> print(ikz.description)
+    Ток короткого замыкания
+
+    >>> ied = Ied(100)
+    >>> print(ied)
+    Iэд=100.00, A
+    >>> print(ied.description)
+    Ток двигателей
+
+    >>> i = ikz + ied
+    >>> print(i)
+    I=180.00, A
+    >>> print(i.description)
+    Результирующий ток
+    >>> i = ied + ikz
+    >>> print(i)
+    I=180.00, A
 
 """
+
+from domain_variables.current.current import Ied

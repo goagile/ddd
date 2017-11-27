@@ -29,6 +29,10 @@ class DomainValue:
     def units(self):
         return self.__units
 
+    @property
+    def description(self):
+        return self.__description
+
     def __float__(self):
         return float(self.__value)
 
