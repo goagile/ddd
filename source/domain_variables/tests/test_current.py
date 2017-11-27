@@ -8,7 +8,8 @@
 
 Подключаем модуль токов
 
-    >>> from domain_variables.current.current import Ikz, Units
+    >>> from domain_variables.current.value import Ikz, Units
+    >>> from domain_variables.current.serializers import CurrentSerializer
 
 Создание тока (По умолчанию, ток задается в А)
 
@@ -144,9 +145,6 @@
     15634.3456
 
 
-Арифметика
-==========
-
 Сложение токов
 --------------
 
@@ -207,7 +205,7 @@
 
 Разные имена токов
 
-    >>> from domain_variables.current.current import Ied
+    >>> from domain_variables.current.value import Ied
 
     >>> ikz = Ikz(80)
     >>> print(ikz)
@@ -279,5 +277,32 @@
     >>> ikz = Ikz(y)
     >>> print(ikz)
     Iкз=20.00, A
+
+Возведение в степень
+????????????????????
+
+    >>> i1 = Ikz(3)
+    >>> i1 ** 2
+    I=9.00, A
+
+Сохранение
+----------
+
+Сохранение в словарь
+
+    >>> i1 = Ikz(3)
+    >>> dumped = CurrentSerializer.dumps(i1)
+    >>> dumped['name']
+    'Ikz'
+    >>> dumped['value']
+    3
+    >>> dumped['units']
+    'A'
+
+Загрузка из словаря
+
+    >>> i2 = CurrentSerializer.loads(dumped)
+    >>> print(i2)
+    Iкз=3.00, A
 
 """

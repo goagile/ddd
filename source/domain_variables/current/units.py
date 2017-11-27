@@ -1,27 +1,27 @@
-from domain_variables.base.units import Unit, UnitTranslation
+from domain_variables.base.units import Unit, ScaleResults
 
 
-class CurrentUnit(Unit):
-
-    @staticmethod
-    def A(value) -> UnitTranslation:
-        return UnitTranslation(value, A())
-
-
-class A(CurrentUnit):
+class StandardCurrentUnit(Unit):
 
     @staticmethod
-    def kA(value) -> UnitTranslation:
-        return UnitTranslation(
+    def A(value) -> ScaleResults:
+        return ScaleResults(value, A())
+
+
+class A(StandardCurrentUnit):
+
+    @staticmethod
+    def kA(value) -> ScaleResults:
+        return ScaleResults(
             new_value=value / 1e3,
             new_units=kA())
 
 
-class kA(CurrentUnit):
+class kA(StandardCurrentUnit):
 
     @staticmethod
-    def A(value) -> UnitTranslation:
-        return UnitTranslation(
+    def A(value) -> ScaleResults:
+        return ScaleResults(
             new_value=value * 1e3,
             new_units=A())
 
@@ -29,3 +29,9 @@ class kA(CurrentUnit):
 class Units:
     A = A()
     kA = kA()
+
+
+registry_of_units = {
+    'A': Units.A,
+    'kA': Units.kA
+}

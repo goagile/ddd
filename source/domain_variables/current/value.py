@@ -10,7 +10,6 @@ class Ikz(CurrentValue):
             name='Ikz',
             label='Iкз',
             units=units,
-            path='x:I:z',
             description='Ток короткого замыкания',
             fpointdigits=2)
 
@@ -23,6 +22,11 @@ class Ied(CurrentValue):
             name='Ied',
             label='Iэд',
             units=units,
-            path='x:I:ed',
             description='Ток двигателей',
             fpointdigits=2)
+
+
+registry_of_currents = {
+    'Ikz': Ikz,
+    'Ied': Ied
+}

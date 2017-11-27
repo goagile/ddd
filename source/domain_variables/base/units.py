@@ -9,7 +9,7 @@ class Unit:
         return bool(self.__class__.__name__ == other.__class__.__name__)
 
 
-class UnitTranslation:
+class ScaleResults:
 
     def __init__(self, new_value, new_units):
         self.new_value = new_value

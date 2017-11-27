@@ -2,7 +2,7 @@
 
 Подключение
 
-    >>> from domain_variables.current.units import Units
+    >>> from domain_variables.current.units import Units, registry_of_units
 
 Перевод
 
@@ -19,5 +19,12 @@
 
     >>> Units.kA == t.new_units
     True
+
+Восстановление из строки
+
+    >>> u = registry_of_units.get('А')
+    >>> print(u)
+    A
+
 
 """

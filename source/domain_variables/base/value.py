@@ -3,12 +3,11 @@ EQUALITY_DELTA = 1e-6
 
 class DomainValue:
 
-    def __init__(self, value, name, label, units, path, description, fpointdigits=2):
+    def __init__(self, value, name, label, units, description, fpointdigits=2):
         self.__value = value
         self.__name = name
         self.__label = label
         self.__units = units
-        self.__path = path
         self.__description = description
         self.__fpointdigits = fpointdigits
 
@@ -22,6 +21,10 @@ class DomainValue:
         return self.__name
 
     @property
+    def label(self):
+        return self.__label
+
+    @property
     def value(self):
         return self.__value
 
@@ -32,6 +35,10 @@ class DomainValue:
     @property
     def description(self):
         return self.__description
+
+    @property
+    def fpointdigits(self):
+        return self.__fpointdigits
 
     def __float__(self):
         return float(self.__value)
