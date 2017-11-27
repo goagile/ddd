@@ -15,13 +15,6 @@ class CurrentValue(DomainValue):
         i2 = other.scale(other.units.A)
         return i1, i2
 
-    def __add__(self, other):
-        i1, i2 = self.__scale_to_si(other)
-        new_value = i1.value + i2.value
-        new_units = i1.units
-        result = self.__class__(new_value, new_units)
-        return result
-
     def equal(self, other, delta=EQUALITY_DELTA):
         i1, i2 = self.__scale_to_si(other)
         return bool(self._are_values_equal(i1.value, i2.value, delta))
@@ -41,3 +34,17 @@ class CurrentValue(DomainValue):
     def __le__(self, other):
         i1, i2 = self.__scale_to_si(other)
         return i1.value <= i2.value
+
+    def __add__(self, other):
+        i1, i2 = self.__scale_to_si(other)
+        new_value = i1.value + i2.value
+        new_units = i1.units
+        result = self.__class__(new_value, new_units)
+        return result
+
+    def __sub__(self, other):
+        i1, i2 = self.__scale_to_si(other)
+        new_value = i1.value - i2.value
+        new_units = i1.units
+        result = self.__class__(new_value, new_units)
+        return result
