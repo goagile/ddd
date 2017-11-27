@@ -1,18 +1,21 @@
-EQUALITY_DELTA = 0.000001
+EQUALITY_DELTA = 1e-6
 
 
 class DomainValue:
 
-    def __init__(self, value, name, label, units, path, description):
+    def __init__(self, value, name, label, units, path, description, fpointdigits=2):
         self.__value = value
         self.__name = name
         self.__label = label
         self.__units = units
         self.__path = path
         self.__description = description
+        self.__fpointdigits = fpointdigits
 
     def __repr__(self):
-        return '{}={}, {}'.format(self.__label, self.__value, self.__units)
+        value_temp = '{{:.{}f}}'.format(self.__fpointdigits)
+        value_str = value_temp.format(self.__value)
+        return '{}={}, {}'.format(self.__label, value_str, self.__units)
 
     @property
     def name(self):
@@ -39,12 +42,9 @@ class DomainValue:
         return self.equal(other, delta=EQUALITY_DELTA)
 
     def equal(self, other, delta=EQUALITY_DELTA):
-        return all([
-            # self.name == other.name,
-            self.are_values_equal(self.value, other.value, delta),
-            # self.units == other.units
-        ])
+        return self._are_values_equal(self.value, other.value, delta)
 
-    def are_values_equal(self, v1, v2, delta):
+    @classmethod
+    def _are_values_equal(cls, v1, v2, delta):
         x = abs(v1 - v2)
         return bool(x <= delta)

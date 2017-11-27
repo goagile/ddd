@@ -11,4 +11,5 @@ class Ikz(CurrentValue):
             label='Iкз',
             units=units,
             path='x:I:z',
-            description='Ток короткого замыкания')
+            description='Ток короткого замыкания',
+            fpointdigits=2)
