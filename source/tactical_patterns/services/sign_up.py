@@ -89,16 +89,19 @@ class SingUpService:
         self.repository = repository
 
     def execute(self, request: SignUpUserRequest):
+        # достаем пользователя из БД
         user = self.repository.user_by_email(request.email)
         if user:
             raise UserAlreadyExistException
 
+        # Создаем нового пользователя
         user = User(
             self.repository.next_id(),
             request.email,
             request.password
         )
 
+        # сохраним пользовеателя в БД
         self.repository.add_user(user)
 
         request = SignUpUserResponce(user)
