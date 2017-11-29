@@ -16,10 +16,15 @@
     >>> user
     User(username=daniel, password=123)
 
+    >>> service = Md5HashingSignUp(user_repository)
+    >>> user = service.execute('daniel', 123)
+    User(username=daniel, password=123)
+
 """
 
 
 import abc
+import hashlib
 
 
 class User:
@@ -52,6 +57,8 @@ class UserRepository:
 
 
 class SignUp(abc.ABC):
+
+    @abc.abstractmethod
     def execute(self, username: str, password: str):
         pass
 
@@ -67,15 +74,36 @@ class DefaultHashingSignUp(SignUp):
     def execute(self, username: str, password: str):
         if not self.user_repository.has_user(username):
             raise ValueError('The user {} does not exist'.format(username))
+
         user = self.user_repository.by_user_name(username)
         if not self.is_password_valid_for_user(user, password):
             raise BadCredentialsException('{}; {}'.format(username, password))
+
         return user
 
     @classmethod
     def is_password_valid_for_user(cls, user, password):
-        return password_verify(password, hash(user))
+        return True
 
 
-def password_verify(password, user_hash):
-    return True
+class Md5HashingSignUp(SignUp):
+
+    SALT = 'S0m3S41T'
+
+    def __init__(self, user_repository):
+        self.user_repository = user_repository
+
+    def execute(self, username: str, password: str):
+        if not self.user_repository.by_user_name(username):
+            raise ValueError('The user {} does not exist'.format(username))
+
+        user = self.user_repository.by_user_name(username)
+        if not self.is_password_valid_for_user(user, password):
+            raise BadCredentialsException('{}; {}'.format(username, password))
+
+    def is_password_valid_for_user(self, user, password):
+        encrypted_password = hashlib.md5('{}_{}'.format(password, self.salt()).encode())
+        return hash(user) == encrypted_password
+
+    def salt(self):
+        return hashlib.md5(self.SALT.encode())
