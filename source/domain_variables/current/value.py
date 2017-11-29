@@ -1,8 +1,8 @@
-from domain_variables.base.current import CurrentValue
+from domain_variables.base.scalar_current_value import ScalarCurrentValue
 from domain_variables.current.units import Units
 
 
-class Ikz(CurrentValue):
+class Ikz(ScalarCurrentValue):
 
     def __init__(self, value, units=Units.A):
         super().__init__(
@@ -14,7 +14,7 @@ class Ikz(CurrentValue):
             fpointdigits=2)
 
 
-class Ied(CurrentValue):
+class Ied(ScalarCurrentValue):
 
     def __init__(self, value, units=Units.A):
         super().__init__(

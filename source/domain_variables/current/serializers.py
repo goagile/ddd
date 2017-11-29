@@ -1,4 +1,4 @@
-from domain_variables.base.current import CurrentValue
+from domain_variables.base.scalar_current_value import ScalarCurrentValue
 from domain_variables.current.value import registry_of_currents
 from domain_variables.current.units import registry_of_units
 
@@ -6,7 +6,7 @@ from domain_variables.current.units import registry_of_units
 class CurrentSerializer:
 
     @classmethod
-    def dumps(cls, curent: CurrentValue):
+    def dumps(cls, curent: ScalarCurrentValue):
         result = {
             'name': curent.name,
             'value': curent.value,

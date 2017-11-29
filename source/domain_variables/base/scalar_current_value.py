@@ -4,7 +4,7 @@ from domain_variables.current.units import Units
 WRONG_MUL_OPERAND = 'Wrong mul operand'
 
 
-class CurrentValue(DomainValue):
+class ScalarCurrentValue(DomainValue):
 
     def scale(self, scale_function):
         scale_result = scale_function(self.value)
@@ -54,7 +54,7 @@ class CurrentValue(DomainValue):
     def __mul__(self, other):
         if isinstance(other, float) or isinstance(other, int):
             result = self._mul_scalar(other)
-        elif isinstance(other, CurrentValue):
+        elif isinstance(other, ScalarCurrentValue):
             result = self._mul_current(other)
         else:
             raise TypeError("'{}' {}".format(other, WRONG_MUL_OPERAND))
@@ -87,7 +87,7 @@ class CurrentValue(DomainValue):
         return result
 
 
-class I(CurrentValue):
+class I(ScalarCurrentValue):
     """ Ток, который получается в результате расчетов """
 
     def __init__(self, value, units=Units.A):
