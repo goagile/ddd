@@ -1,10 +1,24 @@
 """
 
+Хранилище событий
+=================
+
+Создаем хранилище событий
+
     >>> store = EventStore()
+
+Создаем новое событие предметной области
+
     >>> event = DomainEvent(email='xxx@gmail.com')
+
+Добавляем сбытие в хранилище
+
     >>> event_id = store.add(event)
     >>> event_id
     10
+
+Получаем событие из хранилища
+
     >>> se = store.get_event_by_id(10)
     >>> se
     StoredEvent(event_id=10, email=xxx@gmail.com)
