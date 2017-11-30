@@ -18,9 +18,6 @@ class DomainEvent:
     def __init__(self, email):
         self.email = email
 
-    def occured_on(self):
-        pass
-
 
 class StoredEvent:
 
