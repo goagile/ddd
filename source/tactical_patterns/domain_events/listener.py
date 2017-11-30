@@ -1,6 +1,16 @@
 """
 
-    >>> u = User('xxx@email.com')
+Канал сообщений (Слушатель событий)
+===================================
+
+Создаем нового пользователя.
+Операция создания публикует событие UserRegistered в
+канале DomainEventsListener
+
+    >>> user = User('xxx@email.com')
+
+Проверяем, что событие попало в канал
+
     >>> DomainEventsListener.domain_events
     {1: UserRegistered(email=xxx@email.com)}
 
