@@ -1,6 +1,7 @@
 import unittest
 
-from calculator.sum_calculation import SumCalculationResult, SumCalculationInput, Calculation, SumCalculation
+from calculator.step_1_sum_calculation_with_tests.sum_calculation import SumCalculationResult, SumCalculationInput, \
+    Calculation, SumCalculation
 
 
 class TestSumCalculation(unittest.TestCase):
