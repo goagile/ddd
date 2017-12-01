@@ -5,7 +5,7 @@ class NotFoundCalculation(Exception):
     pass
 
 
-class CalculationsRepository:
+class CalculationRepository:
 
     def __init__(self):
         self.calculations = {}
