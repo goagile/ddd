@@ -97,7 +97,7 @@ class RabbitMQMessaging:
         self.connection.close()
 
 
-class AMPQMesage:
+class AMPQMessage:
 
     def __init__(self, notification_message, config):
         self.notification_meaage = notification_message
@@ -115,7 +115,7 @@ class RabbitMQMessageProducer(RabbitMQMessaging):
         notification_occured_on
     ):
         self.channel(exchange_name).basic_publish(
-            AMPQMesage(
+            AMPQMessage(
                 notification_message,
                 {
                     'type': notification_type,
