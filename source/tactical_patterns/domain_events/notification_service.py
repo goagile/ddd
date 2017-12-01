@@ -2,10 +2,17 @@
 
 Создаем службу оповещения
 
+    >>> connection = AMPQStreamConnection('localhost', 5672, 'guest', 'guest')
+    >>>> RabbitMQMessageProducer(connection)
+
+
     >>> store = None
     >>> tracker = None
     >>> producer = None
     >>> notification_service = NotificationService(store, tracker, producer)
+
+    >>> exchange_name = 'XXX'
+    >>> number_of_notofications = notification_service.publish_notifications(exchange_name)
 
 
 """
@@ -90,6 +97,13 @@ class RabbitMQMessaging:
         self.connection.close()
 
 
+class AMPQMesage:
+
+    def __init__(self, notification_message, config):
+        self.notification_meaage = notification_message
+        self.config = config
+
+
 class RabbitMQMessageProducer(RabbitMQMessaging):
 
     def send(
@@ -100,7 +114,17 @@ class RabbitMQMessageProducer(RabbitMQMessaging):
         notification_id,
         notification_occured_on
     ):
-        pass
+        self.channel(exchange_name).basic_publish(
+            AMPQMesage(
+                notification_message,
+                {
+                    'type': notification_type,
+                    'timestamp': notification_occured_on.time_stamp,
+                    'message_id': notification_id
+                }
+            ),
+            exchange_name
+        )
 
 
 
