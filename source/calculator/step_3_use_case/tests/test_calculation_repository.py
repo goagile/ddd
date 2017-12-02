@@ -1,10 +1,10 @@
 import unittest
 
-from calculator.step_3_sum_calculation_use_case.calculation_repository import (
+from calculator.step_3_use_case.calculation_repository import (
     CalculationRepository,
     NotFoundCalculation
 )
-from calculator.step_3_sum_calculation_use_case.sum_calculation import (
+from calculator.step_3_use_case.sum_calculation import (
     Calculation,
     SumCalculationInput,
     SumCalculationResult

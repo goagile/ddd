@@ -1,12 +1,12 @@
 import unittest
 
-from calculator.step_2_sum_calculation_persist.sum_calculation import (
+from calculator.step_2_persist.sum_calculation import (
     SumCalculationInput,
     SumCalculationResult
 )
-from calculator.step_3_sum_calculation_use_case.calculation_repository import CalculationRepository
-from calculator.step_3_sum_calculation_use_case.sum_calculation import Calculation
-from calculator.step_3_sum_calculation_use_case.use_case import SumCalculateUseCase, SumCalculateRequest
+from calculator.step_3_use_case.calculation_repository import CalculationRepository
+from calculator.step_3_use_case.sum_calculation import Calculation
+from calculator.step_3_use_case.use_case import SumCalculateUseCase, SumCalculateRequest
 
 
 class TestSumCalculateUseCase(unittest.TestCase):

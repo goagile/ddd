@@ -1,4 +1,4 @@
-from calculator.step_2_sum_calculation_persist.sum_calculation import Calculation
+from calculator.step_2_persist.sum_calculation import Calculation
 
 
 class NotFoundCalculation(Exception):

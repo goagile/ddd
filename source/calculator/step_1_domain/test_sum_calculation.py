@@ -1,11 +1,7 @@
 import unittest
 
-from calculator.step_3_sum_calculation_use_case.sum_calculation import (
-    SumCalculationResult,
-    SumCalculationInput,
-    Calculation,
-    SumCalculation
-)
+from calculator.step_1_domain.sum_calculation import SumCalculationResult, SumCalculationInput, \
+    Calculation, SumCalculation
 
 
 class TestSumCalculation(unittest.TestCase):

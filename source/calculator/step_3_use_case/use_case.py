@@ -1,8 +1,8 @@
 
 # use_case = SumCalculateUseCase(repository)
 # request = SumCalculateRequest(X=10, Y=20)
-from calculator.step_3_sum_calculation_use_case.calculation_repository import CalculationRepository
-from calculator.step_3_sum_calculation_use_case.sum_calculation import SumCalculation, SumCalculationInput, Calculation
+from calculator.step_3_use_case.calculation_repository import CalculationRepository
+from calculator.step_3_use_case.sum_calculation import SumCalculation, SumCalculationInput, Calculation
 
 
 class SumCalculateRequest:
