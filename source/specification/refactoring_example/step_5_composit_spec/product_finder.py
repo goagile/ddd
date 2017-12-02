@@ -1,4 +1,4 @@
-from nilsson.start_examples.specification.step_5_composit_spec.spec import ColorSpec, SizeSpec, BelowPriceSpec, AndSpec
+from specification.refactoring_example.step_5_composit_spec.spec import ColorSpec, SizeSpec, BelowPriceSpec, AndSpec
 
 
 class ProductFinder:

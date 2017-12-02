@@ -1,10 +1,9 @@
 import unittest
 
-from nilsson.start_examples.specification.step_7_inline_spec_creation.product import Color, Size, product
-from nilsson.start_examples.specification.step_7_inline_spec_creation.product_finder import ProductFinder
-from nilsson.start_examples.specification.step_7_inline_spec_creation.product_repository import ProductRepository
-from nilsson.start_examples.specification.step_7_inline_spec_creation.spec import ColorSpec, SizeSpec, AndSpec, \
-    BelowPriceSpec
+from specification.refactoring_example.step_6_add_select_by_method.product import Color, Size, product
+from specification.refactoring_example.step_6_add_select_by_method.product_finder import ProductFinder
+from specification.refactoring_example.step_6_add_select_by_method.product_repository import ProductRepository
+
 
 repository = ProductRepository()
 repository.add_product(color=Color.RED, size=Size.S)
@@ -19,17 +18,15 @@ class TestRepository(unittest.TestCase):
 
     def test_find_by_color(self):
         expected = [product(color=Color.RED, size=Size.S)]
-        spec = ColorSpec(color=Color.RED)
 
-        result = finder.select_by(spec)
+        result = finder.find_by_color(Color.RED)
 
         self.assertEqual(expected, result)
 
     def test_find_by_size(self):
         expected = [product(color=Color.RED, size=Size.S)]
-        spec = SizeSpec(size=Size.S)
 
-        result = finder.select_by(spec)
+        result = finder.find_by_size(Size.S)
 
         self.assertEqual(expected, result)
 
@@ -38,11 +35,7 @@ class TestRepository(unittest.TestCase):
             product(price=120, color=Color.BLUE, size=Size.L),
             product(price=350, color=Color.BLUE, size=Size.M)
         ]
-        spec = AndSpec(
-            BelowPriceSpec(price=100),
-            ColorSpec(color=Color.BLUE)
-        )
 
-        result = finder.select_by(spec)
+        result = finder.find_below_price_and_color(100, Color.BLUE)
 
         self.assertEqual(expected, result)

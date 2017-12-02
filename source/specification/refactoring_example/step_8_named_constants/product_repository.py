@@ -1,4 +1,4 @@
-from nilsson.start_examples.specification.step_8_named_constants.product import Size, Product, Color
+from specification.refactoring_example.step_8_named_constants.product import Size, Product, Color
 
 
 class ProductRepository:

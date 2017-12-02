@@ -1,4 +1,4 @@
-from nilsson.start_examples.specification.step_7_inline_spec_creation.spec import ColorSpec, SizeSpec, BelowPriceSpec, AndSpec
+from specification.refactoring_example.step_7_inline_spec_creation.spec import ColorSpec, SizeSpec, BelowPriceSpec, AndSpec
 
 
 class ProductFinder:

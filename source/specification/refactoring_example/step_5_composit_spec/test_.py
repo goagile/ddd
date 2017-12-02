@@ -1,8 +1,8 @@
 import unittest
 
-from nilsson.start_examples.specification.step_6_add_select_by_method.product import Color, Size, product
-from nilsson.start_examples.specification.step_6_add_select_by_method.product_finder import ProductFinder
-from nilsson.start_examples.specification.step_6_add_select_by_method.product_repository import ProductRepository
+from specification.refactoring_example.step_5_composit_spec.product import Color, Size, product
+from specification.refactoring_example.step_5_composit_spec.product_finder import ProductFinder
+from specification.refactoring_example.step_5_composit_spec.product_repository import ProductRepository
 
 
 repository = ProductRepository()

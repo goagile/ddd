@@ -1,4 +1,4 @@
-from nilsson.start_examples.specification.step_6_add_select_by_method.spec import ColorSpec, SizeSpec, BelowPriceSpec, AndSpec
+from specification.refactoring_example.step_6_add_select_by_method.spec import ColorSpec, SizeSpec, BelowPriceSpec, AndSpec
 
 
 class ProductFinder:

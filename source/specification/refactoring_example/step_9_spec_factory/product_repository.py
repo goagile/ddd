@@ -1,4 +1,4 @@
-from nilsson.start_examples.specification.step_9_spec_factory.product import Size, Product, Color
+from specification.refactoring_example.step_9_spec_factory.product import Size, Product, Color
 
 
 class ProductRepository:

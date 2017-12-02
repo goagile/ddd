@@ -1,9 +1,9 @@
 import unittest
 
-from nilsson.start_examples.specification.step_9_spec_factory.product import Color, Size, product
-from nilsson.start_examples.specification.step_9_spec_factory.product_finder import ProductFinder
-from nilsson.start_examples.specification.step_9_spec_factory.product_repository import ProductRepository
-from nilsson.start_examples.specification.step_9_spec_factory.spec_factory import SpecFactory
+from specification.refactoring_example.step_9_spec_factory.product import Color, Size, product
+from specification.refactoring_example.step_9_spec_factory.product_finder import ProductFinder
+from specification.refactoring_example.step_9_spec_factory.product_repository import ProductRepository
+from specification.refactoring_example.step_9_spec_factory.spec_factory import SpecFactory
 
 red = Color.RED
 green = Color.GREEN

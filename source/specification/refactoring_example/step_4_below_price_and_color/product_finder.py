@@ -1,4 +1,4 @@
-from nilsson.start_examples.specification.step_4_below_price_and_color.spec import ColorSpec, SizeSpec
+from specification.refactoring_example.step_4_below_price_and_color.spec import ColorSpec, SizeSpec
 
 
 class ProductFinder:
