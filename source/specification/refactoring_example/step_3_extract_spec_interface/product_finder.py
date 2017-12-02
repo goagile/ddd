@@ -1,4 +1,4 @@
-from nilsson.start_examples.specification.step_3_extract_spec_interface.spec import ColorSpec, SizeSpec
+from specification.refactoring_example.step_3_extract_spec_interface.spec import ColorSpec, SizeSpec
 
 
 class ProductFinder:

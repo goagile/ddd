@@ -1,6 +1,6 @@
 import unittest
 
-from nilsson.start_examples.chemical_specification.step_2_refactor_constants.model import (
+from specification.chemical_specification.step_3.model import (
     Container,
     ContainerSpecification,
     ContainerFeature
@@ -9,6 +9,8 @@ from nilsson.start_examples.chemical_specification.step_2_refactor_constants.mod
 
 ARM = ContainerFeature.ARMORED
 ARM_SPEC = ContainerSpecification(ARM)
+
+LIQ = ContainerFeature.LIQUID
 
 
 class TestContainer(unittest.TestCase):
@@ -28,6 +30,14 @@ class TestContainer(unittest.TestCase):
         result = container.features
 
         self.assertEqual([ARM], result)
+
+    def test_is_safely_packed(self):
+        container = Container()
+        container.add_feature(ARM)
+
+        result = container.is_safely_packed()
+
+        self.assertTrue(result)
 
 
 class TestContainerSpecification(unittest.TestCase):

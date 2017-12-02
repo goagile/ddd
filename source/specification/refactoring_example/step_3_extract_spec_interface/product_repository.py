@@ -1,4 +1,4 @@
-from nilsson.start_examples.specification.step_3_extract_spec_interface.product import Size, Product
+from specification.refactoring_example.step_3_extract_spec_interface.product import Size, Product
 
 
 class ProductRepository:

@@ -1,8 +1,8 @@
 import unittest
 
-from nilsson.start_examples.specification.step_3_extract_spec_interface.product import Color, Size, Product
-from nilsson.start_examples.specification.step_3_extract_spec_interface.product_finder import ProductFinder
-from nilsson.start_examples.specification.step_3_extract_spec_interface.product_repository import ProductRepository
+from specification.refactoring_example.step_3_extract_spec_interface.product import Color, Size, Product
+from specification.refactoring_example.step_3_extract_spec_interface.product_finder import ProductFinder
+from specification.refactoring_example.step_3_extract_spec_interface.product_repository import ProductRepository
 
 repository = ProductRepository()
 repository.add_product(Color.RED)

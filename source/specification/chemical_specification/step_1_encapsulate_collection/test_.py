@@ -21,6 +21,7 @@ class TestContainer(unittest.TestCase):
 
         self.assertEqual(feature, result)
 
+
 class TestContainerSpecification(unittest.TestCase):
 
     def test_is_satisfied_by(self):

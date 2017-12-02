@@ -1,6 +1,6 @@
 import unittest
 
-from nilsson.start_examples.specification.step_2_refactor_extract_rule.model import Color, Repository, Size
+from specification.refactoring_example.step_0_source_code.model import Color, Repository, Size
 
 
 repository = Repository()
